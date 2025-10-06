@@ -60,10 +60,17 @@
   --line-height-relaxed: 1.75;
 
   /*========== z index ==========*/
-  /* this is for the layers.  */
-  /* the lesser, the more they are at the top of the elements */
+  /* Higher values appear on top of lower values */
+  --z-back: -1;
+  --z-normal: 1;
   --z-tooltip: 10;
-  --z-fixed: 100;
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-fixed: 1000;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-toast: 1070;
 }
 
 /*=============== BASE ===============*/
