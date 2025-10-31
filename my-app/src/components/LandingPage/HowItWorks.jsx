@@ -12,9 +12,16 @@ const HowItWorks = () => {
       className="h-150 bg-[var(--color-neutral-900)] text-center px-6 flex flex-col items-center"
     >
       {/* ========== SECTION TITLE ========== */}
-      <h2 className="section-title text-[var(--color-neutral-100)] mb-12">
-        How It Works
-      </h2>
+
+      <div className="flex flex-col items-center justify-center ">
+        <h2
+          className="section-title text-[var(--color-neutral-100)] mb-12 "
+          style={{ fontFamily: "var(--font-title)" }}
+        >
+          How It Works
+        </h2>
+        <div className="h-1 w-35 bg-[var(--color-brand-primary)] rounded"></div>
+      </div>
 
       {/* ========== SCROLL STACK WRAPPER ========== */}
       <div className="max-w-5xl w-full h-100 relative">

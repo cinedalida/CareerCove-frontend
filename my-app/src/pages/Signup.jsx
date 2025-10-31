@@ -1,7 +1,7 @@
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
 
-const LandingPage = () => {
+const Signup = () => {
   return (
     <>
       <Navbar />
@@ -11,4 +11,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Signup;

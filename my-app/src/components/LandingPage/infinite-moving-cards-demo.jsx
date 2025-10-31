@@ -1,56 +1,70 @@
-"use client";
 import { InfiniteMovingCards } from "../Animations/infinite-moving-cards";
+import "../../styles/LandingPage/Testimonials.css";
 
 export default function InfiniteMovingCardsDemo() {
   return (
-    <div className="h-[40rem] flex flex-col antialiased items-center justify-center relative overflow-hidden bg-[var(--color-bg-primary)]">
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="right"
-        speed="slow"
-      />
-    </div>
+    <>
+      <section id="feedbacks">
+        <div className="flex flex-col items-center justify-center testimonials_title">
+          <h1
+            className="section-title text-[var(--color-text-primary)] font-[var(--font-weight-semibold)] items-center text-center mb-4"
+            style={{ fontFamily: "var(--font-title)" }}
+          >
+            Testimonials
+          </h1>
+          <div className="h-1 w-30 bg-[var(--color-brand-primary)] rounded"></div>
+        </div>
+        <div className="h-[40rem] flex flex-col antialiased items-center justify-center relative overflow-hidden bg-[var(--color-bg-primary)]">
+          <InfiniteMovingCards
+            items={testimonials}
+            direction="right"
+            speed="slow"
+          />
+        </div>
+      </section>
+    </>
   );
 }
 
 const testimonials = [
   {
     quote:
-      "I felt disorganized. Pieces of paper everywhere. I was constantly making new lists, losing old ones, crossing off items and adding new ones. I was forever worried things were slipping and not getting done. My brain was tired",
-    name: "David H. Hansson",
-    title: "CTO, Boosting Metabolism",
+      "CareerCove helped me organize my job applications and track my career goals in one place. I finally feel like I have a clear direction instead of getting lost in multiple tabs and documents.",
+    name: "Alyssa Ramos",
+    title: "Marketing Graduate, DLSU-D",
     avatar:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Author, Hamlet",
+      "Before CareerCove, I struggled to present my experiences clearly. The resume and portfolio builder made it simple — I landed two interviews within a week of updating my profile!",
+    name: "Joshua Lee",
+    title: "Aspiring Software Developer",
     avatar:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "Writer, A Dream Within a Dream",
+    quote:
+      "What I love most about CareerCove is how it connects students to real opportunities. The internship listings and mentorship features are game changers.",
+    name: "Renee Villanueva",
+    title: "3rd Year IT Student",
     avatar:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Author, Pride and Prejudice",
+      "CareerCove’s career tips and mock interview tools boosted my confidence so much. I actually enjoyed preparing for my job interview!",
+    name: "Michael Tan",
+    title: "Junior Data Analyst",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Author, Moby-Dick",
+      "It feels like CareerCove understands what students need. From goal tracking to networking, everything feels supportive and easy to use.",
+    name: "Samantha Cruz",
+    title: "Fresh Graduate, Computer Science",
     avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&h=100&fit=crop",
   },
 ];
