@@ -1,0 +1,24 @@
+PROJECT SKELETON
+
+
+LandingPage.jsx contents:
+
+Navbar
+
+------------
+
+Sections:
+
+Hero Section
+
+Features
+
+How it works?
+
+Feedbacks
+
+------------
+
+Footer
+
+
