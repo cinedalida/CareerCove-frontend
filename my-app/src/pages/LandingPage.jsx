@@ -15,9 +15,7 @@ const LandingPage = () => {
       <Hero />
       <Features />
       <HowItWorks />
-      {/* <Feedbacks /> */}
       <InfiniteMovingCardsDemo />
-      {/* <LoginPage /> */}
       <Footer />
     </>
   );
