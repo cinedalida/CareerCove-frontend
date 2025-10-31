@@ -1,7 +1,7 @@
 /*=============== GOOGLE FONTS ===============*/
 /*Main Title: Kreon; Default: Poppins*/
 @import url("https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+@import "tailwindcss";
 /*=============== VARIABLES CSS ===============*/
 /*Root elements*/
 
@@ -16,7 +16,6 @@
 
   /* BRAND COLORS */
   --color-brand-primary: rgb(255, 137, 34); /* Orange – Main brand identity */
-  --color-brand-accent: rgb(9, 160, 224); /* Blue – accent for highlights */
 
   /* NEUTRALS */
   --color-neutral-100: rgb(255, 255, 255); /* Pure white backgrounds */
@@ -35,6 +34,7 @@
   --color-bg-secondary: var(--color-neutral-200);
   --color-border: rgba(12, 12, 12, 0.1);
   --color-button-primary: var(--color-brand-primary);
+  --color-button-secondary: var(--color-neutral-900);
   --color-button-accent: var(--color-brand-accent);
 
   /*========== FONT SIZES ==========*/
@@ -98,6 +98,13 @@ img {
   height: auto;
 }
 
+section {
+  padding: 4rem 2rem;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
 /*=============== FORMAT ===============*/
 
 .hero-title {
@@ -123,8 +130,9 @@ h2 {
 button {
   font-family: var(--font-body);
   font-size: var(--font-size-button);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.5px;
+  padding: 0.75rem 1.5rem;
 }
 
 .section-title {
@@ -137,7 +145,6 @@ button {
   font-family: var(--font-body);
   font-size: var(--font-size-content-subtext);
   font-weight: var(--font-weight-light);
-  color: rgba(12, 12, 12, 0.7);
 }
 
 /*=============== SCROLLBAR ===============*/
@@ -156,4 +163,17 @@ button {
   background: var(--color-brand-primary);
   border-radius: 5px;
   transition: background 0.3s ease-in-out;
+}
+
+/*=============== ANIMATIONS ===============*/
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration) linear infinite;
+  animation-direction: var(--animation-direction);
 }
