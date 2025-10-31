@@ -1,28 +1,54 @@
+import { motion } from "framer-motion";
 import { InfiniteMovingCards } from "../Animations/infinite-moving-cards";
 import "../../styles/LandingPage/Testimonials.css";
 
 export default function InfiniteMovingCardsDemo() {
   return (
-    <>
-      <section id="feedbacks">
-        <div className="flex flex-col items-center justify-center testimonials_title">
-          <h1
-            className="section-title text-[var(--color-text-primary)] font-[var(--font-weight-semibold)] items-center text-center mb-4"
-            style={{ fontFamily: "var(--font-title)" }}
-          >
-            Testimonials
-          </h1>
-          <div className="h-1 w-30 bg-[var(--color-brand-primary)] rounded"></div>
-        </div>
-        <div className="h-[40rem] flex flex-col antialiased items-center justify-center relative overflow-hidden bg-[var(--color-bg-primary)]">
-          <InfiniteMovingCards
-            items={testimonials}
-            direction="right"
-            speed="slow"
-          />
-        </div>
-      </section>
-    </>
+    <motion.section
+      id="feedbacks"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
+      {/* Title */}
+      <motion.div
+        className="flex flex-col items-center justify-center testimonials_title"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h1
+          className="section-title text-[var(--color-text-primary)] font-[var(--font-weight-semibold)] text-center mb-4"
+          style={{ fontFamily: "var(--font-title)" }}
+        >
+          Testimonials
+        </h1>
+        <motion.div
+          className="h-1 w-30 bg-[var(--color-brand-primary)] rounded"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        ></motion.div>
+      </motion.div>
+
+      {/* Cards Section */}
+      <motion.div
+        className="h-[40rem] flex flex-col antialiased items-center justify-center relative overflow-hidden bg-[var(--color-bg-primary)]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 1.2 }}
+        viewport={{ once: true }}
+      >
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
+        />
+      </motion.div>
+    </motion.section>
   );
 }
 

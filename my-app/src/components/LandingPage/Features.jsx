@@ -3,13 +3,42 @@ import "../../styles/LandingPage/Features.css";
 import F1 from "../../assets/F1.png";
 import F2 from "../../assets/F2.png";
 import F3 from "../../assets/F3.png";
+import { motion } from "framer-motion";
 
 const Features = () => {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        staggerChildren: 0.2, // delay between child animations
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="features" className="flex flex-col items-center">
-      <div className="flex flex-col items-center">
+      <motion.div
+        className="flex flex-col items-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }} // triggers when 20% in view
+        variants={containerVariants}
+      >
         {/* ========== SECTION HEADER ========== */}
-        <div className="features-header">
+        <motion.div className="features-header" variants={itemVariants}>
           <div>
             <h1
               className="section-title text-[var(--color-text-primary)] font-[var(--font-weight-semibold)]"
@@ -28,15 +57,24 @@ const Features = () => {
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
-        </div>
+        </motion.div>
+
         {/* ========== FEATURE CARDS ========== */}
-        <div className=" flex flex-wrap justify-center gap-8 px-8 xl:gap-10 xl:px-16 w-full max-w-7xl">
+        <motion.div
+          className="flex flex-wrap justify-center gap-8 px-8 xl:gap-10 xl:px-16 w-full max-w-7xl mt-8"
+          variants={containerVariants}
+        >
           {[
             { src: F1, title: "Resume Parsing", desc: "Lorem Ipsum" },
             { src: F2, title: "Smart Job Matching", desc: "Lorem Ipsum" },
             { src: F3, title: "Career Filters", desc: "Lorem Ipsum" },
           ].map((item, index) => (
-            <div key={index} className="w-full max-w-sm">
+            <motion.div
+              key={index}
+              className="w-full max-w-sm"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            >
               <div className="bg-[var(--color-bg-primary)] p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col items-center text-center">
                 <img
                   src={item.src}
@@ -44,7 +82,7 @@ const Features = () => {
                   className="w-full object-contain rounded-xl"
                 />
                 <h2
-                  className="text-[var(--color-text-primary)] "
+                  className="text-[var(--color-text-primary)] mt-3"
                   style={{
                     fontFamily: "var(--font-body)",
                     fontSize: "var(--font-size-content-title)",
@@ -63,10 +101,10 @@ const Features = () => {
                   {item.desc}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
