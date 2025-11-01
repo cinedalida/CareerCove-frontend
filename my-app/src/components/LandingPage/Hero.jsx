@@ -5,6 +5,7 @@ import "../../styles/LandingPage/Hero.css";
 import SplitText from "../Animations/SplitText";
 import TextType from "../Animations/TextType";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const handleAnimationComplete = () => {
   console.log("Animation complete!");
@@ -52,8 +53,13 @@ const HeroSection = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5, duration: 0.8, ease: "easeOut" }}
       >
-        <Button variant="secondary">Try for free</Button>
-        <Button variant="primary">Sign Up</Button>
+        <Link to="/guest">
+          <Button variant="secondary">Try for free</Button>
+        </Link>
+
+        <Link to="/signup">
+          <Button variant="primary">Sign Up</Button>
+        </Link>
       </motion.div>
       <motion.img
         src={F0}

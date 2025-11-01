@@ -6,44 +6,66 @@ const Button = ({
   variant = "primary",
   onClick,
   href,
+  type = "button",
+  disabled = false,
   className = "",
+  ...props
 }) => {
+  // Base shared styles
   const baseStyles = `
     inline-flex items-center justify-center
-    rounded-full transition-all duration-300
-    cursor-pointer border-2
-    hover:scale-105 active:scale-95
+    transition-all duration-300
+    cursor-pointer font-medium
+    focus:outline-none
   `;
 
+  //  Button style variants
   const variants = {
     primary:
-      "bg-[rgb(255,137,34)] text-white border-[rgb(255,137,34)] hover:bg-[var(--color-neutral-100)] hover:text-[var(--color-brand-primary)] px-10 py-3",
+      "bg-[rgb(255,137,34)] text-white border-2 border-[rgb(255,137,34)] hover:bg-[var(--color-neutral-100)] hover:text-[var(--color-brand-primary)] px-10 py-3 rounded-full",
     secondary:
-      "bg-[rgb(12,12,12)] text-white border-[rgb(12,12,12)] hover:bg-[var(--color-neutral-100)] hover:text-black px-10 py-3",
+      "bg-[rgb(12,12,12)] text-white border-2 border-[rgb(12,12,12)] hover:bg-[var(--color-neutral-100)] hover:text-black px-10 py-3 rounded-full",
     outline:
-      "bg-transparent text-[rgb(12,12,12)] border-[rgb(12,12,12)] hover:bg-[rgb(12,12,12)] hover:bg-opacity-5 px-10 py-3",
+      "bg-transparent text-[rgb(12,12,12)] border-2 border-[rgb(12,12,12)] hover:bg-[rgb(12,12,12)] hover:bg-opacity-5 px-10 py-3 rounded-full",
     small:
-      "bg-[rgb(255,137,34)] text-white border-[rgb(255,137,34)] hover:bg-[rgb(230,117,14)] hover:bg-[var(--color-neutral-100)] hover:text-[var(--color-brand-primary)] rounded-lg",
+      "bg-[rgb(255,137,34)] text-white border-2 border-[rgb(255,137,34)] hover:bg-[rgb(230,117,14)] rounded-lg px-6 py-2",
+    form: "bg-neutral-900 text-neutral-100 border-none rounded-lg hover:opacity-90 active:opacity-80 px-6 py-3 font-body font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed",
   };
 
-  const combinedStyles = `${baseStyles} ${variants[variant]} ${className}`;
+  const variantStyles = variants[variant] || variants.primary;
 
+  const combinedStyles = `
+    ${baseStyles} 
+    ${variantStyles} 
+    ${className}
+  `
+    .trim()
+    .replace(/\s+/g, " ");
+
+  // Render link if href provided
   if (href) {
     return (
-      <a href={href} className={combinedStyles}>
+      <Link to={href} className={combinedStyles}>
         {children}
-      </a>
+      </Link>
     );
   }
 
+  // Otherwise render button
   return (
-    <button onClick={onClick} className={combinedStyles}>
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={combinedStyles}
+      {...props}
+    >
       {children}
     </button>
   );
 };
 
-// Demo
+// Demo component (optional)
 const ButtonDemo = () => {
   return (
     <div className="min-h-screen bg-[rgb(243,243,243)] p-8 flex items-center justify-center">
@@ -53,27 +75,11 @@ const ButtonDemo = () => {
         </h2>
 
         <div className="flex flex-wrap gap-4">
-          <Button variant="primary" onClick={() => alert("Sign Up clicked")}>
-            <h3> Sign Up</h3>
-          </Button>
-
-          <Button
-            variant="secondary"
-            onClick={() => alert("Try for free clicked")}
-          >
-            Try for free
-          </Button>
-
-          <Button
-            variant="outline"
-            onClick={() => alert("Try for free clicked")}
-          >
-            Try for free
-          </Button>
-
-          <Button variant="small" onClick={() => alert("Login clicked")}>
-            Login
-          </Button>
+          <Button variant="primary">Sign Up</Button>
+          <Button variant="secondary">Try for free</Button>
+          <Button variant="outline">Outline</Button>
+          <Button variant="small">Login</Button>
+          <Button variant="form">Form Button</Button>
         </div>
 
         <div className="mt-8 p-4 bg-[rgb(243,243,243)] rounded-lg">
@@ -82,9 +88,11 @@ const ButtonDemo = () => {
             <br />
             {'<Button variant="secondary">Try for free</Button>'}
             <br />
-            {'<Button variant="outline">Try for free</Button>'}
+            {'<Button variant="outline">Outline</Button>'}
             <br />
             {'<Button variant="small">Login</Button>'}
+            <br />
+            {'<Button variant="form">Form Button</Button>'}
           </p>
         </div>
       </div>
@@ -92,4 +100,4 @@ const ButtonDemo = () => {
   );
 };
 
-export default Button; // will only export button variant not the demo
+export default Button;

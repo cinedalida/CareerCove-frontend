@@ -1,4 +1,54 @@
 .custom-navbar {
   margin: 0 auto;
   padding: 1rem 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Make items wrap and adjust spacing on smaller screens */
+@media (max-width: 1024px) {
+  .custom-navbar {
+    width: 90%;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  /* Center the nav links when stacked */
+  .custom-navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Adjust logo size */
+  .custom-navbar img {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-navbar {
+    width: 95%;
+    padding: 0.75rem;
+  }
+
+  .custom-navbar ul {
+    gap: 0.25rem;
+  }
+
+  .custom-navbar h2 {
+    font-size: 0.9rem;
+  }
+
+  .custom-navbar button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
 }

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "../../styles/PageLayout/Navbar.css";
 import Button from "../UI/buttons";
 import CCLogo from "../../assets/CCLogo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = React.useState("home");
@@ -27,11 +28,13 @@ const Navbar = () => {
         whileHover={{ scale: 1.1, rotate: -2 }}
         transition={{ type: "spring", stiffness: 200 }}
       >
-        <img
-          src={CCLogo}
-          alt="CareerCove Logo"
-          className="w-20 cursor-pointer"
-        />
+        <Link to="/">
+          <img
+            src={CCLogo}
+            alt="CareerCove Logo"
+            className="w-20 cursor-pointer"
+          />
+        </Link>
       </motion.div>
 
       {/* ===== CENTER MENU ===== */}
@@ -64,7 +67,9 @@ const Navbar = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 200 }}
       >
-        <Button variant="small">Login</Button>
+        <Link to="/login">
+          <Button variant="small">Login</Button>
+        </Link>
       </motion.div>
     </motion.nav>
   );
