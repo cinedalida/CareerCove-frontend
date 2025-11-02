@@ -1,6 +1,6 @@
 import React from "react";
 
-// Reusable Button Component
+// Reusable Button Component [LANDING PAGE]
 const Button = ({
   children,
   variant = "primary",

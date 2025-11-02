@@ -77,18 +77,14 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            // 1. Spacing: Reduced padding from px-8 py-8 to px-6 py-6 for a tighter feel.
             className="relative w-[350px] min-h-[400px] shrink-0 rounded-2xl border bg-[var(--color-neutral-100)] border-[var(--color-border)] shadow-sm cards_spaces"
             key={item.name}
           >
-            {/* 2. Font: Set the font for the whole card to your --font-body */}
             <blockquote style={{ fontFamily: "var(--font-body)" }}>
-              {/* 3. Spacing: Kept the quote mark smaller and with less margin */}
               <div className="text-7xl text-slate-200 dark:text-slate-700 mb-2 leading-none">
                 "
               </div>
 
-              {/* 4. Quote Text: Applied your specific font size, weight, and line height */}
               <span
                 className="relative z-20 text-[var(--color-text-secondary)]"
                 style={{
@@ -100,7 +96,6 @@ export const InfiniteMovingCards = ({
                 {item.quote}
               </span>
 
-              {/* 5. Divider: Used your --color-border and reduced margin from my-6 to my-4 */}
               <div className="border-t border-[var(--color-border)] card_divider"></div>
 
               {/* Author Block */}
@@ -113,22 +108,19 @@ export const InfiniteMovingCards = ({
                   />
                 )}
 
-                {/* 6. Spacing: Kept the gap between name/title tight */}
                 <span className="flex flex-col gap-1">
-                  {/* 7. Author Name: Applied your font weight. Kept text-sm (14px) as it's smaller than your 1rem subtext. */}
                   <span
                     className="text-sm text-[var(--color-text-primary)]"
-                    style={{ fontWeight: "var(--font-weight-semibold)" }} // 600
+                    style={{ fontWeight: "var(--font-weight-semibold)" }}
                   >
                     {item.name}
                   </span>
 
-                  {/* 8. Author Title: Applied your font weight and brand color */}
                   <span
                     className="text-sm"
                     style={{
-                      fontWeight: "var(--font-weight-regular)", // 400
-                      color: "var(--color-brand-primary)", // Your orange color
+                      fontWeight: "var(--font-weight-regular)",
+                      color: "var(--color-brand-primary)",
                     }}
                   >
                     {item.title}

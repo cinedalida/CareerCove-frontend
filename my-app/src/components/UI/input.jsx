@@ -1,3 +1,5 @@
+// Input component for login and signup
+
 export function Input({
   type = "text",
   placeholder = "",

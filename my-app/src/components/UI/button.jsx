@@ -1,3 +1,5 @@
+// Buttons for login and sign up
+
 export function Button({
   children,
   onClick,
