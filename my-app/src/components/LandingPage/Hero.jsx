@@ -7,10 +7,6 @@ import TextType from "../Animations/TextType";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const handleAnimationComplete = () => {
-  console.log("Animation complete!");
-};
-
 const HeroSection = () => {
   return (
     <section

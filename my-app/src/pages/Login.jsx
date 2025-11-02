@@ -1,6 +1,7 @@
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
 import L1 from "../assets/L1.png";
+import { Link } from "react-router-dom";
 
 import { useState } from "react";
 import { Button } from "../components/UI/button";
@@ -245,23 +246,25 @@ export default function LoginForm({ onToggle }) {
               }}
             >
               Don't have an account?{" "}
-              <button
-                onClick={onToggle}
-                style={{
-                  color: "var(--color-brand-primary)",
-                  fontSize: "var(--font-size-content-subtext)",
-                  fontWeight: "var(--font-weight-light)",
-                  border: "none",
-                  background: "none",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  transition: "opacity 0.2s ease",
-                }}
-                onMouseEnter={(e) => (e.target.style.opacity = "0.7")}
-                onMouseLeave={(e) => (e.target.style.opacity = "1")}
-              >
-                Sign up
-              </button>
+              <Link to="/signup">
+                <button
+                  onClick={onToggle}
+                  style={{
+                    color: "var(--color-brand-primary)",
+                    fontSize: "var(--font-size-content-subtext)",
+                    fontWeight: "var(--font-weight-light)",
+                    border: "none",
+                    background: "none",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                    transition: "opacity 0.2s ease",
+                  }}
+                  onMouseEnter={(e) => (e.target.style.opacity = "0.7")}
+                  onMouseLeave={(e) => (e.target.style.opacity = "1")}
+                >
+                  Sign up
+                </button>
+              </Link>
             </p>
           </div>
         </div>
