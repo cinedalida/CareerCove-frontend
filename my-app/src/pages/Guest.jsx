@@ -121,7 +121,7 @@ const Guest = () => {
           {stage === "loading" && (
             <div className="flex items-center justify-center min-h-[40vh]">
               <div className="text-center">
-                <div className="text-[var(--color-text-secondary)] mb-4">
+                <div className="text-lg font-medium text-[var(--color-text-secondary)] mb-4">
                   Generating Job Suggestions...
                 </div>
                 <div className="flex justify-center gap-1">
