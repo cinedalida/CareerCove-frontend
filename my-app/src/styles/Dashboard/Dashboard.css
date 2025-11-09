@@ -1,0 +1,217 @@
+.dashboard-container {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  padding: 2rem;
+  margin-top: -20px;
+  font-family: "Poppins", sans-serif;
+  color: #0c0c0c;
+}
+
+.dashboard-header {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.back-btn {
+  background-color: var(--color-brand-primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.03);
+  opacity: 0.85;
+}
+
+/* Stats Grid */
+.stats-grid {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.stat-card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.stat-icon {
+  font-size: 1.75rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Employability Grid */
+.employability-grid {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.overall-card {
+  background-color: rgb(255, 137, 34);
+  color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.overall-title {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.overall-value {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.progress-bar {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  height: 6px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: white;
+  border-radius: 999px;
+}
+
+.employ-card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tech-skill {
+  background-color: rgb(52, 152, 219);
+}
+
+.experience {
+  background-color: rgb(46, 204, 113);
+}
+
+.education {
+  background-color: rgb(155, 89, 182);
+}
+
+/* Skill Section */
+.skills-card {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skills-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+  background-color: #e5e7eb;
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+/* Info Section */
+.info-grid {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.info-card ul li {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bold {
+  font-weight: 700;
+}
