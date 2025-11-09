@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/PageLayout/Navbar";
@@ -124,17 +122,17 @@ const Guest = () => {
                 <div className="text-lg font-medium text-[var(--color-text-secondary)] mb-4">
                   Generating Job Suggestions...
                 </div>
-                <div className="flex justify-center gap-1">
+                <div className="flex justify-center gap-1 loading-dots">
                   <div
-                    className="w-2 h-2 bg-[var(--color-accent)] rounded-full animate-bounce"
+                    className="w-2 h-2 bg-[var(--color-brand-primary)] rounded-full animate-bounce"
                     style={{ animationDelay: "0s" }}
                   ></div>
                   <div
-                    className="w-2 h-2 bg-[var(--color-accent)] rounded-full animate-bounce"
+                    className="w-2 h-2 bg-[var(--color-brand-primary)] rounded-full animate-bounce"
                     style={{ animationDelay: "0.2s" }}
                   ></div>
                   <div
-                    className="w-2 h-2 bg-[var(--color-accent)] rounded-full animate-bounce"
+                    className="w-2 h-2 bg-[var(--color-brand-primary)] rounded-full animate-bounce"
                     style={{ animationDelay: "0.4s" }}
                   ></div>
                 </div>
