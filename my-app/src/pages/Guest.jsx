@@ -17,7 +17,7 @@ const Guest = () => {
     setUserInput(input);
     setStage("loading");
 
-    // Simulate API call — replace this with your actual API later
+    // Simulate API call — replace this with actual API later
     setTimeout(() => {
       const mockJobs = [
         {

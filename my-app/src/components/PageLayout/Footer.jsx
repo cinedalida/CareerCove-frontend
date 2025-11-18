@@ -14,13 +14,13 @@ const Footer = () => {
       <section id="contact-us">
         {/* TOP SECTION */}
         <motion.div
-          className="flex flex-col md:flex-row md:justify-between md:items-start gap-12 border-b border-[var(--color-border)] pb-10"
+          className="top-section"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Left Section - Brand & Socials */}
+          {/* LEFT SECTION */}
           <motion.div
             className="flex flex-col items-center md:items-start text-center md:text-left"
             initial={{ opacity: 0, x: -40 }}
@@ -29,60 +29,67 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <p className="text-[var(--color-brand-primary)] text-2xl font-semibold mb-2">
-              Contact us.
-            </p>
-            <p className="text-[var(--color-neutral-100)] leading-relaxed mb-6">
-              Our vision is to provide convenience <br />
-              and seamless Job Hunting experience.
+              Contact Us.
             </p>
 
-            <div className="flex justify-center md:justify-start gap-4 text-[var(--color-neutral-100)]">
-              <a
-                href="#"
-                className="hover:text-[var(--color-brand-primary)] transition-colors"
-              >
-                <i className="ri-facebook-fill text-2xl"></i>
-              </a>
-              <a
-                href="#"
-                className="hover:text-[var(--color-brand-primary)] transition-colors"
-              >
-                <i className="ri-twitter-fill text-2xl"></i>
-              </a>
-              <a
-                href="#"
-                className="hover:text-[var(--color-brand-primary)] transition-colors"
-              >
-                <i className="ri-instagram-fill text-2xl"></i>
-              </a>
-            </div>
+            <ul className="text-[var(--color-neutral-100)] space-y-1">
+              <li>Francine Dalida</li>
+              <li>Jan Escander</li>
+              <li>Marti Trance</li>
+            </ul>
           </motion.div>
 
-          {/* Right Section - Links */}
+          {/* RIGHT SECTION */}
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center md:text-left"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center md:text-left"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {footerLinks.map((column, index) => (
-              <div key={index} className="text-[var(--color-neutral-100)]">
-                <h3 className="font-semibold text-lg mb-3">{column.title}</h3>
-                <ul className="space-y-2">
-                  {column.links.map((link, i) => (
-                    <li key={i}>
-                      <a
-                        href="#"
-                        className="hover:text-[var(--color-brand-primary)] transition-colors"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {/* Emails */}
+            <div className="text-[var(--color-neutral-100)]">
+              <h3 className="font-semibold text-lg mb-3">Emails</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="mailto:francine@example.com"
+                    className="hover:text-[var(--color-brand-primary)] transition-colors"
+                  >
+                    francine@example.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:escander@example.com"
+                    className="hover:text-[var(--color-brand-primary)] transition-colors"
+                  >
+                    escander@example.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:marti@example.com"
+                    className="hover:text-[var(--color-brand-primary)] transition-colors"
+                  >
+                    marti@example.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* GitHub */}
+            <div className="text-[var(--color-neutral-100)]">
+              <h3 className="font-semibold text-lg mb-3">GitHub Repository</h3>
+              <a
+                href="https://github.com/cinedalida/CareerCove-frontend"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--color-brand-primary)] transition-colors underline"
+              >
+                github.com/careercove
+              </a>
+            </div>
           </motion.div>
         </motion.div>
 
@@ -95,20 +102,6 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <p>©2025 CareerCove</p>
-          <div className="flex gap-4">
-            <a
-              href="#"
-              className="hover:text-[var(--color-brand-primary)] transition-colors"
-            >
-              Privacy & Policy
-            </a>
-            <a
-              href="#"
-              className="hover:text-[var(--color-brand-primary)] transition-colors"
-            >
-              Terms & Condition
-            </a>
-          </div>
         </motion.div>
       </section>
     </motion.footer>
@@ -116,18 +109,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-const footerLinks = [
-  {
-    title: "About",
-    links: ["How it works", "Featured", "Partnership"],
-  },
-  {
-    title: "Community",
-    links: ["Events", "Blog", "Podcast"],
-  },
-  {
-    title: "Socials",
-    links: ["Facebook", "Twitter", "Instagram"],
-  },
-];

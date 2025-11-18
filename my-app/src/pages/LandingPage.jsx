@@ -8,7 +8,7 @@ import Features from "../components/LandingPage/Features";
 const LandingPage = () => {
   return (
     <>
-      <Navbar />
+      <Navbar variant="GuestNav" />
       <Hero />
       <Features />
       <HowItWorks />

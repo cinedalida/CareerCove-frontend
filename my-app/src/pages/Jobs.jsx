@@ -11,7 +11,7 @@ import "../styles/Guest/Guest.css";
 const Jobs = () => {
   return (
     <>
-      <Navbar />
+      <Navbar variant="UserNav" />
       <section
         className="flex flex-col items-center justify-center text-center min-h-[80vh] bg-[var(--color-bg-primary)] px-6"
         id="jobs"

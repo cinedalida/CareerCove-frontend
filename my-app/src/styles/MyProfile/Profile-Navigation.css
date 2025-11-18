@@ -1,0 +1,59 @@
+/* Container for all tabs */
+.profile-tabs {
+  display: flex;
+  gap: 0.5rem; /* spacing between tabs */
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-body);
+}
+
+/* Each individual tab */
+.profile-tab {
+  display: flex;
+  align-items: center; /* vertical centering of icon + text */
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  border-bottom: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Icon inside tab */
+.profile-tab .icon {
+  display: flex; /* ensures flex behavior */
+  align-items: center; /* vertically center the icon */
+  font-size: 1.25rem; /* slightly bigger than text for visibility */
+  line-height: 1; /* remove extra spacing */
+}
+
+/* Label inside tab */
+.profile-tab .label {
+  display: none; /* hidden on very small screens */
+}
+
+.profile-tab .label h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2; /* visually aligns with icon */
+  display: flex;
+  align-items: center; /* vertically align text to icon */
+}
+
+/* Hover & active states */
+.profile-tab:hover,
+.profile-tab.active {
+  color: var(--color-button-primary);
+}
+
+.profile-tab.active {
+  border-bottom: 3px solid var(--color-button-primary);
+}
+
+/* Responsive: show label from small screens and up */
+@media (min-width: 640px) {
+  .profile-tab .label {
+    display: inline-flex;
+  }
+}

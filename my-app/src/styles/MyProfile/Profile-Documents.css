@@ -1,0 +1,141 @@
+.profile-docs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* Header */
+.profile-docs-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .profile-docs-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.profile-docs-header p {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-button-primary);
+}
+
+/* Upload button */
+.upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: var(--color-button-primary);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.upload-label:hover {
+  opacity: 0.8;
+}
+
+/* Search input */
+.profile-docs-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-body);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.profile-docs-search:focus {
+  border-color: var(--color-button-primary);
+  box-shadow: 0 0 0 2px rgba(255, 137, 34, 0.3);
+}
+
+/* Table */
+.profile-docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+}
+
+.profile-docs-table th,
+.profile-docs-table td {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+}
+
+.profile-docs-table th {
+  font-weight: var(--font-weight-semibold);
+  color: rgba(12, 12, 12, 0.7);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-docs-table td {
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-docs-table td .flex {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-docs-table td .material-symbols-outlined {
+  font-size: 1.2rem; /* adjust size to match text visually */
+  line-height: auto;
+  display: inline-flex; /* ensures proper baseline alignment */
+  align-items: center;
+}
+
+/* Action buttons */
+.doc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.doc-btn.download {
+  color: #27ae60; /* green */
+}
+
+.doc-btn.download:hover {
+  color: #1e8449;
+}
+
+.doc-btn.delete {
+  color: var(--color-error);
+}
+
+.doc-btn.delete:hover {
+  color: #c0392b;
+}
+
+/* Empty state */
+.profile-docs-empty {
+  text-align: center;
+  padding: 2rem 0;
+  font-family: var(--font-body);
+  color: var(--color-text-secondary);
+}

@@ -4,20 +4,22 @@ footer {
   font-family: "Poppins", sans-serif;
 }
 
-/* ----- TOP SECTION ----- */
+/* ----- CONTAINER ----- */
 #contact-us {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* ----- TOP SECTION ----- */
 #contact-us .top-section {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  border-bottom: 1px solid var(--color-border);
   padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
+/* Desktop layout */
 @media (min-width: 768px) {
   #contact-us .top-section {
     flex-direction: row;
@@ -26,7 +28,7 @@ footer {
   }
 }
 
-/* ----- LEFT SECTION (BRAND & SOCIALS) ----- */
+/* ----- LEFT SECTION: Contact + Researchers ----- */
 #contact-us .brand {
   text-align: center;
 }
@@ -37,36 +39,34 @@ footer {
   }
 }
 
-#contact-us .brand p {
-  color: var(--color-neutral-100);
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
+#contact-us .brand-title {
+  color: var(--color-brand-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 
-#contact-us .brand .socials {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+#contact-us .divider {
+  width: 90px;
+  height: 2px;
+  background: var(--color-border);
+  margin: 0 auto 1.5rem auto;
 }
 
 @media (min-width: 768px) {
-  #contact-us .brand .socials {
-    justify-content: flex-start;
+  #contact-us .divider {
+    margin-left: 0;
   }
 }
 
-#contact-us .socials a {
+#contact-us .brand p,
+#contact-us .brand ul li {
   color: var(--color-neutral-100);
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+  line-height: 1.6;
 }
 
-#contact-us .socials a:hover {
-  color: var(--color-brand-primary);
-}
-
-/* ----- RIGHT SECTION (LINK GROUPS) ----- */
-#contact-us .link-groups {
+/* ----- RIGHT SECTION: Emails + GitHub repo ----- */
+#contact-us .info-groups {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -74,27 +74,27 @@ footer {
 }
 
 @media (min-width: 640px) {
-  #contact-us .link-groups {
-    grid-template-columns: repeat(3, 1fr);
+  #contact-us .info-groups {
+    grid-template-columns: repeat(2, 1fr);
     text-align: left;
   }
 }
 
-#contact-us .link-group h3 {
+#contact-us .group h3 {
   color: var(--color-neutral-100);
   font-weight: 600;
   font-size: 1.125rem;
   margin-bottom: 1rem;
 }
 
-#contact-us .link-group a {
+#contact-us .group a {
   color: var(--color-neutral-100);
+  font-size: 0.95rem;
   text-decoration: none;
   transition: color 0.3s ease;
-  font-size: 0.95rem;
 }
 
-#contact-us .link-group a:hover {
+#contact-us .group a:hover {
   color: var(--color-brand-primary);
 }
 

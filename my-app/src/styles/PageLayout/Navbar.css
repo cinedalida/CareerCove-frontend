@@ -4,6 +4,12 @@
   transition: all 0.3s ease;
 }
 
+.custom-navbar.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Make items wrap and adjust spacing on smaller screens */
 @media (max-width: 1024px) {
   .custom-navbar {
