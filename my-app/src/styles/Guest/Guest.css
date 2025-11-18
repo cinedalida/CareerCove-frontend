@@ -182,7 +182,7 @@
 /* Filter Button */
 
 .guest-filter-btn {
-  padding: 0.5rem 1.5rem; /* matches px-6 py-2 */
+  padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
   border: 1.5px solid var(--color-brand-primary, #ff6b00);
   background-color: transparent;

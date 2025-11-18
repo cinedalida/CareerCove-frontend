@@ -41,9 +41,7 @@ export function ChatInput({ onSubmit }) {
               className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-[var(--color-brand-primary)] hover:bg-orange-600 disabled:bg-muted disabled:cursor-not-allowed flex items-center justify-center transition-colors shadow-md p-0"
               aria-label="Send message"
             >
-              <span className="material-icons text-white text-[24px]">
-                send
-              </span>
+              <span className="material-symbols-outlined text-white">send</span>
             </Button>
           </div>
         </div>

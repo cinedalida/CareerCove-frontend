@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { Button } from "../UI/Guest-UI/button";
 import { Card } from "../UI/Guest-UI/card";
@@ -38,9 +36,9 @@ export function JobResults({ jobs, userInput }) {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="flex-1 bg-card border-input"
           />
-          <Button variant="outline" className="guest-filter-btn">
+          {/* <Button variant="outline" className="guest-filter-btn">
             Filter
-          </Button>
+          </Button> */}
         </div>
 
         {/* Job Cards */}

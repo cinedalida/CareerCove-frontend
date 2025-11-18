@@ -1,30 +1,30 @@
-.profile-activity {
+.Profile-RecentAct {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* spacing between sections */
+  gap: 1rem;
   padding: 2rem;
 }
 
 /* ---------------------- Header ---------------------- */
-.profile-activity-header {
+.Profile-RecentAct-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
-.profile-activity-header p {
+.Profile-RecentAct-header p {
   font-family: var(--font-body);
-  font-size: 0.875rem; /* text-sm */
+  font-size: 0.875rem;
   font-weight: var(--font-weight-medium);
   color: var(--color-button-primary);
 }
 
 /* ---------------------- Search Input ---------------------- */
-.profile-search {
+.Profile-RecentAct-search {
   width: 100%;
-  max-width: 400px; /* limit width */
-  padding: 0.5rem 1rem; /* px-4 py-2 */
+  max-width: 400px;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid rgb(200, 200, 200);
   font-family: var(--font-body);
@@ -34,20 +34,20 @@
   margin-bottom: 1rem;
 }
 
-.profile-search:focus {
+.Profile-RecentAct-search:focus {
   border-color: var(--color-button-primary);
   box-shadow: 0 0 0 2px rgba(136, 136, 136, 0.3);
 }
 
 /* ---------------------- Job Cards Container ---------------------- */
-.profile-jobs {
+.Profile-RecentAct-jobs {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
 /* Individual Job Card */
-.job-card {
+.Profile-RecentAct-jobCard {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,12 +57,12 @@
   transition: all 0.3s ease;
 }
 
-.job-card:hover {
+.Profile-RecentAct-jobCard:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Job Content (avatar + text + tags) */
-.job-content {
+.Profile-RecentAct-jobContent {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -71,7 +71,7 @@
 }
 
 /* ---------------------- Avatar ---------------------- */
-.job-avatar {
+.Profile-RecentAct-jobAvatar {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
@@ -80,44 +80,44 @@
 }
 
 /* ---------------------- Job Text ---------------------- */
-.job-text h3 {
+.Profile-RecentAct-jobText h3 {
   font-family: var(--font-body);
   font-weight: var(--font-weight-semibold);
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem;
   color: var(--color-text-primary);
   margin-bottom: 0.25rem;
 }
 
-.job-text p {
+.Profile-RecentAct-jobText p {
   font-family: var(--font-body);
   font-size: 0.875rem;
   color: var(--color-text-primary);
   margin: 0.125rem 0;
 }
 
-.job-text p.address {
+.Profile-RecentAct-jobText p.address {
   color: var(--color-text-secondary);
 }
 
 /* ---------------------- Tags ---------------------- */
-.job-tags {
+.Profile-RecentAct-jobTags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.5rem;
 }
 
-.job-tag {
+.Profile-RecentAct-jobTag {
   font-family: var(--font-body);
-  font-size: 0.75rem; /* text-xs */
+  font-size: 0.75rem;
   padding: 0.25rem 0.75rem;
-  border-radius: 9999px; /* rounded-full */
+  border-radius: 9999px;
   border: 1px solid rgba(12, 12, 12, 0.2);
   color: var(--color-text-primary);
 }
 
 /* ---------------------- Delete Button ---------------------- */
-.job-delete-btn {
+.Profile-RecentAct-jobDeleteBtn {
   margin-left: 1rem;
   flex-shrink: 0;
   font-size: 1.125rem;
@@ -126,12 +126,12 @@
   transition: color 0.3s ease;
 }
 
-.job-delete-btn:hover {
+.Profile-RecentAct-jobDeleteBtn:hover {
   color: #c0392b;
 }
 
 /* ---------------------- Empty State ---------------------- */
-.job-empty {
+.Profile-RecentAct-empty {
   text-align: center;
   padding: 3rem 0;
   font-family: var(--font-body);
@@ -140,11 +140,11 @@
 
 /* ---------------------- Responsive Adjustments ---------------------- */
 @media (min-width: 640px) {
-  .profile-search {
-    margin-bottom: 0; /* remove extra spacing on larger screens */
+  .Profile-RecentAct-search {
+    margin-bottom: 0;
   }
 
-  .profile-activity-header {
-    flex-wrap: wrap; /* prevent overflow */
+  .Profile-RecentAct-header {
+    flex-wrap: wrap;
   }
 }
