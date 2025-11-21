@@ -1,3 +1,5 @@
+// Utils for component: Infinite Moving Cards from LandingPage
+
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 

@@ -27,7 +27,7 @@ const HowItWorks = () => {
   return (
     <section
       id="how-it-works"
-      className="h-150 bg-[var(--color-neutral-900)] text-center px-6 flex flex-col items-center"
+      className="h-170 bg-[var(--color-neutral-900)] text-center px-6 flex flex-col items-center rounded-3xl"
     >
       {/* ========== SECTION TITLE ========== */}
       <motion.div

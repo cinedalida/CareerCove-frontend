@@ -115,10 +115,10 @@ export default function ProfileAboutMe() {
             fontFamily: "Poppins",
           }}
         >
+          <span class="material-symbols-outlined">upload</span>
           <span>
             <h2>Upload Resume</h2>
           </span>
-          <span class="material-symbols-outlined">upload</span>
         </button>
         <input
           ref={fileInputRef}

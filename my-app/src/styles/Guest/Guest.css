@@ -1,11 +1,14 @@
-.chat-input-section {
-  margin-top: -18rem;
-  position: relative;
-  z-index: 10;
+.chat-jobs-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: -6rem;
 }
 
 .job-results-search {
   margin-bottom: 2rem;
+  width: 100%;
+  /* border: #e65a00 2px solid; */
 }
 
 .job-card {
@@ -24,6 +27,19 @@
   border-color: var(--color-brand-primary);
   box-shadow: 0 8px 20px rgba(255, 102, 0, 0.25);
 }
+
+/* .search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-neutral-400, #9ca3af);
+  pointer-events: none;
+}
+
+.search-input {
+  padding-left: 3rem !important;
+} */
 
 /* ===== Job Card Styling ===== */
 
@@ -176,7 +192,6 @@
 .guest-input:focus {
   outline: none;
   border-color: var(--color-brand-primary, #ff6b00);
-  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
 }
 
 /* Filter Button */
@@ -269,5 +284,60 @@
   40% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+/* text area styles */
+
+.chat-textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--color-neutral-900);
+  background-color: var(--color-neutral-100);
+  color: var(--foreground);
+  font-size: 1rem;
+  line-height: 1.625;
+  resize: none;
+  overflow-y: auto;
+  transition: all 0.2s ease;
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.chat-textarea::placeholder {
+  color: rgb(105, 105, 105);
+}
+
+.chat-textarea:focus {
+  outline: none;
+  border-color: var(--color-brand-primary);
+}
+
+.chat-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 2 COLUMNS LAYOUT FOR JOB RESULTS PAGE */
+
+.job-results-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr; /* mobile: 1 column */
+}
+
+/* Tablet — 2 columns */
+@media (min-width: 640px) {
+  .job-results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop — 3 columns */
+@media (min-width: 1024px) {
+  .job-results-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

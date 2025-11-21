@@ -2,7 +2,6 @@ import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
 import L1 from "../assets/L1.png";
 import { Link } from "react-router-dom";
-
 import { useState } from "react";
 import { Button } from "../components/UI/button";
 import { Input } from "../components/UI/input";

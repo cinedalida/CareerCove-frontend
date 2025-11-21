@@ -29,7 +29,7 @@ const Features = () => {
   };
 
   return (
-    <section id="features" className="flex flex-col items-center">
+    <section id="features-section" className="flex flex-col items-center">
       <motion.div
         className="flex flex-col items-center"
         initial="hidden"
@@ -53,21 +53,32 @@ const Features = () => {
               className="text-[var(--color-text-secondary)] leading-relaxed"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Explore how CareerCove makes your job search smarter and faster.
             </p>
           </div>
         </motion.div>
 
         {/* ========== FEATURE CARDS ========== */}
         <motion.div
-          className="flex flex-wrap justify-center gap-8 px-8 xl:gap-10 xl:px-16 w-full max-w-7xl mt-8"
+          className="flex flex-wrap justify-center gap-8 px-8 xl:gap-10 xl:px-16 w-full max-w-7xl mt-8 feature-cards-container"
           variants={containerVariants}
         >
           {[
-            { src: F1, title: "Resume Parsing", desc: "Lorem Ipsum" },
-            { src: F2, title: "Smart Job Matching", desc: "Lorem Ipsum" },
-            { src: F3, title: "Career Filters", desc: "Lorem Ipsum" },
+            {
+              src: F1,
+              title: "Resume Parsing",
+              desc: "Upload your resume or type your skills in the chat, and CareerCove will handle the rest.",
+            },
+            {
+              src: F2,
+              title: "Smart Job Matching",
+              desc: "Find jobs matched to you from Jobstreet, Kalibrr, and Indeed automatically.",
+            },
+            {
+              src: F3,
+              title: "Career Filters",
+              desc: "Quickly narrow down job listings with filters tailored to your resume.",
+            },
           ].map((item, index) => (
             <motion.div
               key={index}

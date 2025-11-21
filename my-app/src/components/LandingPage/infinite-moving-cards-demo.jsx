@@ -23,10 +23,10 @@ export default function InfiniteMovingCardsDemo() {
           className="section-title text-[var(--color-text-primary)] font-[var(--font-weight-semibold)] text-center mb-4"
           style={{ fontFamily: "var(--font-title)" }}
         >
-          Testimonials
+          Feedback
         </h1>
         <motion.div
-          className="h-1 w-30 bg-[var(--color-brand-primary)] rounded"
+          className="h-1 w-25 bg-[var(--color-brand-primary)] rounded"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

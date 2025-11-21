@@ -104,7 +104,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* Buttons inside editing */
+S/* Buttons inside editing */
 .aboutme-experience-actions {
   display: flex;
   gap: 0.5rem;
@@ -156,7 +156,7 @@
 .aboutme-experience-duration {
   font-family: "Poppins", sans-serif;
   font-size: 0.875rem;
-  color: #6b7280; /* gray-500 */
+  color: #6b7280;
 }
 
 /* Edit button for display mode */
@@ -188,7 +188,7 @@
 /* ---------------------- About Me Skills Section ---------------------- */
 .aboutMeSkills-section {
   border-bottom: 1px solid #e5e7eb; /* light gray border */
-  padding-bottom: 1.5rem;
+  padding: 5rem;
   margin-bottom: 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -249,7 +249,7 @@
 
 .aboutMeSkills-btn {
   padding: 0.5rem 1rem;
-  border-radius: 9999px; /* rounded-full */
+  border-radius: 9999px;
   font-family: "Poppins", sans-serif;
   font-size: 0.875rem;
   font-weight: 500;

@@ -2,9 +2,8 @@ import { motion } from "framer-motion";
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
 import "../styles/Dashboard/Dashboard.css";
-import SplitText from "../components/Animations/SplitText";
-import TextType from "../components/Animations/TextType";
 
+// Note: subject for change. Icons, colors
 export default function DashboardPage() {
   const stats = [
     {
@@ -50,6 +49,7 @@ export default function DashboardPage() {
   return (
     <>
       <Navbar variant="UserNav" />
+
       <section
         className="flex flex-col items-center justify-center text-center min-h-[10vh] bg-[var(--color-bg-primary)] px-6"
         id="Dashboard"

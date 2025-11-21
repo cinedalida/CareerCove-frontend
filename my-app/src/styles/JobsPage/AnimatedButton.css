@@ -1,0 +1,73 @@
+/* Glow background animation */
+.glow-bg {
+  background: rgb(255, 137, 34);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Border pulse animation */
+.border-pulse {
+  border: 2px solid rgb(255, 137, 34);
+  animation: borderPulse 2s ease-in-out infinite;
+}
+
+/* Gradient background for button */
+.gradient-bg {
+  background: linear-gradient(135deg, rgb(255, 137, 34), rgb(255, 107, 0));
+  box-shadow: 0 8px 32px rgba(255, 137, 34, 0.4);
+}
+
+/* Shimmer effect */
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.jobs-animated-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0%,
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes borderPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 0 rgba(255, 137, 34, 0.7);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 8px rgba(255, 137, 34, 0);
+  }
+}
+
+/* Button hover brightness */
+button:hover {
+  filter: brightness(1.1);
+}

@@ -3,6 +3,7 @@ import { Button } from "../UI/Guest-UI/button";
 import { Card } from "../UI/Guest-UI/card";
 import { Input } from "../UI/Guest-UI/input";
 import "../../styles/Guest/Guest.css";
+import { ChevronLeft, ChevronRight, Bookmark, Search } from "lucide-react";
 
 export function JobResults({ jobs, userInput }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -30,15 +31,16 @@ export function JobResults({ jobs, userInput }) {
       <div className="max-w-6xl mx-auto ">
         {/* Search and Filter */}
         <div className="flex gap-4 mb-8 job-results-search">
-          <Input
-            placeholder="Search more.."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="flex-1 bg-card border-input"
-          />
-          {/* <Button variant="outline" className="guest-filter-btn">
-            Filter
-          </Button> */}
+          <div className="relative flex-1">
+            <Search className="search-icon " size={20} />
+
+            <Input
+              placeholder="Search more.."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="guest-input search-input"
+            />
+          </div>
         </div>
 
         {/* Job Cards */}

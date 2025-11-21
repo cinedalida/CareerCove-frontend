@@ -32,7 +32,7 @@ export function ChatInput({ onSubmit }) {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             rows={3}
-            placeholder="Type your education, experiences and skills..."
+            placeholder="I am a fresh Computer Science graduate skilled in..."
             disabled={isSubmitting}
           />
 
