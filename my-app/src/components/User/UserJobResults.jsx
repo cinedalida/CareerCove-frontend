@@ -226,7 +226,7 @@ function JobFormModal({ isOpen, onClose, onSubmit, editingJob }) {
               value={formData.location}
               onChange={(e) => handleChange("location", e.target.value)}
               className="form-input"
-              placeholder="e.g. San Francisco, CA"
+              placeholder="e.g. Makati, Philippines"
             />
           </div>
 
@@ -237,7 +237,7 @@ function JobFormModal({ isOpen, onClose, onSubmit, editingJob }) {
               value={formData.salary}
               onChange={(e) => handleChange("salary", e.target.value)}
               className="form-input"
-              placeholder="e.g. $120,000 - $150,000"
+              placeholder="e.g. P120,000 - P150,000"
             />
           </div>
 
