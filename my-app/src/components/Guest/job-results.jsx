@@ -33,13 +33,12 @@ export function JobResults({ jobs, userInput }) {
         <div className="flex gap-4 mb-8 job-results-search">
           <div className="relative flex-1">
             <Search className="search-icon " size={20} />
-
             <Input
               placeholder="Search more.."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="guest-input search-input"
-            />
+            />{" "}
           </div>
         </div>
 
@@ -58,26 +57,6 @@ export function JobResults({ jobs, userInput }) {
                     <p className="job-company">{job.company}</p>
                     <p className="job-location">{job.location}</p>
                   </div>
-
-                  <button
-                    onClick={() => toggleSave(job.id)}
-                    className={`save-button ${
-                      savedJobs.includes(job.id) ? "saved" : ""
-                    }`}
-                    aria-label="Save job"
-                  >
-                    <svg
-                      className="save-icon"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      fill={
-                        savedJobs.includes(job.id) ? "currentColor" : "none"
-                      }
-                    >
-                      <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
-                    </svg>
-                  </button>
                 </div>
 
                 <div className="job-details">

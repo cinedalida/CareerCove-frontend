@@ -1,3 +1,8 @@
+/* ============================================================
+   PROFILE DOCUMENTS SECTION
+   ============================================================ */
+
+/* Main container */
 .profile-docs {
   display: flex;
   flex-direction: column;
@@ -12,13 +17,6 @@
   gap: 1rem;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-@media (min-width: 640px) {
-  .profile-docs-header {
-    flex-direction: row;
-    align-items: center;
-  }
 }
 
 .profile-docs-header p {
@@ -64,7 +62,10 @@
   box-shadow: 0 0 0 2px rgba(255, 137, 34, 0.3);
 }
 
-/* Table */
+/* ============================================================
+   TABLE SECTION
+   ============================================================ */
+
 .profile-docs-table {
   width: 100%;
   border-collapse: collapse;
@@ -96,13 +97,16 @@
 }
 
 .profile-docs-table td .material-symbols-outlined {
-  font-size: 1.2rem; /* adjust size to match text visually */
+  font-size: 1.2rem;
   line-height: auto;
-  display: inline-flex; /* ensures proper baseline alignment */
+  display: inline-flex;
   align-items: center;
 }
 
-/* Action buttons */
+/* ============================================================
+   ACTION BUTTONS
+   ============================================================ */
+
 .doc-btn {
   display: inline-flex;
   align-items: center;
@@ -117,7 +121,7 @@
 }
 
 .doc-btn.download {
-  color: #27ae60; /* green */
+  color: #27ae60;
 }
 
 .doc-btn.download:hover {
@@ -132,10 +136,60 @@
   color: #c0392b;
 }
 
-/* Empty state */
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
 .profile-docs-empty {
   text-align: center;
   padding: 2rem 0;
   font-family: var(--font-body);
   color: var(--color-text-secondary);
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - DESKTOP (min-width: 640px)
+   ============================================================ */
+
+@media (min-width: 640px) {
+  .profile-docs-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - TABLET (max-width: 1024px)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .upload-label {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.9rem;
+    gap: 0.4rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - MOBILE (max-width: 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .upload-label {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    gap: 0.35rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - SMALL MOBILE (max-width: 480px)
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .upload-label {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
+    gap: 0.3rem;
+  }
 }

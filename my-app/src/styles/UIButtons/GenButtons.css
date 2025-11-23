@@ -1,0 +1,32 @@
+/* Button responsiveness */
+
+/* ===== GLOBAL RESPONSIVE BUTTON RULES ===== */
+.app-btn {
+  font-family: var(--font-body);
+  transition: all 0.2s ease;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .app-btn {
+    padding: 0.65rem 1.2rem !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .app-btn {
+    padding: 0.55rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .app-btn {
+    padding: 0.5rem 0.9rem !important;
+    font-size: 0.85rem !important;
+    width: 100%; /* optional: full width buttons */
+  }
+}

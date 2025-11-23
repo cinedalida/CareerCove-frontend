@@ -1,19 +1,47 @@
-/* Glow background animation */
+/* ============================================================
+   ANIMATED BUTTON - BASE STYLES
+   ============================================================ */
+
+.jobs-btn-container {
+  width: auto;
+}
+
+.jobs-animated-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.jobs-animated-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* ============================================================
+   BACKGROUND EFFECTS
+   ============================================================ */
+
+/* Glow background */
 .glow-bg {
   background: rgb(255, 137, 34);
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Border pulse animation */
-.border-pulse {
-  border: 2px solid rgb(255, 137, 34);
-  animation: borderPulse 2s ease-in-out infinite;
-}
-
-/* Gradient background for button */
+/* Gradient background */
 .gradient-bg {
   background: linear-gradient(135deg, rgb(255, 137, 34), rgb(255, 107, 0));
   box-shadow: 0 8px 32px rgba(255, 137, 34, 0.4);
+}
+
+/* Border pulse */
+.border-pulse {
+  border: 2px solid rgb(255, 137, 34);
+  animation: borderPulse 2s ease-in-out infinite;
 }
 
 /* Shimmer effect */
@@ -27,19 +55,10 @@
   animation: shimmer 3s ease-in-out infinite;
 }
 
-.jobs-animated-btn {
-  position: relative;
-  overflow: hidden;
-  padding: 0.5rem 2rem;
-  border-radius: 1rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
 
-/* Animations */
 @keyframes shimmer {
   0%,
   100% {
@@ -67,7 +86,38 @@
   }
 }
 
-/* Button hover brightness */
-button:hover {
-  filter: brightness(1.1);
+/* ============================================================
+   RESPONSIVE STYLES - MEDIUM SCREENS (max-width: 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .jobs-animated-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .jobs-animated-btn span svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - SMALL SCREENS (max-width: 480px)
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .jobs-animated-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .jobs-animated-btn span svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .jobs-animated-btn span {
+    gap: 0.5rem;
+  }
 }

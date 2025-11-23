@@ -1,5 +1,3 @@
-// Buttons for login and sign up
-
 export function Button({
   children,
   onClick,
@@ -21,15 +19,15 @@ export function Button({
   };
 
   const variantStyles = variants[variant] || variants.primary;
+
   const disabledStyles = disabled
     ? "opacity-50 cursor-not-allowed hover:opacity-50"
     : "";
 
   const buttonStyles = `
-    padding: 0.75rem 1.5rem
-    font-size: 1rem
-    font-weight: 500
-    letter-spacing: 0.5px
+    px-6 py-3
+    text-base
+    font-medium
     ${baseStyles}
     ${variantStyles}
     ${disabledStyles}
@@ -43,29 +41,7 @@ export function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={buttonStyles}
-      style={{
-        padding: "0.75rem 1.5rem",
-        fontFamily: "var(--font-body)",
-        fontSize: "1rem",
-        fontWeight: "500",
-        letterSpacing: "0.5px",
-        borderRadius: "0.5rem",
-        border: "none",
-        cursor: disabled ? "not-allowed" : "pointer",
-        opacity: disabled ? "0.5" : "1",
-        backgroundColor:
-          variant === "primary"
-            ? "var(--color-neutral-900)"
-            : variant === "secondary"
-            ? "var(--color-neutral-200)"
-            : "transparent",
-        color:
-          variant === "primary"
-            ? "var(--color-neutral-100)"
-            : "var(--color-neutral-900)",
-        transition: "all 0.2s ease",
-      }}
+      className={`app-btn ${buttonStyles}`}
       {...props}
     >
       {children}

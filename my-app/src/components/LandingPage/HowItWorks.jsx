@@ -1,5 +1,6 @@
 import React from "react";
 import ScrollStack, { ScrollStackItem } from "../Animations/ScrollStack.jsx";
+import "../../styles/LandingPage/HowItWorks.css";
 import H1 from "../../assets/H1.png";
 import H2 from "../../assets/H2.png";
 import H3 from "../../assets/H3.png";
@@ -27,7 +28,7 @@ const HowItWorks = () => {
   return (
     <section
       id="how-it-works"
-      className="h-170 bg-[var(--color-neutral-900)] text-center px-6 flex flex-col items-center rounded-3xl"
+      className="h-170 bg-[var(--color-neutral-900)] text-center px-6 flex flex-col items-center rounded-3xl how-it-works-responsive"
     >
       {/* ========== SECTION TITLE ========== */}
       <motion.div
@@ -79,7 +80,7 @@ const HowItWorks = () => {
               textColor: "text-[var(--color-neutral-100)]",
             },
           ].map((step, index) => (
-            <ScrollStackItem key={index}>
+            <ScrollStackItem key={index} className="scrollstack-item">
               <motion.div
                 className={`${step.bg} rounded-2xl flex items-center gap-5 p-3.5 min-h-[240px]`}
                 variants={cardVariants}
@@ -91,17 +92,17 @@ const HowItWorks = () => {
                 <img
                   src={step.img}
                   alt={step.title}
-                  className="w-60 flex-shrink-0"
+                  className="flex-shrink-0 scalable-img"
                 />
                 <div className="text-left">
                   <h3
-                    className={`font-semibold text-2xl mb-3 ${step.textColor}`}
+                    className={`font-semibold mb-3 ${step.textColor} scalable-title`}
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     {step.title}
                   </h3>
                   <p
-                    className={`section-subtext ${step.textColor}`}
+                    className={`section-subtext ${step.textColor} scalable-text`}
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     {step.text}

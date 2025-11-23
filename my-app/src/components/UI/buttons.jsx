@@ -45,7 +45,7 @@ const Button = ({
   // Render link if href provided
   if (href) {
     return (
-      <Link to={href} className={combinedStyles}>
+      <Link to={href} className={`app-btn ${combinedStyles}`}>
         {children}
       </Link>
     );
@@ -57,7 +57,7 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={combinedStyles}
+      className={`app-btn ${combinedStyles}`}
       {...props}
     >
       {children}

@@ -1,0 +1,39 @@
+/* Hide signup illustration on smaller screens */
+.signup-illustration {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+/* Hide image below 1024px */
+@media (max-width: 1024px) {
+  .signup-illustration {
+    display: none;
+  }
+
+  .signup-container {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 2rem;
+    padding: 1rem;
+  }
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+  .signup-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .signup-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .signup-header p {
+    font-size: 0.875rem;
+  }
+}

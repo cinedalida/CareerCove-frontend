@@ -1,19 +1,26 @@
-/* ===== Main Container ===== */
+/* ============================================================
+   MAIN CONTAINER
+   ============================================================ */
+
 .job-results-container {
   min-height: 100vh;
   width: 100%;
   background: var(--color-background, #f9fafb);
   padding: 2rem 1rem;
+  border-radius: 1.5rem;
 }
 
 .job-results-wrapper {
   width: 100%;
   margin: 0 auto;
 }
-/* ===== Search Bar ===== */
+
+/* ============================================================
+   SEARCH BAR
+   ============================================================ */
+
 .job-results-search {
   margin-bottom: 2rem;
-  max-width: 48rem;
 }
 
 .search-input-wrapper {
@@ -33,28 +40,20 @@
   padding-left: 3rem !important;
 }
 
-/* ===== Job Results Grid ===== */
+/* ============================================================
+   JOB RESULTS GRID
+   ============================================================ */
+
 .job-results-grid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
-  grid-template-columns: 1fr;
 }
 
-/* Tablet — 2 columns with divider */
-@media (min-width: 768px) {
-  .job-results-grid {
-    grid-template-columns: 320px 1px 1fr;
-  }
-}
+/* ============================================================
+   COLUMN WRAPPER
+   ============================================================ */
 
-/* Desktop — 3 columns */
-@media (min-width: 1024px) {
-  .job-results-grid {
-    grid-template-columns: 400px 1px 1fr;
-  }
-}
-
-/* ===== Column Wrapper ===== */
 .job-column-wrapper {
   background: white;
   border-radius: 1.5rem;
@@ -64,14 +63,14 @@
 }
 
 .suggested-column {
-  grid-column: 1;
+  order: 1;
 }
 
 .featured-column {
-  grid-column: 3;
+  order: 2;
 }
 
-/* Column Divider */
+/* Column divider */
 .column-divider {
   display: none;
   background: linear-gradient(
@@ -84,14 +83,10 @@
   margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-  .column-divider {
-    display: block;
-    grid-column: 2;
-  }
-}
+/* ============================================================
+   JOB COLUMN
+   ============================================================ */
 
-/* ===== Job Column ===== */
 .job-column {
   display: flex;
   flex-direction: column;
@@ -105,6 +100,8 @@
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--color-border-light, #e5e7eb);
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .column-title {
@@ -131,14 +128,20 @@
   height: 1.25rem;
 }
 
-/* ===== Jobs List ===== */
+/* ============================================================
+   JOBS LIST
+   ============================================================ */
+
 .jobs-list {
   flex: 1;
   margin-bottom: 1.5rem;
   overflow-y: auto;
 }
 
-/* ===== Job Card ===== */
+/* ============================================================
+   JOB CARD
+   ============================================================ */
+
 .job-card {
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -160,20 +163,25 @@
   margin-bottom: 0;
 }
 
-/* Job Header */
+.suggested-job-card {
+  position: relative;
+}
+
+/* Job header */
 .job-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 1rem;
+  gap: 1rem;
 }
 
 .job-info {
   flex: 1;
-  padding-right: 1rem;
+  min-width: 0;
 }
 
-/* Company Logo */
+/* Company logo */
 .company-logo {
   width: 2.5rem;
   height: 2.5rem;
@@ -192,52 +200,26 @@
   font-size: 1.125rem;
 }
 
-/* Job Title */
+/* Job title */
 .job-title {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-neutral-900, #1f2937);
   margin-bottom: 0.25rem;
   line-height: 1.3;
+  word-wrap: break-word;
 }
 
-/* Company Name */
+/* Company name */
 .job-company {
   color: var(--color-brand-primary);
   font-weight: 500;
   font-size: 0.9rem;
   margin-bottom: 0.25rem;
+  word-wrap: break-word;
 }
 
-/* Save Button */
-.save-button {
-  padding: 0.5rem;
-  border-radius: 9999px;
-  transition: all 0.2s ease;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.save-button:hover {
-  background-color: rgba(255, 107, 0, 0.1);
-}
-
-.save-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--color-neutral-400, #9ca3af);
-  stroke: currentColor;
-  transition: all 0.2s ease;
-}
-
-.save-button.saved .save-icon {
-  color: var(--color-brand-primary);
-  fill: var(--color-brand-primary);
-}
-
-/* Job Details */
+/* Job details */
 .job-details {
   margin-bottom: 1.25rem;
 }
@@ -249,6 +231,7 @@
   display: flex;
   align-items: start;
   gap: 0.5rem;
+  word-wrap: break-word;
 }
 
 .job-details .label {
@@ -260,9 +243,13 @@
   color: var(--color-neutral-600, #4b5563) !important;
   line-height: 1.6;
   margin-top: 0.75rem;
+  word-wrap: break-word;
 }
 
-/* Skill Tags */
+/* ============================================================
+   SKILL TAGS
+   ============================================================ */
+
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
@@ -290,7 +277,72 @@
   box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3);
 }
 
-/* Job Footer */
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.status-applied {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-interview {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-offer {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+/* Save button */
+.save-button {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.save-button:hover {
+  background-color: rgba(255, 107, 0, 0.1);
+}
+
+.save-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-neutral-400, #9ca3af);
+  stroke: currentColor;
+  transition: all 0.2s ease;
+}
+
+.save-button.saved .save-icon {
+  color: var(--color-brand-primary);
+  fill: var(--color-brand-primary);
+}
+
+/* View button */
 .job-footer {
   display: flex;
   justify-content: flex-end;
@@ -321,7 +373,71 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== Pagination ===== */
+/* Add job button */
+.add-job-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-brand-primary, #ff6b00);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(255, 107, 0, 0.2);
+  white-space: nowrap;
+}
+
+.add-job-btn:hover {
+  background-color: #e65a00;
+  box-shadow: 0 4px 8px rgba(230, 90, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Job actions */
+.job-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.action-btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn {
+  color: var(--color-neutral-400, #9ca3af);
+}
+
+.edit-btn:hover {
+  color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.delete-btn {
+  color: var(--color-neutral-400, #9ca3af);
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+  background-color: #fef2f2;
+}
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+
 .pagination {
   display: flex;
   align-items: center;
@@ -360,7 +476,10 @@
   font-weight: 500;
 }
 
-/* ===== Empty State ===== */
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
 .job-empty-card {
   padding: 3rem 1.5rem;
   text-align: center;
@@ -383,7 +502,28 @@
   letter-spacing: 0.3px;
 }
 
-/* ===== Guest Input Styles ===== */
+.empty-state-btn {
+  margin-top: 1rem;
+  background-color: var(--color-brand-primary, #ff6b00);
+  color: white;
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.empty-state-btn:hover {
+  background-color: #e65a00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(230, 90, 0, 0.3);
+}
+
+/* ============================================================
+   INPUT STYLES
+   ============================================================ */
+
 .guest-input {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -406,25 +546,527 @@
   box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
 }
 
-/* ===== Responsive Adjustments ===== */
-@media (max-width: 767px) {
+/* ============================================================
+   MODAL STYLES
+   ============================================================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 1.5rem;
+  max-width: 42rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modal-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid var(--color-border-light, #e5e7eb);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-neutral-900, #1f2937);
+}
+
+.modal-close-btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-neutral-400, #9ca3af);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn:hover {
+  color: var(--color-neutral-600, #4b5563);
+  background-color: var(--color-neutral-100, #f3f4f6);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+/* ============================================================
+   FORM STYLES
+   ============================================================ */
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-neutral-700, #374151);
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--color-border, #d1d5db);
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--color-neutral-900, #1f2937);
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-brand-primary, #ff6b00);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-brand-primary, #ff6b00);
+  color: white;
+  box-shadow: 0 2px 4px rgba(255, 107, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #e65a00;
+  box-shadow: 0 4px 8px rgba(230, 90, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--color-neutral-700, #374151);
+  border: 1px solid var(--color-border, #d1d5db);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-neutral-50, #f9fafb);
+  border-color: var(--color-neutral-300, #d1d5db);
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - TABLET (min-width: 768px)
+   ============================================================ */
+
+@media (min-width: 768px) {
+  .job-results-grid {
+    display: grid;
+    grid-template-columns: 320px 1px 1fr;
+  }
+
+  .suggested-column {
+    grid-column: 1;
+    order: unset;
+  }
+
+  .featured-column {
+    grid-column: 3;
+    order: unset;
+  }
+
+  .column-divider {
+    display: block;
+    grid-column: 2;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - DESKTOP (min-width: 1024px)
+   ============================================================ */
+
+@media (min-width: 1024px) {
+  .job-results-grid {
+    grid-template-columns: 400px 1px 1fr;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - LARGE DESKTOP (min-width: 1280px)
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  .job-results-wrapper {
+    max-width: 1280px;
+  }
+
+  .job-results-grid {
+    grid-template-columns: 450px 1px 1fr;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - EXTRA LARGE DESKTOP (min-width: 1536px)
+   ============================================================ */
+
+@media (min-width: 1536px) {
+  .job-results-wrapper {
+    max-width: 1536px;
+  }
+
+  .job-results-grid {
+    grid-template-columns: 500px 1px 1fr;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - TABLET RANGE (768px - 1023px)
+   ============================================================ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
   .job-results-container {
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+
+  .job-results-grid {
+    gap: 1.25rem;
+    grid-template-columns: 280px 1px 1fr;
   }
 
   .job-column-wrapper {
-    padding: 1rem;
-  }
-
-  .job-card {
-    padding: 1rem;
+    padding: 1.25rem;
   }
 
   .column-title {
     font-size: 1.125rem;
   }
 
+  .job-card {
+    padding: 1.25rem;
+  }
+
   .job-title {
     font-size: 1.125rem;
+  }
+
+  .add-job-btn span {
+    display: inline;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - MOBILE (480px - 767px)
+   ============================================================ */
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .job-results-container {
+    padding: 1rem;
+  }
+
+  .job-column-wrapper {
+    padding: 1.25rem;
+  }
+
+  .column-header {
+    gap: 0.75rem;
+  }
+
+  .column-title {
+    font-size: 1.125rem;
+  }
+
+  .job-card {
+    padding: 1.25rem;
+  }
+
+  .job-title {
+    font-size: 1.125rem;
+  }
+
+  .company-logo {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - SMALL MOBILE (max-width: 479px)
+   ============================================================ */
+
+@media (max-width: 479px) {
+  .job-results-container {
+    padding: 0.75rem;
+  }
+
+  .job-results-search {
+    margin-bottom: 1.5rem;
+  }
+
+  .search-input {
+    font-size: 0.875rem;
+    padding: 0.625rem 1rem 0.625rem 2.5rem !important;
+  }
+
+  .search-icon {
+    left: 0.75rem;
+  }
+
+  .job-column-wrapper {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .column-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .column-title {
+    font-size: 1rem;
+  }
+
+  .add-job-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .add-job-btn span {
+    display: none;
+  }
+
+  .job-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .job-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .job-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .company-logo {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .company-initial {
+    font-size: 1rem;
+  }
+
+  .job-title {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .job-company {
+    font-size: 0.8125rem;
+  }
+
+  .job-details p {
+    font-size: 0.8125rem;
+  }
+
+  .job-description {
+    font-size: 0.8125rem;
+  }
+
+  .skill-tag {
+    font-size: 0.6875rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  .view-button {
+    font-size: 0.8125rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .status-badge {
+    font-size: 0.6875rem;
+    padding: 0.25rem 0.625rem;
+  }
+
+  .pagination-text {
+    font-size: 0.8125rem;
+  }
+
+  .modal-content {
+    margin: 0.5rem;
+    border-radius: 1rem;
+  }
+
+  .modal-header {
+    padding: 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.125rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .form-label {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - FORM (max-width: 640px)
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  .modal-content {
+    margin: 0.5rem;
+  }
+
+  .modal-header,
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - LANDSCAPE MOBILE
+   ============================================================ */
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .modal-content {
+    max-height: 85vh;
+  }
+
+  .modal-header {
+    padding: 1rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* ============================================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+  .action-btn,
+  .pagination-btn,
+  .save-button,
+  .view-button,
+  .add-job-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 16px;
+  }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+
+@media print {
+  .add-job-btn,
+  .action-btn,
+  .pagination,
+  .modal-overlay,
+  .save-button,
+  .column-menu-btn {
+    display: none !important;
+  }
+
+  .job-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .job-results-grid {
+    display: block;
+  }
+
+  .job-column-wrapper {
+    margin-bottom: 2rem;
   }
 }

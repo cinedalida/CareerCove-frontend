@@ -1,3 +1,8 @@
+/* ============================================================
+   PROFILE HEADER SECTION
+   ============================================================ */
+
+/* Main header container */
 .profile-header {
   display: flex;
   align-items: center;
@@ -7,7 +12,10 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Avatar container */
+/* ============================================================
+   AVATAR SECTION
+   ============================================================ */
+
 .profile-avatar-container {
   position: relative;
   flex-shrink: 0;
@@ -28,8 +36,8 @@
   background-color: var(--color-button-primary);
   color: white;
   border: none;
-  border-radius: 50%;
-  padding: 0.25rem;
+  border-radius: 100%;
+  padding: 0.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -41,7 +49,10 @@
   opacity: 0.8;
 }
 
-/* User Info */
+/* ============================================================
+   USER INFO SECTION
+   ============================================================ */
+
 .profile-user-info {
   flex: 1;
   display: flex;
@@ -72,7 +83,10 @@
   color: var(--color-text-primary);
 }
 
-/* Editable inputs */
+/* ============================================================
+   INPUT FIELDS
+   ============================================================ */
+
 .profile-input {
   padding: 0.4rem 0.75rem;
   border-radius: 0.5rem;
@@ -90,7 +104,10 @@
   box-shadow: 0 0 0 2px rgba(255, 137, 34, 0.3);
 }
 
-/* Edit button */
+/* ============================================================
+   EDIT BUTTON
+   ============================================================ */
+
 .profile-edit-btn-container {
   flex-shrink: 0;
 }
@@ -111,6 +128,88 @@
   opacity: 0.85;
 }
 
+/* ============================================================
+   MATERIAL ICONS
+   ============================================================ */
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - TABLET (max-width: 900px)
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem 4rem;
+  }
+
+  .profile-user-info {
+    align-items: center;
+    width: 100%;
+  }
+
+  .profile-contact {
+    white-space: normal;
+  }
+
+  .profile-edit-btn-container {
+    margin-top: 1rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - MOBILE (max-width: 600px)
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .profile-avatar {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .profile-upload-btn {
+    padding: 0.35rem;
+    transform: scale(0.9);
+  }
+
+  .profile-user-info h1 {
+    font-size: 1.25rem;
+    white-space: normal;
+  }
+
+  .profile-user-info p {
+    font-size: 0.9rem;
+  }
+
+  .profile-input {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - SMALL MOBILE (max-width: 400px)
+   ============================================================ */
+
+@media (max-width: 400px) {
+  .profile-header {
+    padding: 1.25rem 0.5rem 3rem;
+  }
+
+  .profile-avatar {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  .profile-edit-btn {
+    padding: 0.35rem;
+  }
+
+  .material-symbols-outlined {
+    font-size: 20px !important;
+  }
 }

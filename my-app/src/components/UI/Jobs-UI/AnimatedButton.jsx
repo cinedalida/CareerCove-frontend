@@ -2,7 +2,7 @@ import "../../../styles/JobsPage/AnimatedButton.css";
 
 export default function AnimatedButton({ onClick }) {
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block jobs-btn-container">
       {/* Background glow effect */}
       <div className="absolute inset-0 -z-10 rounded-2xl bg-orange-500 opacity-75 animate-pulse glow-bg"></div>
       {/* Border pulse */}
@@ -32,7 +32,7 @@ export default function AnimatedButton({ onClick }) {
           </svg>
           Upload Resume
         </span>
-      </button>{" "}
+      </button>
     </div>
   );
 }

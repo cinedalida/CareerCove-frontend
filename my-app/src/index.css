@@ -140,10 +140,55 @@ button {
   font-weight: var(--font-weight-semibold);
 }
 
+/* Base section subtext */
+
 .section-subtext {
   font-family: var(--font-body);
-  font-size: var(--font-size-content-subtext);
   font-weight: var(--font-weight-light);
+  font-size: 1rem !important; /* override Tailwind */
+  line-height: 1.5rem;
+  max-width: 32rem !important; /* override Tailwind */
+  margin-bottom: 2rem !important; /* override Tailwind */
+  color: var(--color-text-secondary);
+  text-align: left;
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  .section-subtext {
+    font-size: 0.95rem !important;
+    line-height: 1.4rem;
+    max-width: 28rem !important;
+    margin-bottom: 1.75rem !important;
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .section-subtext {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem;
+    max-width: 24rem !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .section-subtext {
+    font-size: 0.8rem !important;
+    line-height: 1.2rem;
+    max-width: 20rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Icons styles */
+
+.material-symbols-outlined {
+  vertical-align: middle;
+  font-size: 1.5rem;
 }
 
 /*=============== SCROLLBAR ===============*/

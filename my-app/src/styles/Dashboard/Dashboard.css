@@ -1,3 +1,7 @@
+/* ============================================================
+   DASHBOARD - BASE CONTAINER
+   ============================================================ */
+
 .dashboard-container {
   position: relative;
   z-index: 10;
@@ -7,6 +11,10 @@
   font-family: "Poppins", sans-serif;
   color: #0c0c0c;
 }
+
+/* ============================================================
+   DASHBOARD HEADER
+   ============================================================ */
 
 .dashboard-header {
   max-width: 1200px;
@@ -36,7 +44,10 @@
   opacity: 0.85;
 }
 
-/* Stats Grid */
+/* ============================================================
+   STATS SECTION
+   ============================================================ */
+
 .stats-grid {
   max-width: 1200px;
   margin: 0 auto 2rem;
@@ -78,7 +89,10 @@
   opacity: 0.9;
 }
 
-/* Employability Grid */
+/* ============================================================
+   EMPLOYABILITY SECTION
+   ============================================================ */
+
 .employability-grid {
   max-width: 1200px;
   margin: 0 auto 2rem;
@@ -87,6 +101,7 @@
   gap: 1rem;
 }
 
+/* Overall card */
 .overall-card {
   background-color: rgb(255, 137, 34);
   color: white;
@@ -106,6 +121,7 @@
   font-weight: 700;
 }
 
+/* Progress bar */
 .progress-bar {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 999px;
@@ -120,6 +136,7 @@
   border-radius: 999px;
 }
 
+/* Employability cards */
 .employ-card {
   border-radius: 12px;
   padding: 1.5rem;
@@ -141,7 +158,10 @@
   background-color: rgb(155, 89, 182);
 }
 
-/* Skill Section */
+/* ============================================================
+   SKILLS SECTION
+   ============================================================ */
+
 .skills-card {
   max-width: 1200px;
   margin: 0 auto 2rem;
@@ -182,7 +202,10 @@
   transition: width 0.4s ease;
 }
 
-/* Info Section */
+/* ============================================================
+   INFO SECTION
+   ============================================================ */
+
 .info-grid {
   max-width: 1200px;
   margin: 0 auto 4rem;
@@ -211,6 +234,10 @@
   justify-content: space-between;
   align-items: center;
 }
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
 
 .bold {
   font-weight: 700;

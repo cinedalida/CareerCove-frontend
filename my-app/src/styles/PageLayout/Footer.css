@@ -2,6 +2,7 @@ footer {
   background-color: var(--color-neutral-900);
   padding: 4rem 1.5rem;
   font-family: "Poppins", sans-serif;
+  margin-top: 20rem;
 }
 
 /* ----- CONTAINER ----- */

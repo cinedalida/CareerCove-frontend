@@ -98,7 +98,7 @@ const Jobs = () => {
           />
         </motion.div>
 
-        <div className="section-subtext max-w-2xl mb-8 CC-Subtext text-[var(--color-text-secondary)]">
+        <div className="section-subtext CC-Subtext">
           <TextType
             text={[
               "Type your skills and job preferences here!",

@@ -26,7 +26,7 @@ export function ChatInput({ onSubmit }) {
     <div className="chat-input-container">
       <div className="chat-input-wrapper">
         {/* Chat Box */}
-        <div className="chat-input-section">
+        <div className="chat-input-section chat-input-responsive">
           <Textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -34,6 +34,7 @@ export function ChatInput({ onSubmit }) {
             rows={3}
             placeholder="I am a fresh Computer Science graduate skilled in..."
             disabled={isSubmitting}
+            className="chat-textarea"
           />
 
           {/* Send Button */}

@@ -47,7 +47,10 @@ export default function ProfileDocuments() {
     <div className="profile-docs">
       {/* Header */}
       <div className="profile-docs-header">
-        <p>🟠 Files: {documents.length}</p>
+        <h2>
+          <span className="material-symbols-outlined">files</span> Files:{" "}
+          {documents.length}
+        </h2>
         <label className="upload-label">
           <input
             type="file"
@@ -56,7 +59,7 @@ export default function ProfileDocuments() {
             className="hidden"
           />
           <span className="material-symbols-outlined">upload</span>
-          <span>Upload Document</span>
+          <h2>Upload Document</h2>
         </label>
       </div>
 
@@ -83,8 +86,7 @@ export default function ProfileDocuments() {
           <tbody>
             {filteredDocs.map((doc) => (
               <tr key={doc.id}>
-                <td className="flex items-center gap-2">
-                  <span className="material-symbols-outlined">description</span>
+                <td className="items-center gap-2">
                   <span>{doc.name}</span>
                 </td>
                 <td>{doc.type}</td>

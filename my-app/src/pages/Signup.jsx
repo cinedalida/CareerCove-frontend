@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "../components/UI/button";
 import { Input } from "../components/UI/input";
+import "../styles/PageLayout/Signup.css"; // Add this
 
 export default function SignupForm({ onToggle }) {
   const [fullName, setFullName] = useState("");
@@ -50,19 +51,21 @@ export default function SignupForm({ onToggle }) {
     <>
       <Navbar />
       <div
+        className="signup-container"
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          height: "100vh", // full page height
-          backgroundColor: "var(--color-neutral-50)",
+          height: "100vh",
           gap: "4rem",
           padding: "2rem",
+          marginTop: "6rem",
         }}
       >
         <img
           src={S1}
-          alt="Login illustration"
+          alt="Signup illustration"
+          className="signup-illustration"
           style={{
             width: "700px",
             height: "auto",
@@ -71,6 +74,7 @@ export default function SignupForm({ onToggle }) {
           }}
         />
         <div
+          className="signup-card"
           style={{
             backgroundColor: "var(--color-neutral-100)",
             borderRadius: "0.75rem",
@@ -83,6 +87,7 @@ export default function SignupForm({ onToggle }) {
           }}
         >
           <div
+            className="signup-header"
             style={{
               textAlign: "center",
               gap: "0.5rem",
@@ -111,6 +116,7 @@ export default function SignupForm({ onToggle }) {
 
           {error && (
             <div
+              className="error-box"
               style={{
                 backgroundColor: "var(--color-error)",
                 opacity: "0.1",
@@ -133,7 +139,9 @@ export default function SignupForm({ onToggle }) {
               flexDirection: "column",
             }}
           >
+            {/* Full Name */}
             <div
+              className="form-group"
               style={{
                 gap: "0.5rem",
                 display: "flex",
@@ -158,7 +166,9 @@ export default function SignupForm({ onToggle }) {
               />
             </div>
 
+            {/* Email */}
             <div
+              className="form-group"
               style={{
                 gap: "0.5rem",
                 display: "flex",
@@ -183,7 +193,9 @@ export default function SignupForm({ onToggle }) {
               />
             </div>
 
+            {/* Password */}
             <div
+              className="form-group"
               style={{
                 gap: "0.5rem",
                 display: "flex",
@@ -208,7 +220,9 @@ export default function SignupForm({ onToggle }) {
               />
             </div>
 
+            {/* Confirm Password */}
             <div
+              className="form-group"
               style={{
                 gap: "0.5rem",
                 display: "flex",
@@ -246,11 +260,7 @@ export default function SignupForm({ onToggle }) {
             </Button>
           </form>
 
-          <div
-            style={{
-              textAlign: "center",
-            }}
-          >
+          <div className="signup-text" style={{ textAlign: "center" }}>
             <p
               style={{
                 fontSize: "0.875rem",
@@ -261,6 +271,7 @@ export default function SignupForm({ onToggle }) {
               <Link to="/login">
                 <button
                   onClick={onToggle}
+                  className="signin-btn"
                   style={{
                     color: "var(--color-brand-primary)",
                     fontSize: "var(--font-size-content-subtext)",
@@ -271,8 +282,6 @@ export default function SignupForm({ onToggle }) {
                     textDecoration: "none",
                     transition: "opacity 0.2s ease",
                   }}
-                  onMouseEnter={(e) => (e.target.style.opacity = "0.7")}
-                  onMouseLeave={(e) => (e.target.style.opacity = "1")}
                 >
                   Sign in
                 </button>

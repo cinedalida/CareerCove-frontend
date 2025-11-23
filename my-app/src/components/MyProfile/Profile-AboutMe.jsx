@@ -115,10 +115,12 @@ export default function ProfileAboutMe() {
             fontFamily: "Poppins",
           }}
         >
-          <span class="material-symbols-outlined">upload</span>
-          <span>
-            <h2>Upload Resume</h2>
-          </span>
+          <div className="aboutme-upload-resume-btn">
+            <span class="material-symbols-outlined">upload</span>
+            <span>
+              <h2>Upload Resume</h2>
+            </span>
+          </div>
         </button>
         <input
           ref={fileInputRef}
@@ -141,7 +143,13 @@ export default function ProfileAboutMe() {
               editMode === "education" ? "edit-active" : ""
             }`}
           >
-            <span>{editMode === "education" ? "✓" : "✏️"}</span>
+            <span>
+              {editMode === "education" ? (
+                "✓"
+              ) : (
+                <span className="material-symbols-outlined">border_color</span>
+              )}
+            </span>
             {editMode === "education" ? "Done" : "Edit"}
           </button>
         </div>
@@ -171,7 +179,13 @@ export default function ProfileAboutMe() {
               editMode === "experience" ? "edit-active" : ""
             }`}
           >
-            <span>{editMode === "experience" ? "✓" : "✏️"}</span>
+            <span>
+              {editMode === "experience" ? (
+                "✓"
+              ) : (
+                <span class="material-symbols-outlined">border_color</span>
+              )}
+            </span>
             {editMode === "experience" ? "Done" : "Edit"}
           </button>
         </div>
@@ -288,7 +302,13 @@ export default function ProfileAboutMe() {
               editMode === "skills" ? "edit-active" : ""
             }`}
           >
-            <span>{editMode === "skills" ? "✓" : "✏️"}</span>
+            <span>
+              {editMode === "skills" ? (
+                "✓"
+              ) : (
+                <span class="material-symbols-outlined">border_color</span>
+              )}
+            </span>
             {editMode === "skills" ? "Done" : "Edit"}
           </button>
         </div>
@@ -346,7 +366,7 @@ export default function ProfileAboutMe() {
         </div>
 
         {editMode === "skills" && (
-          <div className="mt-4 flex gap-2">
+          <div className="skills-input-add-section">
             <input
               type="text"
               value={newSkill}

@@ -1,0 +1,79 @@
+/* ============================================================
+   HOW IT WORKS SECTION
+   ============================================================ */
+
+/* Scalable elements */
+.scalable-img {
+  width: clamp(150px, 40%, 300px);
+  height: auto;
+}
+
+.scalable-title {
+  font-size: clamp(1.125rem, 2vw, 2rem);
+}
+
+.scalable-text {
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - MOBILE (max-width: 640px)
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .how-it-works-responsive {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .how-it-works-responsive .scrollstack-item {
+    flex-direction: column;
+    gap: 1rem;
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .how-it-works-responsive .scrollstack-item img {
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .how-it-works-responsive .scrollstack-item div.text-left {
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+
+  .how-it-works-responsive .scrollstack-item div.text-left h3 {
+    font-size: 1.2rem;
+  }
+
+  .how-it-works-responsive .scrollstack-item div.text-left p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE STYLES - TABLET (641px–1024px)
+   ============================================================ */
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .how-it-works-responsive .scrollstack-item {
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .how-it-works-responsive .scrollstack-item img {
+    width: 250px;
+    height: auto;
+  }
+
+  .how-it-works-responsive .scrollstack-item div.text-left h3 {
+    font-size: 1.5rem;
+  }
+
+  .how-it-works-responsive .scrollstack-item div.text-left p {
+    font-size: 1rem;
+  }
+}

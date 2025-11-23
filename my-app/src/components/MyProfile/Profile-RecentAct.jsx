@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useMemo } from "react";
 import "../../styles/MyProfile/Profile-RecentAct.css";
 
@@ -82,8 +80,10 @@ export default function ProfileRecentAct() {
     <div className="Profile-RecentAct">
       {/* Header */}
       <div className="Profile-RecentAct-header">
-        <span>🔖</span>
-        <p>Bookmarks: {filteredJobs.length}</p>
+        <span>
+          <span className="material-symbols-outlined">book</span>
+        </span>
+        <h2>Bookmarks: {filteredJobs.length}</h2>
       </div>
 
       {/* Search Input */}
@@ -119,7 +119,7 @@ export default function ProfileRecentAct() {
               className="Profile-RecentAct-jobDeleteBtn"
               title="Delete bookmark"
             >
-              🗑️
+              <span className="material-symbols-outlined">delete</span>
             </button>
           </div>
         ))}

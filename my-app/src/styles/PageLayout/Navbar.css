@@ -58,3 +58,36 @@
     padding: 0.3rem 0.8rem;
   }
 }
+
+/* ===== MOBILE COLLAPSE ===== */
+@media (max-width: 768px) {
+  .custom-navbar {
+    flex-direction: row;
+    justify-content: flex-start; /* logo on left */
+    gap: 0;
+    padding: 0.5rem 1rem;
+  }
+
+  .custom-navbar img {
+    width: 55px;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-neutral-100);
+    border: 1px solid var(--color-border);
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-radius: 1rem;
+    z-index: 40;
+  }
+
+  .mobile-menu ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

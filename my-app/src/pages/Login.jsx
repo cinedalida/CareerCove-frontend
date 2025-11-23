@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "../components/UI/button";
 import { Input } from "../components/UI/input";
+import "../styles/PageLayout/Login.css";
 
 export default function LoginForm({ onToggle }) {
   const [email, setEmail] = useState("");
@@ -38,17 +39,18 @@ export default function LoginForm({ onToggle }) {
     <>
       <Navbar />
       <div
+        className="login-container"
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          height: "100vh", // full page height
-          backgroundColor: "var(--color-neutral-50)",
+          height: "100vh",
           gap: "4rem",
           padding: "2rem",
         }}
       >
         <div
+          className="login-card"
           style={{
             backgroundColor: "var(--color-neutral-100)",
             borderRadius: "0.75rem",
@@ -61,6 +63,7 @@ export default function LoginForm({ onToggle }) {
           }}
         >
           <div
+            className="login-header"
             style={{
               textAlign: "center",
               gap: "0.5rem",
@@ -89,6 +92,7 @@ export default function LoginForm({ onToggle }) {
 
           {error && (
             <div
+              className="error-box"
               style={{
                 backgroundColor: "var(--color-error)",
                 opacity: "0.1",
@@ -104,6 +108,7 @@ export default function LoginForm({ onToggle }) {
           )}
 
           <form
+            className="login-form"
             onSubmit={handleSubmit}
             style={{
               gap: "1rem",
@@ -112,6 +117,7 @@ export default function LoginForm({ onToggle }) {
             }}
           >
             <div
+              className="form-group"
               style={{
                 gap: "0.5rem",
                 display: "flex",
@@ -137,6 +143,7 @@ export default function LoginForm({ onToggle }) {
             </div>
 
             <div
+              className="form-group"
               style={{
                 gap: "0.5rem",
                 display: "flex",
@@ -162,6 +169,7 @@ export default function LoginForm({ onToggle }) {
             </div>
 
             <div
+              className="form-options"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -188,16 +196,13 @@ export default function LoginForm({ onToggle }) {
                     borderRadius: "0.25rem",
                   }}
                 />
-                <span
-                  style={{
-                    color: "var(--color-text-secondary)",
-                  }}
-                >
+                <span style={{ color: "var(--color-text-secondary)" }}>
                   Remember me
                 </span>
               </label>
               <button
                 type="button"
+                className="forgot-btn"
                 style={{
                   fontSize: "var(--font-size-content-subtext)",
                   fontWeight: "var(--font-weight-light)",
@@ -206,14 +211,6 @@ export default function LoginForm({ onToggle }) {
                   cursor: "pointer",
                   textDecoration: "none",
                   transition: "opacity 0.2s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.color = "var(--color-button-primary)"; // hover color
-                  e.target.style.opacity = "0.8"; // optional
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color = "var(--color-text-primary)"; // revert
-                  e.target.style.opacity = "1";
                 }}
               >
                 Forgot Password?
@@ -233,11 +230,7 @@ export default function LoginForm({ onToggle }) {
             </Button>
           </form>
 
-          <div
-            style={{
-              textAlign: "center",
-            }}
-          >
+          <div className="signup-text" style={{ textAlign: "center" }}>
             <p
               style={{
                 fontSize: "0.875rem",
@@ -248,6 +241,7 @@ export default function LoginForm({ onToggle }) {
               <Link to="/signup">
                 <button
                   onClick={onToggle}
+                  className="signup-btn"
                   style={{
                     color: "var(--color-brand-primary)",
                     fontSize: "var(--font-size-content-subtext)",
@@ -258,8 +252,6 @@ export default function LoginForm({ onToggle }) {
                     textDecoration: "none",
                     transition: "opacity 0.2s ease",
                   }}
-                  onMouseEnter={(e) => (e.target.style.opacity = "0.7")}
-                  onMouseLeave={(e) => (e.target.style.opacity = "1")}
                 >
                   Sign up
                 </button>
@@ -267,9 +259,11 @@ export default function LoginForm({ onToggle }) {
             </p>
           </div>
         </div>
+
         <img
           src={L1}
           alt="Login illustration"
+          className="login-illustration"
           style={{
             width: "700px",
             height: "auto",

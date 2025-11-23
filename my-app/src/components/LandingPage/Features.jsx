@@ -1,4 +1,3 @@
-import React from "react";
 import "../../styles/LandingPage/Features.css";
 import F1 from "../../assets/F1.png";
 import F2 from "../../assets/F2.png";
@@ -29,7 +28,10 @@ const Features = () => {
   };
 
   return (
-    <section id="features-section" className="flex flex-col items-center">
+    <section
+      id="features"
+      className="flex flex-col items-center features-section"
+    >
       <motion.div
         className="flex flex-col items-center"
         initial="hidden"

@@ -1,3 +1,8 @@
+/* ============================================================
+   PROFILE RECENT ACTIVITY SECTION
+   ============================================================ */
+
+/* Main container */
 .Profile-RecentAct {
   display: flex;
   flex-direction: column;
@@ -5,7 +10,10 @@
   padding: 2rem;
 }
 
-/* ---------------------- Header ---------------------- */
+/* ============================================================
+   HEADER SECTION
+   ============================================================ */
+
 .Profile-RecentAct-header {
   display: flex;
   align-items: center;
@@ -20,7 +28,10 @@
   color: var(--color-button-primary);
 }
 
-/* ---------------------- Search Input ---------------------- */
+/* ============================================================
+   SEARCH INPUT
+   ============================================================ */
+
 .Profile-RecentAct-search {
   width: 100%;
   max-width: 400px;
@@ -39,14 +50,18 @@
   box-shadow: 0 0 0 2px rgba(136, 136, 136, 0.3);
 }
 
-/* ---------------------- Job Cards Container ---------------------- */
+/* ============================================================
+   JOB CARDS SECTION
+   ============================================================ */
+
+/* Job cards container */
 .Profile-RecentAct-jobs {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-/* Individual Job Card */
+/* Individual job card */
 .Profile-RecentAct-jobCard {
   display: flex;
   align-items: center;
@@ -61,7 +76,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Job Content (avatar + text + tags) */
+/* Job content wrapper */
 .Profile-RecentAct-jobContent {
   display: flex;
   align-items: flex-start;
@@ -70,7 +85,7 @@
   min-width: 0;
 }
 
-/* ---------------------- Avatar ---------------------- */
+/* Avatar */
 .Profile-RecentAct-jobAvatar {
   width: 3rem;
   height: 3rem;
@@ -79,7 +94,7 @@
   flex-shrink: 0;
 }
 
-/* ---------------------- Job Text ---------------------- */
+/* Job text content */
 .Profile-RecentAct-jobText h3 {
   font-family: var(--font-body);
   font-weight: var(--font-weight-semibold);
@@ -99,7 +114,7 @@
   color: var(--color-text-secondary);
 }
 
-/* ---------------------- Tags ---------------------- */
+/* Tags */
 .Profile-RecentAct-jobTags {
   display: flex;
   flex-wrap: wrap;
@@ -116,7 +131,7 @@
   color: var(--color-text-primary);
 }
 
-/* ---------------------- Delete Button ---------------------- */
+/* Delete button */
 .Profile-RecentAct-jobDeleteBtn {
   margin-left: 1rem;
   flex-shrink: 0;
@@ -130,7 +145,10 @@
   color: #c0392b;
 }
 
-/* ---------------------- Empty State ---------------------- */
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
 .Profile-RecentAct-empty {
   text-align: center;
   padding: 3rem 0;
@@ -138,7 +156,10 @@
   color: var(--color-text-secondary);
 }
 
-/* ---------------------- Responsive Adjustments ---------------------- */
+/* ============================================================
+   RESPONSIVE STYLES - SMALL SCREENS (min-width: 640px)
+   ============================================================ */
+
 @media (min-width: 640px) {
   .Profile-RecentAct-search {
     margin-bottom: 0;

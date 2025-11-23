@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
     <section
-      className="relative flex flex-col items-center justify-center text-center min-h-[80vh] px-6"
+      className="hero-section relative flex flex-col items-center justify-center text-center min-h-[80vh] px-6"
       id="hero"
     >
-      <div className="relative z-10 flex flex-col items-center">
+      <div className="hero-content relative z-10 flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,12 +32,12 @@ const HeroSection = () => {
           />
         </motion.div>
 
-        <div className="section-subtext max-w-2xl mb-8 CC-Subtext text-[var(--color-text-secondary)]">
+        <div className="section-subtext CC-Subtext">
           <TextType
             text={[
-              "Find the job that fits your story.",
-              "Build your future, one click at a time.",
-              "Your career journey starts with CareerCove.",
+              "Type your skills and job preferences here!",
+              "Sign up to parse your resume automatically.",
+              "Explore job listings tailored to you.",
             ]}
             typingSpeed={75}
             pauseDuration={1500}
@@ -47,7 +47,7 @@ const HeroSection = () => {
         </div>
 
         <motion.div
-          className="flex gap-4 mb-12"
+          className="hero-buttons flex gap-4 mb-12"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.5, duration: 0.8, ease: "easeOut" }}
