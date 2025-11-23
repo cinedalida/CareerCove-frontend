@@ -56,28 +56,32 @@ const HowItWorks = () => {
               img: H1,
               title: "Explore jobs instantly",
               text: "Use CareerCove as a guest or log in — search and match jobs from LinkedIn, Kalibrr, and JobStreet.",
+              titleColor: "text-[var(--color-text-secondary)]",
               textColor: "text-[var(--color-text-secondary)]",
             },
             {
-              bg: "bg-[rgb(87,87,87)]",
+              bg: "bg-[rgb(208,208,208)]",
               img: H2,
               title: "Upload & analyze your profile",
               text: "CareerCove parses your résumé and evaluates both job-fit and soft skills based on your credentials.",
-              textColor: "text-[var(--color-neutral-100)]",
+              titleColor: "text-[var(--color-text-secondary)]",
+              textColor: "text-[var(--color-text-secondary)]",
             },
             {
               bg: "bg-[rgb(249,167,96)]",
               img: H3,
               title: "Organize your applications",
               text: "Track and bookmark jobs, save files to your document locker, and monitor your application progress.",
+              titleColor: "text-[var(--color-text-secondary)]",
               textColor: "text-[var(--color-text-secondary)]",
             },
             {
-              bg: "bg-[rgb(87,87,87)]",
+              bg: "bg-[rgb(208,208,208)]",
               img: H4,
               title: "Unlock more with a full account",
               text: "Sign up to access the full suite: résumé parser, job trackers, document repository, and soft skills insights.",
-              textColor: "text-[var(--color-neutral-100)]",
+              titleColor: "text-[var(--color-text-secondary)]",
+              textColor: "text-[var(--color-text-secondary)]",
             },
           ].map((step, index) => (
             <ScrollStackItem key={index} className="scrollstack-item">
@@ -96,7 +100,7 @@ const HowItWorks = () => {
                 />
                 <div className="text-left">
                   <h3
-                    className={`font-semibold mb-3 ${step.textColor} scalable-title`}
+                    className={`font-semibold mb-3 ${step.titleColor} scalable-title`}
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     {step.title}
