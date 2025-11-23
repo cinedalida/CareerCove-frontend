@@ -1,10 +1,22 @@
 /* Hide signup illustration on smaller screens */
+
 .signup-illustration {
   width: 100%;
   max-width: 700px;
   height: auto;
   border-radius: 1rem;
   object-fit: cover;
+}
+
+.signup-error {
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid red;
+  color: rgb(218, 78, 78);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 /* Hide image below 1024px */

@@ -2,11 +2,10 @@ import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
 import S1 from "../assets/S1.png";
 import { Link } from "react-router-dom";
-
 import { useState } from "react";
 import { Button } from "../components/UI/button";
 import { Input } from "../components/UI/input";
-import "../styles/PageLayout/Signup.css"; // Add this
+import "../styles/PageLayout/Signup.css";
 
 export default function SignupForm({ onToggle }) {
   const [fullName, setFullName] = useState("");
@@ -59,7 +58,7 @@ export default function SignupForm({ onToggle }) {
           height: "100vh",
           gap: "4rem",
           padding: "2rem",
-          marginTop: "6rem",
+          marginTop: "10rem",
         }}
       >
         <img
@@ -114,22 +113,7 @@ export default function SignupForm({ onToggle }) {
             </p>
           </div>
 
-          {error && (
-            <div
-              className="error-box"
-              style={{
-                backgroundColor: "var(--color-error)",
-                opacity: "0.1",
-                border: `1px solid var(--color-error)`,
-                color: "var(--color-error)",
-                padding: "1rem",
-                borderRadius: "0.5rem",
-                fontSize: "0.875rem",
-              }}
-            >
-              {error}
-            </div>
-          )}
+          {error && <div className="signup-error">{error}</div>}
 
           <form
             onSubmit={handleSubmit}

@@ -90,22 +90,7 @@ export default function LoginForm({ onToggle }) {
             </p>
           </div>
 
-          {error && (
-            <div
-              className="error-box"
-              style={{
-                backgroundColor: "var(--color-error)",
-                opacity: "0.1",
-                border: `1px solid var(--color-error)`,
-                color: "var(--color-error)",
-                padding: "1rem",
-                borderRadius: "0.5rem",
-                fontSize: "0.875rem",
-              }}
-            >
-              {error}
-            </div>
-          )}
+          {error && <div className="login-error">{error}</div>}
 
           <form
             className="login-form"
