@@ -10,7 +10,7 @@ const LandingPage = () => {
   return (
     <>
       <Squares
-        className="absolute inset-0 z-0"
+        className="fixed inset-0 z-0"
         speed={0.3}
         squareSize={100}
         direction="up"

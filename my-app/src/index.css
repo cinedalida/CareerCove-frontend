@@ -104,6 +104,16 @@ section {
   margin: 0 auto;
 }
 
+body {
+  background-color: #f0f0f0;
+  background-size: cover;
+  margin: 0;
+}
+
+.CareerCove-Display {
+  min-height: 80vh;
+}
+
 /*=============== FORMAT ===============*/
 
 .hero-title {
@@ -161,6 +171,10 @@ button {
     max-width: 28rem !important;
     margin-bottom: 1.75rem !important;
   }
+
+  .CareerCove-Display {
+    min-height: 70vh;
+  }
 }
 
 /* Small screens */
@@ -171,6 +185,10 @@ button {
     max-width: 24rem !important;
     margin-bottom: 1.5rem !important;
     text-align: center;
+  }
+
+  .CareerCove-Display {
+    min-height: 60vh;
   }
 }
 

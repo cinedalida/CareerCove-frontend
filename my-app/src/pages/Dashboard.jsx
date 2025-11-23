@@ -50,11 +50,6 @@ export default function DashboardPage() {
     <>
       <Navbar variant="UserNav" />
 
-      <section
-        className="flex flex-col items-center justify-center text-center min-h-[10vh] bg-[var(--color-bg-primary)] px-6"
-        id="Dashboard"
-      ></section>
-
       <section className="dashboard-container">
         <div className="dashboard-header">
           <h1>Analytics Dashboard</h1>

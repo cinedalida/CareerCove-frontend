@@ -36,7 +36,7 @@ export default function InfiniteMovingCardsDemo() {
 
       {/* Cards Section */}
       <motion.div
-        className="h-[40rem] flex flex-col antialiased items-center justify-center relative overflow-hidden bg-[var(--color-bg-primary)]"
+        className="h-[40rem] flex flex-col antialiased items-center justify-center relative overflow-hidden "
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1.2 }}

@@ -1,17 +1,15 @@
 /* ============================================================
    DASHBOARD - BASE CONTAINER
    ============================================================ */
-
 .dashboard-container {
   position: relative;
   z-index: 10;
   min-height: 100vh;
-  padding: 2rem;
-  margin-top: -20px;
+  padding: 15rem 2rem 2rem 2rem; /* increased top padding */
+  margin-top: 0; /* remove the negative margin */
   font-family: "Poppins", sans-serif;
   color: #0c0c0c;
 }
-
 /* ============================================================
    DASHBOARD HEADER
    ============================================================ */

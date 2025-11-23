@@ -9,6 +9,7 @@ import { JobResults } from "../components/User/UserJobResults";
 import "../styles/Guest/Guest.css";
 import AnimatedButton from "../components/UI/Jobs-UI/AnimatedButton";
 import PDFUploadModal from "../components/UI/Jobs-UI/PDFUploadModal";
+import Squares from "../components/Animations/Squares";
 
 const Jobs = () => {
   const [stage, setStage] = useState("input");
@@ -75,10 +76,18 @@ const Jobs = () => {
   return (
     <>
       <Navbar variant="UserNav" />
+      <Squares
+        className="fixed inset-0 -z-10"
+        speed={0.3}
+        squareSize={100}
+        direction="up"
+        borderColor="#D3D3D3"
+        hoverFillColor="#F0AF66"
+      />
 
       {/* CareerCove Title */}
       <section
-        className="flex flex-col items-center justify-center text-center min-h-[80vh] bg-[var(--color-bg-primary)] px-6"
+        className="CareerCove-Display flex flex-col items-center justify-center text-center px-6"
         id="jobs"
       >
         <motion.div
@@ -98,19 +107,6 @@ const Jobs = () => {
           />
         </motion.div>
 
-        <div className="section-subtext CC-Subtext">
-          <TextType
-            text={[
-              "Type your skills and job preferences here!",
-              "Sign up to parse your resume automatically.",
-              "Explore job listings tailored to you.",
-            ]}
-            typingSpeed={75}
-            pauseDuration={1500}
-            showCursor={true}
-            cursorCharacter="|"
-          />
-        </div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

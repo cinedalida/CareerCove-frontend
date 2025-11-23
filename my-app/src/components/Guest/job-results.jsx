@@ -48,7 +48,7 @@ export function JobResults({ jobs, userInput }) {
             filteredJobs.map((job) => (
               <Card
                 key={job.id}
-                className="job-card relative p-6 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="guest-job-card relative p-6 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Header Section */}
                 <div className="job-header">

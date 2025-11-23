@@ -6,6 +6,7 @@ import SplitText from "../components/Animations/SplitText";
 import TextType from "../components/Animations/TextType";
 import { ChatInput } from "../components/Guest/chat-input";
 import { JobResults } from "../components/Guest/job-results";
+import Squares from "../components/Animations/Squares";
 import "../styles/Guest/Guest.css";
 
 const Guest = () => {
@@ -71,9 +72,17 @@ const Guest = () => {
   return (
     <>
       <Navbar />
+      <Squares
+        className="fixed inset-0 z-0"
+        speed={0.3}
+        squareSize={100}
+        direction="up"
+        borderColor="#D3D3D3"
+        hoverFillColor="#F0AF66"
+      />
 
       <section
-        className="flex flex-col items-center justify-center text-center min-h-[80vh] bg-[var(--color-bg-primary)] px-6"
+        className="CareerCove-Display flex flex-col items-center justify-center text-center px-6"
         id="guest"
       >
         <motion.div
@@ -92,20 +101,6 @@ const Guest = () => {
             to={{ opacity: 1, y: 0 }}
           />
         </motion.div>
-
-        <div className="section-subtext CC-Subtext">
-          <TextType
-            text={[
-              "Type your skills and job preferences here!",
-              "Sign up to parse your resume automatically.",
-              "Explore job listings tailored to you.",
-            ]}
-            typingSpeed={75}
-            pauseDuration={1500}
-            showCursor={true}
-            cursorCharacter="|"
-          />
-        </div>
       </section>
 
       <motion.div
