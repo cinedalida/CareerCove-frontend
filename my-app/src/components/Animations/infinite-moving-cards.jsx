@@ -1,4 +1,4 @@
-import "../../styles/LandingPage/testimonials.css";
+import "../../styles/LandingPage/Testimonials.css";
 
 import { cn } from "../../lib/utils";
 import React, { useEffect, useState } from "react";
