@@ -53,26 +53,26 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="mailto:francine@example.com"
+                    href="mailto:dfb0414@dlsud.edu.ph"
                     className="hover:text-[var(--color-brand-primary)] transition-colors"
                   >
-                    francine@example.com
+                    dfb0414@dlsud.edu.ph
                   </a>
                 </li>
                 <li>
                   <a
-                    href="mailto:escander@example.com"
+                    href="mailto:ejb1823@dlsud.edu.ph"
                     className="hover:text-[var(--color-brand-primary)] transition-colors"
                   >
-                    escander@example.com
+                    ejb1823@dlsud.edu.ph
                   </a>
                 </li>
                 <li>
                   <a
-                    href="mailto:marti@example.com"
+                    href="mailto:tmv0253@dlsud.edu.ph"
                     className="hover:text-[var(--color-brand-primary)] transition-colors"
                   >
-                    marti@example.com
+                    tmv0253@dlsud.edu.ph
                   </a>
                 </li>
               </ul>
