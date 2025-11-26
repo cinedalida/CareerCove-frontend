@@ -1,90 +1,235 @@
 /* ============================================================
-   DASHBOARD - BASE CONTAINER
+   DASHBOARD - CareerCove-aligned (uses index.css vars & fonts)
    ============================================================ */
+
 .dashboard-container {
   position: relative;
   z-index: 10;
   min-height: 100vh;
-  padding: 15rem 2rem 2rem 2rem; /* increased top padding */
-  margin-top: 0; /* remove the negative margin */
-  font-family: "Poppins", sans-serif;
-  color: #0c0c0c;
+  padding: 6rem 2rem 4rem;
+  margin-top: 3rem;
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
 }
-/* ============================================================
-   DASHBOARD HEADER
-   ============================================================ */
 
+/* Header */
 .dashboard-header {
   max-width: 1200px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.dashboard-header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.back-btn {
-  background-color: var(--color-brand-primary);
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-size: 1rem;
+.section-title {
+  font-family: var(--font-body);
+  font-size: var(--font-size-content-title);
   font-weight: var(--font-weight-semibold);
-  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.back-btn:hover {
-  transform: scale(1.03);
-  opacity: 0.85;
+.section-subtext {
+  margin-top: 0.35rem;
+  color: var(--color-text-secondary);
 }
 
 /* ============================================================
-   STATS SECTION
+   STATS GRID
    ============================================================ */
 
 .stats-grid {
   max-width: 1200px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.5rem;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+/* Card base */
 .stat-card {
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1.2rem;
   color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  box-shadow: 0 6px 18px rgba(12, 12, 12, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(12, 12, 12, 0.09);
 }
 
 .stat-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .stat-icon {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  opacity: 0.95;
 }
 
 .stat-value {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
 .stat-label {
   font-size: 0.9rem;
-  opacity: 0.9;
+  opacity: 0.95;
+}
+
+/* ============================================================
+   VISUALIZATIONS GRID
+   ============================================================ */
+
+.viz-grid {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  display: grid;
+  gap: 1rem;
+  /* 3 columns on large, 1 column on mobile */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.viz-card {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(12, 12, 12, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.viz-title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+}
+
+.viz-body {
+  flex: 1;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* allow charts to shrink responsively */
+.chart-svg {
+  width: 100%;
+  height: 220px;
+}
+
+/* Label text in charts */
+.chart-label {
+  fill: var(--color-text-secondary);
+  font-family: var(--font-body);
+}
+
+.chart-value {
+  fill: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+/* Vertical bar chart specific */
+.bar-chart .bar-rect {
+  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.25s;
+}
+.bar-chart .bar-rect:hover {
+  transform: translateY(-4px) scale(1.02);
+  opacity: 0.95;
+}
+
+/* Horizontal bars */
+.horizontal-bars {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 0 0.25rem;
+}
+
+.hbar-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.hbar-title {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.hbar-track {
+  background: var(--color-bg-secondary);
+  border-radius: 999px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.hbar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+  min-width: 3%;
+  box-shadow: 0 2px 6px rgba(12, 12, 12, 0.06) inset;
+}
+
+.hbar-value {
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Donut chart + legend */
+.donut-wrap {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.donut-chart {
+  width: 170px;
+  height: 170px;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legend-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.legend-text {
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  min-width: 110px;
+}
+
+.legend-value {
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin-left: 0.25rem;
 }
 
 /* ============================================================
@@ -93,37 +238,34 @@
 
 .employability-grid {
   max-width: 1200px;
-  margin: 0 auto 2rem;
+  margin: 1.5rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
-/* Overall card */
 .overall-card {
-  background-color: rgb(255, 137, 34);
-  color: white;
+  background-color: var(--color-brand-primary);
+  color: var(--color-neutral-100);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.25rem;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .overall-title {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
 
 .overall-value {
-  font-size: 3rem;
+  font-size: 2.25rem;
   font-weight: 700;
 }
 
-/* Progress bar */
 .progress-bar {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.18);
   border-radius: 999px;
-  height: 6px;
+  height: 8px;
   margin-top: 1rem;
   overflow: hidden;
 }
@@ -132,111 +274,87 @@
   height: 100%;
   background-color: white;
   border-radius: 999px;
+  transition: width 0.5s ease;
 }
 
-/* Employability cards */
 .employ-card {
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1rem;
   color: white;
   font-weight: 600;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .tech-skill {
   background-color: rgb(52, 152, 219);
 }
-
 .experience {
   background-color: rgb(46, 204, 113);
 }
-
 .education {
   background-color: rgb(155, 89, 182);
 }
 
 /* ============================================================
-   SKILLS SECTION
-   ============================================================ */
-
-.skills-card {
-  max-width: 1200px;
-  margin: 0 auto 2rem;
-  background-color: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.skills-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.skills-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.skill-bar {
-  background-color: #e5e7eb;
-  border-radius: 999px;
-  height: 10px;
-  overflow: hidden;
-}
-
-.skill-fill {
-  height: 100%;
-  border-radius: 999px;
-  transition: width 0.4s ease;
-}
-
-/* ============================================================
-   INFO SECTION
+   INFO GRID
    ============================================================ */
 
 .info-grid {
   max-width: 1200px;
-  margin: 0 auto 4rem;
+  margin: 1.5rem auto 4rem;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .info-card {
-  background-color: white;
+  background-color: var(--color-bg-primary);
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 6px 18px rgba(12, 12, 12, 0.04);
 }
 
 .info-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .info-card ul li {
-  font-size: 0.9rem;
-  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.45rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* ============================================================
-   UTILITY CLASSES
-   ============================================================ */
-
+/* Utilities */
 .bold {
   font-weight: 700;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .viz-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .viz-grid {
+    grid-template-columns: 1fr;
+  }
+  .donut-wrap {
+    justify-content: center;
+  }
+  .chart-svg {
+    height: 180px;
+  }
+  .dashboard-container {
+    padding: 4.5rem 1rem 2rem;
+  }
 }
