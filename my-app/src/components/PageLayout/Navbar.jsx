@@ -55,8 +55,8 @@ const Navbar = ({ variant = "GuestNav" }) => {
 
   return (
     <motion.nav
-      className={`fixed top-6 left-1/2 -translate-x-1/2 w-[70%] border border-[var(--color-neutral-900)] rounded-2xl flex items-center justify-between bg-[var(--color-neutral-100)] shadow-sm z-50 custom-navbar px-6 py-3 transition-all duration-300 ${
-        hidden ? "-translate-y-32 opacity-0 pointer-events-none" : "opacity-100"
+      className={`custom-navbar transition-all duration-300 ${
+        hidden ? "hidden" : ""
       }`}
       initial={{ opacity: 0, y: -40 }}
       animate={{ opacity: hidden ? 0 : 1, y: hidden ? -100 : 0 }}
@@ -112,17 +112,30 @@ const Navbar = ({ variant = "GuestNav" }) => {
 
           {/* Login button only for GuestNav */}
           {variant === "GuestNav" && (
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 200 }}
-            >
+            <motion.div whileHover={{ scale: 1.1 }}>
               <Link
                 to="/login"
                 onClick={() => {
-                  if (window.innerWidth <= 768) setMobileOpen(false); // auto-close menu
+                  if (window.innerWidth <= 768) setMobileOpen(false);
                 }}
               >
                 <Button variant="small">Login</Button>
+              </Link>
+            </motion.div>
+          )}
+
+          {/* Logout button only for UserNav */}
+          {variant === "UserNav" && (
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              onClick={() => {
+                console.log("Logged out");
+                if (window.innerWidth <= 768) setMobileOpen(false);
+              }}
+            >
+              <Link to="/">
+                <Button variant="small">Logout</Button>
               </Link>
             </motion.div>
           )}

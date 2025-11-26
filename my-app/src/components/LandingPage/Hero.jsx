@@ -10,10 +10,7 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section
-      className="hero-section relative flex flex-col items-center justify-center text-center min-h-[80vh] px-6"
-      id="hero"
-    >
+    <section id="hero" className="hero-section">
       <div className="hero-content relative z-10 flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -32,14 +29,15 @@ const HeroSection = () => {
           />
         </motion.div>
 
-        <div className="section-subtext CC-Subtext">
+        <div>
           <TextType
+            className="CC-section-subtext"
             text={[
               "Type your skills and job preferences here!",
               "Sign up to parse your resume automatically.",
               "Explore job listings tailored to you.",
             ]}
-            typingSpeed={75}
+            typingSpeed={90}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter="|"

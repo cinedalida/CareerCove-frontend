@@ -170,7 +170,7 @@ const TextType = ({
       ...props,
     },
     <span
-      className="inline text-2xl"
+      className="inline"
       style={{ color: getCurrentTextColor() || "inherit" }}
     >
       {displayedText}

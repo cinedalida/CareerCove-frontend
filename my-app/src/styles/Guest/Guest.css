@@ -255,6 +255,15 @@
   box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
 }
 
+.guest-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-neutral-400, #9ca3af);
+  pointer-events: none;
+}
+
 /* ============================================================
    CHAT TEXTAREA
    ============================================================ */
@@ -424,6 +433,9 @@
   .job-title {
     font-size: 1.125rem;
   }
+  .guest-input {
+    margin-bottom: 1rem;
+  }
 }
 
 /* ============================================================
@@ -475,6 +487,7 @@
   .guest-input {
     font-size: 0.875rem;
     padding: 0.625rem 0.875rem;
+    margin-bottom: 1rem;
   }
 
   .chat-textarea {

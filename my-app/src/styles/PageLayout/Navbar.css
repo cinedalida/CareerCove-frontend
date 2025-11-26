@@ -1,7 +1,16 @@
 .custom-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
   margin: 0 auto;
   padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-neutral-100);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  z-index: 50;
 }
 
 .custom-navbar.hidden {
@@ -13,7 +22,7 @@
 /* Make items wrap and adjust spacing on smaller screens */
 @media (max-width: 1024px) {
   .custom-navbar {
-    width: 90%;
+    width: 100%;
     padding: 0.75rem 1.5rem;
   }
 }
@@ -41,7 +50,7 @@
 
 @media (max-width: 480px) {
   .custom-navbar {
-    width: 95%;
+    width: 100%;
     padding: 0.75rem;
   }
 
@@ -78,11 +87,9 @@
     left: 0;
     width: 100%;
     background: var(--color-neutral-100);
-    border: 1px solid var(--color-border);
     padding: 1rem 1.5rem;
     flex-direction: column;
     gap: 0.75rem;
-    border-radius: 1rem;
     z-index: 40;
   }
 

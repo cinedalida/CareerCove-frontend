@@ -9,7 +9,6 @@ import { JobResults } from "../components/User/UserJobResults";
 import "../styles/Guest/Guest.css";
 import AnimatedButton from "../components/UI/Jobs-UI/AnimatedButton";
 import PDFUploadModal from "../components/UI/Jobs-UI/PDFUploadModal";
-import Squares from "../components/Animations/Squares";
 
 const Jobs = () => {
   const [stage, setStage] = useState("input");
@@ -76,14 +75,6 @@ const Jobs = () => {
   return (
     <>
       <Navbar variant="UserNav" />
-      <Squares
-        className="fixed inset-0 -z-10"
-        speed={0.3}
-        squareSize={100}
-        direction="up"
-        borderColor="#D3D3D3"
-        hoverFillColor="#F0AF66"
-      />
 
       {/* CareerCove Title */}
       <section
