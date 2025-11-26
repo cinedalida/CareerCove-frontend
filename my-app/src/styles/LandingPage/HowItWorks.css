@@ -2,6 +2,21 @@
    HOW IT WORKS SECTION
    ============================================================ */
 
+.how-it-works-section {
+  background-color: var(--color-neutral-900);
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Scalable elements */
 .scalable-img {
   width: clamp(150px, 40%, 300px);
@@ -21,12 +36,12 @@
    ============================================================ */
 
 @media (max-width: 640px) {
-  .how-it-works-responsive {
+  .how-it-works-section {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .how-it-works-responsive .scrollstack-item > div {
+  .how-it-works-section.scrollstack-item > div {
     flex-direction: column;
     gap: 1rem;
     min-height: auto;
@@ -38,7 +53,7 @@
     text-align: left;
   }
 
-  .how-it-works-responsive .scrollstack-item img {
+  .how-it-works-section.scrollstack-item img {
     width: 80%;
     max-width: 250px;
     height: auto;
@@ -48,16 +63,16 @@
     margin-right: 0;
   }
 
-  .how-it-works-responsive .scrollstack-item .text-left {
+  .how-it-works-section.scrollstack-item.text-left {
     text-align: left;
     padding-top: 0.5rem;
   }
 
-  .how-it-works-responsive .scrollstack-item .text-left h3 {
+  .how-it-works-section.scrollstack-item.text-left h3 {
     font-size: 1.2rem;
   }
 
-  .how-it-works-responsive .scrollstack-item .text-left p {
+  .how-it-works-section.scrollstack-item.text-left p {
     font-size: 0.9rem;
   }
 }
@@ -67,21 +82,21 @@
    ============================================================ */
 
 @media (min-width: 641px) and (max-width: 1024px) {
-  .how-it-works-responsive .scrollstack-item > div {
+  .how-it-works-section.scrollstack-item > div {
     gap: 1.5rem;
     padding: 2rem;
   }
 
-  .how-it-works-responsive .scrollstack-item img {
+  .how-it-works-section.scrollstack-item img {
     width: 250px;
     height: auto;
   }
 
-  .how-it-works-responsive .scrollstack-item .text-left h3 {
+  .how-it-works-section.scrollstack-item.text-left h3 {
     font-size: 1.5rem;
   }
 
-  .how-it-works-responsive .scrollstack-item .text-left p {
+  .how-it-works-section.scrollstack-item.text-left p {
     font-size: 1rem;
   }
 }

@@ -104,24 +104,18 @@ export default function ProfileAboutMe() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="aboutme-container">
       {/* Resume Upload */}
-      <div className="flex justify-end">
+      <div className="profile-aboutme-header">
         <button
           onClick={handleResumeUpload}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-opacity hover:opacity-80"
-          style={{
-            color: "rgb(255, 137, 34)",
-            fontFamily: "Poppins",
-          }}
+          className="aboutme-upload-resume-btn"
+          style={{ fontFamily: "Poppins", color: "var(--color-neutral-100)" }}
         >
-          <div className="aboutme-upload-resume-btn">
-            <span class="material-symbols-outlined">upload</span>
-            <span>
-              <h2>Upload Resume</h2>
-            </span>
-          </div>
+          <span className="material-symbols-outlined">upload</span>
+          <h2 className="m-0 p-0">Upload Resume</h2>
         </button>
+
         <input
           ref={fileInputRef}
           type="file"
@@ -188,8 +182,7 @@ export default function ProfileAboutMe() {
             </span>
             {editMode === "experience" ? "Done" : "Edit"}
           </button>
-        </div>
-
+        </div>{" "}
         <div className="aboutme-experience-list">
           {experiences.map((exp, idx) => (
             <div

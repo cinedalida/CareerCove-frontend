@@ -26,10 +26,7 @@ const HowItWorks = () => {
     },
   };
   return (
-    <section
-      id="how-it-works"
-      className="h-170 bg-[var(--color-neutral-900)] text-center px-6 flex flex-col items-center rounded-3xl how-it-works-responsive"
-    >
+    <section id="how-it-works" className="how-it-works-section">
       {/* ========== SECTION TITLE ========== */}
       <motion.div
         className="flex flex-col items-center justify-center"
@@ -48,7 +45,7 @@ const HowItWorks = () => {
       </motion.div>
 
       {/* ========== SCROLL STACK WRAPPER ========== */}
-      <div className="max-w-5xl w-full h-100 relative mt-12">
+      <div className="max-w-5xl w-full h-100 relative mt-12 scrollstack-wrapper">
         <ScrollStack className="relative z-10">
           {[
             {

@@ -18,6 +18,11 @@ export default function ProfileNavigation({ activeTab, setActiveTab }) {
       label: <h2>Recent Activity</h2>,
       icon: <span className="material-symbols-outlined">schedule</span>,
     },
+    {
+      id: "tracker",
+      label: <h2>Application Tracker</h2>,
+      icon: <span className="material-symbols-outlined">track_changes</span>,
+    },
   ];
 
   return (

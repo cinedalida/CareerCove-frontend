@@ -59,7 +59,7 @@ export default function ProfileDocuments() {
             className="hidden"
           />
           <span className="material-symbols-outlined">upload</span>
-          <h2>Upload Document</h2>
+          <h2 className="m-0 p-0">Upload Document</h2>
         </label>
       </div>
 
