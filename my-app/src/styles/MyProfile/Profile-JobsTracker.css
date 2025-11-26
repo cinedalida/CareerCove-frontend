@@ -1,0 +1,356 @@
+/* ============================================================
+   JOBS TRACKER — CareerCove Style System Alignment
+   ============================================================ */
+
+/* Container */
+.job-results-wrapper {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.column-title {
+  font-family: var(--font-body);
+  font-size: var(--font-size-content-title);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* ===========================
+   ADD JOB BUTTON
+   =========================== */
+.add-job-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-brand-primary);
+  color: var(--color-neutral-100);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 1rem;
+}
+
+.add-job-btn:hover {
+  opacity: 0.9;
+}
+
+/* ===========================
+   JOB CARD
+   =========================== */
+
+.job-card {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  border-radius: 14px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.job-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.company-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--color-brand-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-neutral-100);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.2rem;
+}
+
+.job-title {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.job-company {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+/* STATUS BADGES */
+.status-badge {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  color: white;
+  width: max-content;
+  margin-top: 0.25rem;
+}
+
+.status-applied {
+  background: var(--color-brand-primary);
+}
+
+.status-interview {
+  background: var(--color-warning);
+}
+
+.status-offer {
+  background: var(--color-success);
+}
+
+.status-rejected {
+  background: var(--color-error);
+}
+
+/* ACTION BUTTONS */
+.job-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: var(--color-neutral-200);
+  border: none;
+  padding: 0.45rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: var(--color-warning);
+  color: white;
+}
+
+.delete-btn:hover {
+  background: var(--color-error);
+  color: white;
+}
+
+/* JOB DETAILS */
+.job-details {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+.job-details p {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.job-description {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  line-height: 1.4rem;
+}
+
+/* SKILLS */
+.skill-tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  padding: 0.3rem 0.7rem;
+  background: var(--color-neutral-200);
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
+
+/* ===========================
+   EMPTY STATE
+   =========================== */
+.job-empty-card {
+  text-align: center;
+  background: var(--color-neutral-200);
+  padding: 2rem;
+  border-radius: 14px;
+}
+
+.job-empty-text {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.empty-state-btn {
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  background: var(--color-brand-primary);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===========================
+   PAGINATION
+   =========================== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.pagination-btn {
+  background: var(--color-neutral-200);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination-text {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+/* ===========================
+   MODAL STYLING
+   =========================== */
+
+.jobTracker-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-modal-backdrop);
+}
+
+.jobTracker-modal-content {
+  background: var(--color-neutral-100);
+  width: 90%;
+  max-width: 600px;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: var(--z-modal);
+}
+
+.jobTracker-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.jobTracker-modal-title {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.jobTracker-modal-close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* FORM ELEMENTS */
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.form-input,
+.form-textarea,
+select {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-secondary {
+  padding: 0.6rem 1.2rem;
+  background: var(--color-neutral-200);
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+}
+
+.btn-primary {
+  padding: 0.6rem 1.2rem;
+  background: var(--color-brand-primary);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .job-card {
+    padding: 1.2rem;
+  }
+}

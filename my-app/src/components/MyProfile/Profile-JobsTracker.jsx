@@ -7,7 +7,7 @@ import {
   Trash2,
   X,
 } from "lucide-react";
-import "../../styles/JobsPage/JobsPage.css";
+import "../../styles/MyProfile/Profile-JobsTracker.css";
 
 // ========== INITIAL DATA ==========
 
@@ -80,10 +80,10 @@ function JobFormModal({ isOpen, onClose, onSubmit, editingJob }) {
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <div className="modal-header">
-          <h3 className="modal-title">
+    <div className="jobTracker-modal-overlay">
+      <div className="jobTracker-modal-content">
+        <div className="jobTracker-modal-header">
+          <h3 className="jobTracker-modal-title">
             {editingJob ? "Edit Job Application" : "Add Job Application"}
           </h3>
           <button onClick={onClose} className="modal-close-btn">
@@ -348,7 +348,7 @@ export function ProfileJobsTracker() {
   };
 
   return (
-    <div className="job-results-container">
+    <div>
       <div className="job-results-wrapper">
         <div className="job-column-wrapper">
           <div className="job-column">
