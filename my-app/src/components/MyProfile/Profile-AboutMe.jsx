@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 
 export default function ProfileAboutMe() {
   const fileInputRef = useRef(null);
-  const [editMode, setEditMode] = useState(null); // "education" | "experience" | "skills" | null
+  const [editMode, setEditMode] = useState(null); // "education" | "experience" | "hardSkills" | "softSkills" | null
 
   const [education, setEducation] = useState(
     `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqua ex ea commodo consequat.`
@@ -35,7 +35,7 @@ export default function ProfileAboutMe() {
     experience: "",
   });
 
-  const [skills, setSkills] = useState([
+  const [hardSkills, setHardSkills] = useState([
     "Python",
     "JavaScript",
     "Firebase",
@@ -46,9 +46,22 @@ export default function ProfileAboutMe() {
     "PostgreSQL",
   ]);
 
-  const [editingSkillIndex, setEditingSkillIndex] = useState(null);
-  const [tempSkill, setTempSkill] = useState("");
-  const [newSkill, setNewSkill] = useState("");
+  const [softSkills, setSoftSkills] = useState([
+    "Communication",
+    "Leadership",
+    "Problem Solving",
+    "Team Collaboration",
+    "Time Management",
+    "Adaptability",
+  ]);
+
+  const [editingHardSkillIndex, setEditingHardSkillIndex] = useState(null);
+  const [tempHardSkill, setTempHardSkill] = useState("");
+  const [newHardSkill, setNewHardSkill] = useState("");
+
+  const [editingSoftSkillIndex, setEditingSoftSkillIndex] = useState(null);
+  const [tempSoftSkill, setTempSoftSkill] = useState("");
+  const [newSoftSkill, setNewSoftSkill] = useState("");
 
   const handleResumeUpload = () => {
     fileInputRef.current?.click();
@@ -85,22 +98,42 @@ export default function ProfileAboutMe() {
     setExperiences(experiences.filter((_, i) => i !== index));
   };
 
-  const handleSaveSkill = (index) => {
-    const updatedSkills = [...skills];
-    updatedSkills[index] = tempSkill;
-    setSkills(updatedSkills);
-    setEditingSkillIndex(null);
+  // Hard Skills handlers
+  const handleSaveHardSkill = (index) => {
+    const updatedSkills = [...hardSkills];
+    updatedSkills[index] = tempHardSkill;
+    setHardSkills(updatedSkills);
+    setEditingHardSkillIndex(null);
   };
 
-  const handleAddSkill = () => {
-    if (newSkill.trim()) {
-      setSkills([...skills, newSkill]);
-      setNewSkill("");
+  const handleAddHardSkill = () => {
+    if (newHardSkill.trim()) {
+      setHardSkills([...hardSkills, newHardSkill]);
+      setNewHardSkill("");
     }
   };
 
-  const handleDeleteSkill = (index) => {
-    setSkills(skills.filter((_, i) => i !== index));
+  const handleDeleteHardSkill = (index) => {
+    setHardSkills(hardSkills.filter((_, i) => i !== index));
+  };
+
+  // Soft Skills handlers
+  const handleSaveSoftSkill = (index) => {
+    const updatedSkills = [...softSkills];
+    updatedSkills[index] = tempSoftSkill;
+    setSoftSkills(updatedSkills);
+    setEditingSoftSkillIndex(null);
+  };
+
+  const handleAddSoftSkill = () => {
+    if (newSoftSkill.trim()) {
+      setSoftSkills([...softSkills, newSoftSkill]);
+      setNewSoftSkill("");
+    }
+  };
+
+  const handleDeleteSoftSkill = (index) => {
+    setSoftSkills(softSkills.filter((_, i) => i !== index));
   };
 
   return (
@@ -177,12 +210,12 @@ export default function ProfileAboutMe() {
               {editMode === "experience" ? (
                 "✓"
               ) : (
-                <span class="material-symbols-outlined">border_color</span>
+                <span className="material-symbols-outlined">border_color</span>
               )}
             </span>
             {editMode === "experience" ? "Done" : "Edit"}
           </button>
-        </div>{" "}
+        </div>
         <div className="aboutme-experience-list">
           {experiences.map((exp, idx) => (
             <div
@@ -246,11 +279,15 @@ export default function ProfileAboutMe() {
                   <div className="aboutme-experience-info">
                     <h3 className="aboutme-experience-title">{exp.title}</h3>
                     <p className="aboutme-experience-location">
-                      <span class="material-symbols-outlined">pin_drop</span>
+                      <span className="material-symbols-outlined">
+                        pin_drop
+                      </span>
                       {exp.location}
                     </p>
                     <p className="aboutme-experience-duration">
-                      <span class="material-symbols-outlined">schedule</span>{" "}
+                      <span className="material-symbols-outlined">
+                        schedule
+                      </span>{" "}
                       {exp.experience}
                     </p>
                   </div>
@@ -285,69 +322,71 @@ export default function ProfileAboutMe() {
         </div>
       </section>
 
-      {/* ---------------------- About Me Skills Section ---------------------- */}
-      <section className="aboutMeSkills-section">
-        <div className="aboutMeSkills-header">
-          <h2 className="aboutMeSkills-title">Skills</h2>
+      {/* ---------------------- About Me Hard Skills Section ---------------------- */}
+      <section className="aboutMeHardSkills-section">
+        <div className="aboutMeHardSkills-header">
+          <h2 className="aboutMeHardSkills-title">Hard Skills</h2>
           <button
-            onClick={() => setEditMode(editMode === "skills" ? null : "skills")}
-            className={`aboutMeSkills-edit-btn ${
-              editMode === "skills" ? "edit-active" : ""
+            onClick={() =>
+              setEditMode(editMode === "hardSkills" ? null : "hardSkills")
+            }
+            className={`aboutMeHardSkills-edit-btn ${
+              editMode === "hardSkills" ? "edit-active" : ""
             }`}
           >
             <span>
-              {editMode === "skills" ? (
+              {editMode === "hardSkills" ? (
                 "✓"
               ) : (
-                <span class="material-symbols-outlined">border_color</span>
+                <span className="material-symbols-outlined">border_color</span>
               )}
             </span>
-            {editMode === "skills" ? "Done" : "Edit"}
+            {editMode === "hardSkills" ? "Done" : "Edit"}
           </button>
         </div>
 
-        <div className="aboutMeSkills-list">
-          {skills.map((skill, idx) => (
-            <div key={idx} className="aboutMeSkills-item">
-              {editMode === "skills" && editingSkillIndex === idx ? (
+        <div className="aboutMeHardSkills-list">
+          {hardSkills.map((skill, idx) => (
+            <div key={idx} className="aboutMeHardSkills-item">
+              {editMode === "hardSkills" && editingHardSkillIndex === idx ? (
                 <div className="flex gap-2">
                   <input
                     type="text"
-                    value={tempSkill}
-                    onChange={(e) => setTempSkill(e.target.value)}
-                    className="aboutMeSkills-edit-input"
+                    value={tempHardSkill}
+                    onChange={(e) => setTempHardSkill(e.target.value)}
+                    className="aboutMeHardSkills-edit-input"
                   />
                   <button
-                    onClick={() => handleSaveSkill(idx)}
-                    className="aboutMeSkills-btn-save"
+                    onClick={() => handleSaveHardSkill(idx)}
+                    className="aboutMeHardSkills-btn-save"
                   >
                     Save
                   </button>
                   <button
-                    onClick={() => setEditingSkillIndex(null)}
-                    className="aboutMeSkills-btn-cancel"
+                    onClick={() => setEditingHardSkillIndex(null)}
+                    className="aboutMeHardSkills-btn-cancel"
                   >
                     X
                   </button>
                 </div>
               ) : (
                 <button
-                  className="aboutMeSkills-btn"
+                  className="aboutMeHardSkills-btn"
                   onClick={() => {
-                    if (editMode === "skills") {
-                      setEditingSkillIndex(idx);
-                      setTempSkill(skill);
+                    if (editMode === "hardSkills") {
+                      setEditingHardSkillIndex(idx);
+                      setTempHardSkill(skill);
                     }
                   }}
                 >
                   {skill}
-                  {editMode === "skills" && (
+                  {editMode === "hardSkills" && (
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleDeleteSkill(idx);
+                        handleDeleteHardSkill(idx);
                       }}
-                      className="aboutMeSkills-btn-delete"
+                      className="aboutMeHardSkills-btn-delete"
                     >
                       ✕
                     </button>
@@ -358,17 +397,115 @@ export default function ProfileAboutMe() {
           ))}
         </div>
 
-        {editMode === "skills" && (
-          <div className="skills-input-add-section">
+        {editMode === "hardSkills" && (
+          <div className="hardSkills-input-add-section">
             <input
               type="text"
-              value={newSkill}
-              onChange={(e) => setNewSkill(e.target.value)}
-              onKeyPress={(e) => e.key === "Enter" && handleAddSkill()}
+              value={newHardSkill}
+              onChange={(e) => setNewHardSkill(e.target.value)}
+              onKeyPress={(e) => e.key === "Enter" && handleAddHardSkill()}
               placeholder="Add new skill..."
-              className="aboutMeSkills-edit-input flex-1"
+              className="aboutMeHardSkills-edit-input flex-1"
             />
-            <button onClick={handleAddSkill} className="aboutMeSkills-btn-add">
+            <button
+              onClick={handleAddHardSkill}
+              className="aboutMeHardSkills-btn-add"
+            >
+              Add
+            </button>
+          </div>
+        )}
+      </section>
+
+      {/* ---------------------- About Me Soft Skills Section ---------------------- */}
+      <section className="aboutMeSoftSkills-section">
+        <div className="aboutMeSoftSkills-header">
+          <h2 className="aboutMeSoftSkills-title">Soft Skills</h2>
+          <button
+            onClick={() =>
+              setEditMode(editMode === "softSkills" ? null : "softSkills")
+            }
+            className={`aboutMeSoftSkills-edit-btn ${
+              editMode === "softSkills" ? "edit-active" : ""
+            }`}
+          >
+            <span>
+              {editMode === "softSkills" ? (
+                "✓"
+              ) : (
+                <span className="material-symbols-outlined">border_color</span>
+              )}
+            </span>
+            {editMode === "softSkills" ? "Done" : "Edit"}
+          </button>
+        </div>
+
+        <div className="aboutMeSoftSkills-list">
+          {softSkills.map((skill, idx) => (
+            <div key={idx} className="aboutMeSoftSkills-item">
+              {editMode === "softSkills" && editingSoftSkillIndex === idx ? (
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={tempSoftSkill}
+                    onChange={(e) => setTempSoftSkill(e.target.value)}
+                    className="aboutMeSoftSkills-edit-input"
+                  />
+                  <button
+                    onClick={() => handleSaveSoftSkill(idx)}
+                    className="aboutMeSoftSkills-btn-save"
+                  >
+                    Save
+                  </button>
+                  <button
+                    onClick={() => setEditingSoftSkillIndex(null)}
+                    className="aboutMeSoftSkills-btn-cancel"
+                  >
+                    X
+                  </button>
+                </div>
+              ) : (
+                <button
+                  className="aboutMeSoftSkills-btn"
+                  onClick={() => {
+                    if (editMode === "softSkills") {
+                      setEditingSoftSkillIndex(idx);
+                      setTempSoftSkill(skill);
+                    }
+                  }}
+                >
+                  {skill}
+                  {editMode === "softSkills" && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDeleteSoftSkill(idx);
+                      }}
+                      className="aboutMeSoftSkills-btn-delete"
+                    >
+                      ✕
+                    </button>
+                  )}
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {editMode === "softSkills" && (
+          <div className="softSkills-input-add-section">
+            <input
+              type="text"
+              value={newSoftSkill}
+              onChange={(e) => setNewSoftSkill(e.target.value)}
+              onKeyPress={(e) => e.key === "Enter" && handleAddSoftSkill()}
+              placeholder="Add new skill..."
+              className="aboutMeSoftSkills-edit-input flex-1"
+            />
+            <button
+              onClick={handleAddSoftSkill}
+              className="aboutMeSoftSkills-btn-add"
+            >
               Add
             </button>
           </div>

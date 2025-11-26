@@ -233,25 +233,25 @@
 }
 
 /* ============================================================
-   ABOUT ME - SKILLS SECTION
+   ABOUT ME - HARD SKILLS SECTION
    ============================================================ */
 
 /* Section wrapper */
-.aboutMeSkills-section {
+.aboutMeHardSkills-section {
   border-bottom: 1px solid #e5e7eb;
   padding: 1.5rem 0;
   margin-bottom: 1.5rem;
 }
 
 /* Header */
-.aboutMeSkills-header {
+.aboutMeHardSkills-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.aboutMeSkills-title {
+.aboutMeHardSkills-title {
   font-family: "Poppins", sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
@@ -259,7 +259,7 @@
 }
 
 /* Edit button */
-.aboutMeSkills-edit-btn {
+.aboutMeHardSkills-edit-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -273,28 +273,28 @@
   transition: opacity 0.2s, background-color 0.2s, color 0.2s;
 }
 
-.aboutMeSkills-edit-btn:hover {
+.aboutMeHardSkills-edit-btn:hover {
   opacity: 0.8;
 }
 
-.aboutMeSkills-edit-btn.edit-active {
+.aboutMeHardSkills-edit-btn.edit-active {
   background-color: rgb(255, 137, 34);
   color: white;
 }
 
 /* Skills list */
-.aboutMeSkills-list {
+.aboutMeHardSkills-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 /* Individual skill */
-.aboutMeSkills-item {
+.aboutMeHardSkills-item {
   position: relative;
 }
 
-.aboutMeSkills-btn {
+.aboutMeHardSkills-btn {
   padding: 0.5rem 1rem;
   border-radius: 9999px;
   font-family: "Poppins", sans-serif;
@@ -306,19 +306,19 @@
   cursor: default;
 }
 
-.aboutMeSkills-btn:hover {
+.aboutMeHardSkills-btn:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Save and cancel buttons */
-.aboutMeSkills-btn-save {
+.aboutMeHardSkills-btn-save {
   background-color: rgb(255, 137, 34);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 0.375rem;
 }
 
-.aboutMeSkills-btn-cancel {
+.aboutMeHardSkills-btn-cancel {
   background-color: rgb(220, 53, 69);
   color: white;
   padding: 0.25rem 0.75rem;
@@ -326,14 +326,14 @@
 }
 
 /* Input and add section */
-.skills-input-add-section {
+.hardSkills-input-add-section {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
-.aboutMeSkills-edit-input {
+.aboutMeHardSkills-edit-input {
   width: 50%;
   padding: 0.5rem 0.75rem;
   border-radius: 0.375rem;
@@ -344,7 +344,7 @@
   transition: width 0.3s ease;
 }
 
-.aboutMeSkills-btn-add {
+.aboutMeHardSkills-btn-add {
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   font-size: var(--font-size-content-subtext);
@@ -355,13 +355,13 @@
   cursor: pointer;
 }
 
-.aboutMeSkills-btn-add:hover {
+.aboutMeHardSkills-btn-add:hover {
   opacity: 0.8;
   transform: scale(1.05);
 }
 
 /* Delete button */
-.aboutMeSkills-btn-delete {
+.aboutMeHardSkills-btn-delete {
   position: absolute;
   top: -6px;
   right: -6px;
@@ -380,7 +380,159 @@
   cursor: pointer;
 }
 
-.aboutMeSkills-item:hover .aboutMeSkills-btn-delete {
+.aboutMeHardSkills-item:hover .aboutMeHardSkills-btn-delete {
+  opacity: 1;
+}
+
+/* ============================================================
+   ABOUT ME - SOFT SKILLS SECTION
+   ============================================================ */
+
+/* Section wrapper */
+.aboutMeSoftSkills-section {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1.5rem 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Header */
+.aboutMeSoftSkills-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.aboutMeSoftSkills-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgb(12, 12, 12);
+}
+
+/* Edit button */
+.aboutMeSoftSkills-edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: #f3f3f3;
+  color: rgb(12, 12, 12);
+  transition: opacity 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.aboutMeSoftSkills-edit-btn:hover {
+  opacity: 0.8;
+}
+
+.aboutMeSoftSkills-edit-btn.edit-active {
+  background-color: rgb(255, 137, 34);
+  color: white;
+}
+
+/* Skills list */
+.aboutMeSoftSkills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Individual skill */
+.aboutMeSoftSkills-item {
+  position: relative;
+}
+
+.aboutMeSoftSkills-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: rgb(255, 137, 34);
+  color: white;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.aboutMeSoftSkills-btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Save and cancel buttons */
+.aboutMeSoftSkills-btn-save {
+  background-color: rgb(255, 137, 34);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.aboutMeSoftSkills-btn-cancel {
+  background-color: rgb(220, 53, 69);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+/* Input and add section */
+.softSkills-input-add-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.aboutMeSoftSkills-edit-input {
+  width: 50%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid rgb(255, 137, 34);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  outline: none;
+  transition: width 0.3s ease;
+}
+
+.aboutMeSoftSkills-btn-add {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: var(--font-size-content-subtext);
+  background-color: #f3f3f3;
+  color: rgb(255, 137, 34);
+  border: 1px dashed rgb(255, 137, 34);
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.aboutMeSoftSkills-btn-add:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/* Delete button */
+.aboutMeSoftSkills-btn-delete {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background-color: rgb(220, 53, 69);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.aboutMeSoftSkills-item:hover .aboutMeSoftSkills-btn-delete {
   opacity: 1;
 }
 
@@ -406,11 +558,13 @@
     font-size: 0.875rem;
   }
 
-  .aboutMeSkills-edit-input {
+  .aboutMeHardSkills-edit-input,
+  .aboutMeSoftSkills-edit-input {
     width: 60%;
   }
 
-  .aboutMeSkills-btn-add {
+  .aboutMeHardSkills-btn-add,
+  .aboutMeSoftSkills-btn-add {
     padding: 0.45rem 0.9rem;
     font-size: 0.825rem;
   }
@@ -426,7 +580,8 @@
   }
 
   .aboutme-section,
-  .aboutMeSkills-section {
+  .aboutMeHardSkills-section,
+  .aboutMeSoftSkills-section {
     padding: 1rem 0;
   }
 
@@ -450,16 +605,19 @@
     padding: 0.25rem 0.5rem;
   }
 
-  .skills-input-add-section {
+  .hardSkills-input-add-section,
+  .softSkills-input-add-section {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .aboutMeSkills-edit-input {
+  .aboutMeHardSkills-edit-input,
+  .aboutMeSoftSkills-edit-input {
     width: 100%;
   }
 
-  .aboutMeSkills-btn-add {
+  .aboutMeHardSkills-btn-add,
+  .aboutMeSoftSkills-btn-add {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
     width: 100%;
@@ -488,12 +646,14 @@
     padding: 0.2rem 0.4rem;
   }
 
-  .aboutMeSkills-edit-input {
+  .aboutMeHardSkills-edit-input,
+  .aboutMeSoftSkills-edit-input {
     width: 100%;
     padding: 0.4rem 0.6rem;
   }
 
-  .aboutMeSkills-btn-add {
+  .aboutMeHardSkills-btn-add,
+  .aboutMeSoftSkills-btn-add {
     padding: 0.35rem 0.7rem;
     font-size: 0.75rem;
   }
