@@ -9,6 +9,7 @@ export default function ProfileRecentAct() {
       company: "Tech Corp",
       address: "San Francisco, CA",
       tags: ["Remote", "PA-5k"],
+      status: "In Progress",
     },
     {
       id: "2",
@@ -16,6 +17,7 @@ export default function ProfileRecentAct() {
       company: "Startup Inc",
       address: "New York, NY",
       tags: ["Remote", "PA-5k"],
+      status: "In Progress",
     },
     {
       id: "3",
@@ -23,6 +25,7 @@ export default function ProfileRecentAct() {
       company: "Company Name",
       address: "City, Country",
       tags: ["Remote", "PA-5k"],
+      status: "In Progress",
     },
     {
       id: "4",
@@ -30,6 +33,7 @@ export default function ProfileRecentAct() {
       company: "Company Name",
       address: "City, Country",
       tags: ["Remote", "PA-5k"],
+      status: "Interview",
     },
     {
       id: "5",
@@ -37,6 +41,7 @@ export default function ProfileRecentAct() {
       company: "Company Name",
       address: "City, Country",
       tags: ["Remote", "PA-5k"],
+      status: "In Progress",
     },
     {
       id: "6",
@@ -44,6 +49,7 @@ export default function ProfileRecentAct() {
       company: "Company Name",
       address: "City, Country",
       tags: ["Remote", "PA-5k"],
+      status: "Accepted",
     },
     {
       id: "7",
@@ -51,6 +57,7 @@ export default function ProfileRecentAct() {
       company: "Company Name",
       address: "City, Country",
       tags: ["Remote", "PA-5k"],
+      status: "In Progress",
     },
     {
       id: "8",
@@ -58,6 +65,7 @@ export default function ProfileRecentAct() {
       company: "Company Name",
       address: "City, Country",
       tags: ["Remote", "PA-5k"],
+      status: "Interview",
     },
   ]);
 
@@ -74,7 +82,34 @@ export default function ProfileRecentAct() {
     [jobs, searchQuery]
   );
 
+  const statusCounts = useMemo(() => {
+    return {
+      "In Progress": jobs.filter((job) => job.status === "In Progress").length,
+      Interview: jobs.filter((job) => job.status === "Interview").length,
+      Accepted: jobs.filter((job) => job.status === "Accepted").length,
+    };
+  }, [jobs]);
+
   const handleDelete = (id) => setJobs(jobs.filter((job) => job.id !== id));
+
+  const handleStatusChange = (id, newStatus) => {
+    setJobs(
+      jobs.map((job) => (job.id === id ? { ...job, status: newStatus } : job))
+    );
+  };
+
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "In Progress":
+        return "#3498db";
+      case "Interview":
+        return "#f39c12";
+      case "Accepted":
+        return "#27ae60";
+      default:
+        return "#95a5a6";
+    }
+  };
 
   return (
     <div className="Profile-RecentAct">
@@ -84,6 +119,31 @@ export default function ProfileRecentAct() {
           <span className="material-symbols-outlined">book</span>
         </span>
         <h2>Bookmarks: {filteredJobs.length}</h2>
+      </div>
+
+      {/* Status Counts */}
+      <div className="Profile-RecentAct-statusCounts">
+        <div
+          className="Profile-RecentAct-statusCount"
+          style={{ borderLeftColor: getStatusColor("In Progress") }}
+        >
+          <span className="status-label">In Progress</span>
+          <span className="status-number">{statusCounts["In Progress"]}</span>
+        </div>
+        <div
+          className="Profile-RecentAct-statusCount"
+          style={{ borderLeftColor: getStatusColor("Interview") }}
+        >
+          <span className="status-label">Interview</span>
+          <span className="status-number">{statusCounts.Interview}</span>
+        </div>
+        <div
+          className="Profile-RecentAct-statusCount"
+          style={{ borderLeftColor: getStatusColor("Accepted") }}
+        >
+          <span className="status-label">Accepted</span>
+          <span className="status-number">{statusCounts.Accepted}</span>
+        </div>
       </div>
 
       {/* Search Input */}
@@ -111,6 +171,21 @@ export default function ProfileRecentAct() {
                       {tag}
                     </span>
                   ))}
+                </div>
+                {/* Status Selector */}
+                <div className="Profile-RecentAct-statusSelector">
+                  <label htmlFor={`status-${job.id}`}>Status:</label>
+                  <select
+                    id={`status-${job.id}`}
+                    value={job.status}
+                    onChange={(e) => handleStatusChange(job.id, e.target.value)}
+                    className="Profile-RecentAct-statusDropdown"
+                    style={{ borderColor: getStatusColor(job.status) }}
+                  >
+                    <option value="In Progress">In Progress</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Accepted">Accepted</option>
+                  </select>
                 </div>
               </div>
             </div>

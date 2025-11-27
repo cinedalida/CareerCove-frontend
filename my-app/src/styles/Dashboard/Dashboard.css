@@ -27,57 +27,9 @@
   font-weight: var(--font-weight-semibold);
 }
 
-.section-subtext {
+.dashboard-section-subtext {
   margin-top: 0.35rem;
   color: var(--color-text-secondary);
-}
-
-/* ============================================================
-   STATS GRID
-   ============================================================ */
-
-.stats-grid {
-  max-width: 1200px;
-  margin: 0 auto 1.5rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-/* Card base */
-.stat-card {
-  border-radius: 12px;
-  padding: 1.2rem;
-  color: white;
-  box-shadow: 0 6px 18px rgba(12, 12, 12, 0.06);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(12, 12, 12, 0.09);
-}
-
-.stat-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.6rem;
-}
-
-.stat-icon {
-  font-size: 1.5rem;
-  opacity: 0.95;
-}
-
-.stat-value {
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.95;
 }
 
 /* ============================================================
@@ -102,25 +54,31 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-height: 400px;
+  height: auto;
 }
 
 .viz-title {
   font-size: var(--font-size-h2);
   font-weight: var(--font-weight-medium);
+  flex-shrink: 0;
 }
 
 .viz-body {
   flex: 1;
-  min-height: 120px;
+  min-height: 300px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 
 /* allow charts to shrink responsively */
 .chart-svg {
   width: 100%;
-  height: 220px;
+  height: auto;
+  min-height: 250px;
 }
 
 /* Label text in charts */
@@ -150,7 +108,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
-  padding: 0 0.25rem;
+  padding: 0.5rem 0.25rem;
+  min-height: 250px;
 }
 
 .hbar-row {
@@ -190,15 +149,18 @@
 /* Donut chart + legend */
 .donut-wrap {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 1rem 0;
+  min-height: 250px;
 }
 
 .donut-chart {
-  width: 170px;
-  height: 170px;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
 }
 
 .donut-legend {
@@ -233,105 +195,115 @@
 }
 
 /* ============================================================
-   EMPLOYABILITY SECTION
+   TOP 20 LISTS SECTION
    ============================================================ */
 
-.employability-grid {
+.top-lists-grid {
   max-width: 1200px;
-  margin: 1.5rem auto;
+  margin: 2rem auto 4rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.overall-card {
-  background-color: var(--color-brand-primary);
-  color: var(--color-neutral-100);
-  border-radius: 12px;
-  padding: 1.25rem;
-  text-align: center;
-}
-
-.overall-title {
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-}
-
-.overall-value {
-  font-size: 2.25rem;
-  font-weight: 700;
-}
-
-.progress-bar {
-  background-color: rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  height: 8px;
-  margin-top: 1rem;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background-color: white;
-  border-radius: 999px;
-  transition: width 0.5s ease;
-}
-
-.employ-card {
-  border-radius: 12px;
-  padding: 1rem;
-  color: white;
-  font-weight: 600;
-  text-align: center;
-}
-
-.tech-skill {
-  background-color: rgb(52, 152, 219);
-}
-.experience {
-  background-color: rgb(46, 204, 113);
-}
-.education {
-  background-color: rgb(155, 89, 182);
-}
-
-/* ============================================================
-   INFO GRID
-   ============================================================ */
-
-.info-grid {
-  max-width: 1200px;
-  margin: 1.5rem auto 4rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.info-card {
-  background-color: var(--color-bg-primary);
-  border-radius: 12px;
-  padding: 1rem;
+.top-list-card {
+  background: var(--color-bg-primary);
   border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
   box-shadow: 0 6px 18px rgba(12, 12, 12, 0.04);
+  transition: all 0.3s ease;
 }
 
-.info-card h3 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+.top-list-card:hover {
+  box-shadow: 0 8px 24px rgba(12, 12, 12, 0.08);
 }
 
-.info-card ul li {
-  font-size: 0.95rem;
-  margin-bottom: 0.45rem;
+.list-title {
+  font-family: var(--font-body);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.list-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.625rem;
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
 }
 
-/* Utilities */
-.bold {
-  font-weight: 700;
+/* Custom scrollbar for list */
+.list-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list-content::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+  border-radius: 10px;
+}
+
+.list-content::-webkit-scrollbar-thumb {
+  background: var(--color-brand-primary);
+  border-radius: 10px;
+}
+
+.list-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.list-item:hover {
+  background: var(--color-brand-primary);
+  transform: translateX(4px);
+}
+
+.list-item:hover .list-rank,
+.list-item:hover .list-name,
+.list-item:hover .list-percentage {
+  color: var(--color-neutral-100);
+}
+
+.list-rank {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-primary);
+  min-width: 35px;
+  transition: color 0.2s ease;
+}
+
+.list-item:hover .list-rank {
+  color: var(--color-neutral-100);
+}
+
+.list-name {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  transition: color 0.2s ease;
+}
+
+.list-percentage {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  min-width: 50px;
+  text-align: right;
+  transition: color 0.2s ease;
 }
 
 /* ============================================================
@@ -342,19 +314,149 @@
   .viz-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .viz-card {
+    min-height: 380px;
+  }
+
+  .viz-body {
+    min-height: 280px;
+  }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .viz-grid {
     grid-template-columns: 1fr;
   }
+
+  .viz-card {
+    min-height: 420px;
+  }
+
+  .viz-body {
+    min-height: 320px;
+  }
+
+  .top-lists-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
   .donut-wrap {
     justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
   }
+
+  .donut-chart {
+    width: 200px;
+    height: 200px;
+  }
+
   .chart-svg {
-    height: 180px;
+    min-height: 220px;
   }
+
   .dashboard-container {
     padding: 4.5rem 1rem 2rem;
+  }
+
+  .list-item {
+    gap: 0.75rem;
+    padding: 0.625rem 0.875rem;
+  }
+
+  .list-rank {
+    font-size: 0.8125rem;
+    min-width: 30px;
+  }
+
+  .list-name {
+    font-size: 0.875rem;
+  }
+
+  .list-percentage {
+    font-size: 0.8125rem;
+    min-width: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 4rem 0.75rem 2rem;
+  }
+
+  .viz-card {
+    min-height: 400px;
+    padding: 0.875rem;
+  }
+
+  .viz-body {
+    min-height: 300px;
+  }
+
+  .horizontal-bars {
+    gap: 0.75rem;
+    padding: 0.25rem;
+  }
+
+  .hbar-row {
+    grid-template-columns: 1fr 1.5fr auto;
+    gap: 0.4rem;
+  }
+
+  .hbar-title {
+    font-size: 0.8125rem;
+  }
+
+  .hbar-value {
+    font-size: 0.8125rem;
+    min-width: 35px;
+  }
+
+  .donut-chart {
+    width: 160px;
+    height: 160px;
+  }
+
+  .legend-text {
+    font-size: 0.8125rem;
+    min-width: 100px;
+  }
+
+  .legend-value {
+    font-size: 0.8125rem;
+  }
+
+  .top-list-card {
+    padding: 1rem;
+  }
+
+  .list-title {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .list-content {
+    max-height: 500px;
+  }
+
+  .list-item {
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .list-rank {
+    font-size: 0.75rem;
+    min-width: 28px;
+  }
+
+  .list-name {
+    font-size: 0.8125rem;
+  }
+
+  .list-percentage {
+    font-size: 0.75rem;
+    min-width: 40px;
   }
 }

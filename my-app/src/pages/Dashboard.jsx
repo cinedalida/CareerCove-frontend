@@ -114,36 +114,6 @@ function DonutChart({ data, size = 180, inner = 56 }) {
    Dashboard Page
    ----------------------- */
 export default function DashboardPage() {
-  {
-    /* ======= REMOVE THIS PART IF NOT NEEDED ======= */
-  }
-  const stats = [
-    {
-      label: "Profile Completeness",
-      value: "85%",
-      icon: "✓",
-      color: "rgb(255,137,34)",
-    },
-    {
-      label: "Applications Sent",
-      value: "24",
-      icon: "📤",
-      color: "rgb(52,152,219)",
-    },
-    {
-      label: "Interview Scheduled",
-      value: "5",
-      icon: "📅",
-      color: "rgb(46,204,113)",
-    },
-    {
-      label: "Offers Received",
-      value: "2",
-      icon: "🎉",
-      color: "rgb(155,89,182)",
-    },
-  ];
-
   const topJobs = [
     { job: "Software Engineer", count: 1543 },
     { job: "Frontend Developer", count: 1120 },
@@ -168,12 +138,53 @@ export default function DashboardPage() {
     { skill: "Critical Thinking", demand: 75, color: "rgb(155,89,182)" },
   ];
 
-  const employabilityScore = {
-    overall: 78,
-    technicalSkills: 85,
-    experience: 72,
-    education: 90,
-  };
+  // Top 20 Jobs List
+  const top20Jobs = [
+    { rank: 1, job: "Software Engineer", percentage: 15.4 },
+    { rank: 2, job: "Frontend Developer", percentage: 12.3 },
+    { rank: 3, job: "Backend Developer", percentage: 10.8 },
+    { rank: 4, job: "Data Analyst", percentage: 9.2 },
+    { rank: 5, job: "QA Engineer", percentage: 8.5 },
+    { rank: 6, job: "Full Stack Developer", percentage: 7.9 },
+    { rank: 7, job: "DevOps Engineer", percentage: 6.8 },
+    { rank: 8, job: "Mobile Developer", percentage: 5.7 },
+    { rank: 9, job: "UI/UX Designer", percentage: 5.2 },
+    { rank: 10, job: "Data Scientist", percentage: 4.6 },
+    { rank: 11, job: "Machine Learning Engineer", percentage: 4.1 },
+    { rank: 12, job: "Cloud Engineer", percentage: 3.8 },
+    { rank: 13, job: "Security Analyst", percentage: 3.5 },
+    { rank: 14, job: "Product Manager", percentage: 3.2 },
+    { rank: 15, job: "Business Analyst", percentage: 2.9 },
+    { rank: 16, job: "Database Administrator", percentage: 2.6 },
+    { rank: 17, job: "Systems Analyst", percentage: 2.3 },
+    { rank: 18, job: "Network Engineer", percentage: 2.0 },
+    { rank: 19, job: "AI Engineer", percentage: 1.8 },
+    { rank: 20, job: "Blockchain Developer", percentage: 1.5 },
+  ];
+
+  // Top 20 Skills List
+  const top20Skills = [
+    { rank: 1, skill: "JavaScript", percentage: 18.5 },
+    { rank: 2, skill: "Python", percentage: 16.2 },
+    { rank: 3, skill: "React", percentage: 14.8 },
+    { rank: 4, skill: "SQL", percentage: 13.4 },
+    { rank: 5, skill: "Node.js", percentage: 12.1 },
+    { rank: 6, skill: "Git", percentage: 11.3 },
+    { rank: 7, skill: "Java", percentage: 10.7 },
+    { rank: 8, skill: "TypeScript", percentage: 9.8 },
+    { rank: 9, skill: "AWS", percentage: 9.2 },
+    { rank: 10, skill: "Docker", percentage: 8.5 },
+    { rank: 11, skill: "MongoDB", percentage: 7.9 },
+    { rank: 12, skill: "REST APIs", percentage: 7.3 },
+    { rank: 13, skill: "GraphQL", percentage: 6.8 },
+    { rank: 14, skill: "Kubernetes", percentage: 6.2 },
+    { rank: 15, skill: "Angular", percentage: 5.7 },
+    { rank: 16, skill: "Vue.js", percentage: 5.1 },
+    { rank: 17, skill: "C++", percentage: 4.6 },
+    { rank: 18, skill: "Jenkins", percentage: 4.2 },
+    { rank: 19, skill: "TensorFlow", percentage: 3.8 },
+    { rank: 20, skill: "Redis", percentage: 3.4 },
+  ];
 
   return (
     <>
@@ -183,31 +194,10 @@ export default function DashboardPage() {
         <div className="dashboard-header">
           <div>
             <h1 className="section-title">Analytics Dashboard</h1>
-            <p className="section-subtext">
-              Insights on in-demand jobs and skills in computing — visualized
-              for quick decisions.
+            <p className="dashboard-section-subtext">
+              Insights on in-demand jobs and skills in the Computing Industry.
             </p>
           </div>
-        </div>
-
-        {/* Stats */}
-        <div className="stats-grid">
-          {stats.map((stat, idx) => (
-            <motion.div
-              key={idx}
-              className="stat-card"
-              style={{ backgroundColor: stat.color }}
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.06 }}
-            >
-              <div className="stat-content">
-                <span className="stat-icon">{stat.icon}</span>
-                <span className="stat-value">{stat.value}</span>
-              </div>
-              <p className="stat-label">{stat.label}</p>
-            </motion.div>
-          ))}
         </div>
 
         {/* Visualization Row */}
@@ -287,60 +277,34 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* ====================== REMOVE THIS PART IF NOT NEEDED ====================== */}
-
-        {/* Employability & Skills */}
-        <div className="employability-grid">
-          <div className="overall-card">
-            <p className="overall-title">Overall Employability</p>
-            <div className="overall-value">{employabilityScore.overall}%</div>
-            <div className="progress-bar" aria-hidden>
-              <div
-                className="progress-fill"
-                style={{ width: `${employabilityScore.overall}%` }}
-              />
+        {/* Top 20 Lists */}
+        <div className="top-lists-grid">
+          {/* Top 20 Jobs */}
+          <div className="top-list-card">
+            <h3 className="list-title">Top 20 In-Demand Jobs</h3>
+            <div className="list-content">
+              {top20Jobs.map((item) => (
+                <div key={item.rank} className="list-item">
+                  <span className="list-rank">#{item.rank}</span>
+                  <span className="list-name">{item.job}</span>
+                  <span className="list-percentage">{item.percentage}%</span>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="employ-card tech-skill">
-            <p>Technical Skills</p>
-            <span>{employabilityScore.technicalSkills}%</span>
-          </div>
-          <div className="employ-card experience">
-            <p>Experience</p>
-            <span>{employabilityScore.experience}%</span>
-          </div>
-          <div className="employ-card education">
-            <p>Education</p>
-            <span>{employabilityScore.education}%</span>
-          </div>
-        </div>
 
-        {/* Info Row */}
-        <div className="info-grid">
-          <div className="info-card">
-            <h3>Next Steps</h3>
-            <ul>
-              <li>✓ Complete your profile (15% remaining)</li>
-              <li>✓ Add 2 more projects to portfolio</li>
-              <li>✓ Improve Python skills to 85%+</li>
-            </ul>
-          </div>
-          <div className="info-card">
-            <h3>Quick Stats</h3>
-            <ul>
-              <li>
-                <span>Profile Views</span>
-                <span className="bold">248</span>
-              </li>
-              <li>
-                <span>Applications Pending</span>
-                <span className="bold">8</span>
-              </li>
-              <li>
-                <span>Skill Endorsements</span>
-                <span className="bold">42</span>
-              </li>
-            </ul>
+          {/* Top 20 Skills */}
+          <div className="top-list-card">
+            <h3 className="list-title">Top 20 Required Skills</h3>
+            <div className="list-content">
+              {top20Skills.map((item) => (
+                <div key={item.rank} className="list-item">
+                  <span className="list-rank">#{item.rank}</span>
+                  <span className="list-name">{item.skill}</span>
+                  <span className="list-percentage">{item.percentage}%</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

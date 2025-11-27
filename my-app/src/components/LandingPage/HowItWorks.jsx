@@ -103,7 +103,7 @@ const HowItWorks = () => {
                     {step.title}
                   </h3>
                   <p
-                    className={`section-subtext ${step.textColor} scalable-text`}
+                    className={`howItWorkssection-subtext ${step.textColor} scalable-text`}
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     {step.text}

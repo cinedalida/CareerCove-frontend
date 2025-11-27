@@ -3,6 +3,8 @@ import "../../styles/LandingPage/Testimonials.css";
 import { cn } from "../../lib/utils";
 import React, { useEffect, useState } from "react";
 
+// infinite moving cards component
+
 export const InfiniteMovingCards = ({
   items,
   direction = "left",
@@ -63,34 +65,34 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl  overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 overflow-hidden testimonials-scroller",
         className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4 testimonials-list",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item, idx) => (
           <li
-            className="bg-[var(--color-neutral-100)] relative w-[350px] min-h-[400px] shrink-0 rounded-2xl border border-[var(--color-border)] shadow-sm cards_spaces"
+            className="testimonial-card bg-[var(--color-neutral-100)] relative shrink-0 rounded-2xl border border-[var(--color-border)] shadow-sm cards_spaces"
             key={item.name}
           >
             <blockquote style={{ fontFamily: "var(--font-body)" }}>
-              <div className="text-7xl text-slate-200 dark:text-slate-700 mb-2 leading-none">
+              <div className="testimonial-quote-mark text-slate-200 dark:text-slate-700 mb-2 leading-none">
                 "
               </div>
 
               <span
-                className="relative z-20 text-[var(--color-text-secondary)]"
+                className="testimonial-quote relative z-20 text-[var(--color-text-secondary)]"
                 style={{
-                  fontSize: "var(--font-size-content-subtext)", // 1rem
-                  fontWeight: "var(--font-weight-light)", // 300
-                  lineHeight: "var(--line-height-normal)", // 1.5
+                  fontSize: "var(--font-size-content-subtext)",
+                  fontWeight: "var(--font-weight-light)",
+                  lineHeight: "var(--line-height-normal)",
                 }}
               >
                 {item.quote}
@@ -99,25 +101,25 @@ export const InfiniteMovingCards = ({
               <div className="border-t border-[var(--color-border)] card_divider"></div>
 
               {/* Author Block */}
-              <div className="relative z-20 flex flex-row items-center gap-4">
+              <div className="relative z-20 flex flex-row items-center gap-4 testimonial-author">
                 {item.avatar && (
                   <img
                     src={item.avatar || "/placeholder.svg"}
                     alt={item.name}
-                    className="w-12 h-12 rounded-full border-2 border-slate-300 dark:border-slate-600 object-cover"
+                    className="testimonial-avatar rounded-full border-2 border-slate-300 dark:border-slate-600 object-cover"
                   />
                 )}
 
                 <span className="flex flex-col gap-1">
                   <span
-                    className="text-sm text-[var(--color-text-primary)]"
+                    className="testimonial-name text-[var(--color-text-primary)]"
                     style={{ fontWeight: "var(--font-weight-semibold)" }}
                   >
                     {item.name}
                   </span>
 
                   <span
-                    className="text-sm"
+                    className="testimonial-title"
                     style={{
                       fontWeight: "var(--font-weight-regular)",
                       color: "var(--color-brand-primary)",

@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { InfiniteMovingCards } from "../Animations/infinite-moving-cards";
 import "../../styles/LandingPage/Testimonials.css";
 
+// infinite moving cards demo component
+
 export default function InfiniteMovingCardsDemo() {
   return (
     <motion.section

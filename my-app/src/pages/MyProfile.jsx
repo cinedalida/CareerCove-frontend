@@ -6,7 +6,6 @@ import ProfileNavigation from "../components/MyProfile/Profile-Navigation";
 import ProfileAboutMe from "../components/MyProfile/Profile-AboutMe";
 import ProfileDocuments from "../components/MyProfile/Profile-Documents";
 import ProfileRecentActivity from "../components/MyProfile/Profile-RecentAct";
-import ProfileJobsTracker from "../components/MyProfile/Profile-JobsTracker";
 import "../styles/MyProfile/MyProfile.css";
 
 const Profile = () => {
@@ -30,7 +29,6 @@ const Profile = () => {
                 {activeTab === "about" && <ProfileAboutMe />}
                 {activeTab === "documents" && <ProfileDocuments />}
                 {activeTab === "activity" && <ProfileRecentActivity />}
-                {activeTab === "tracker" && <ProfileJobsTracker />}
               </div>
             </main>
           </div>

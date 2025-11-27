@@ -1,5 +1,50 @@
+/* ============================================================
+   TESTIMONIALS SECTION
+   ============================================================ */
+
 .testimonials_title {
   margin-top: 5rem;
+}
+
+/* ============================================================
+   INFINITE MOVING CARDS - SCROLLER
+   ============================================================ */
+
+.testimonials-scroller {
+  max-width: 90rem; /* 1440px */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+
+.testimonials-list {
+  gap: 1rem;
+}
+
+/* ============================================================
+   TESTIMONIAL CARDS
+   ============================================================ */
+
+.testimonial-card {
+  width: 350px;
+  min-height: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(12, 12, 12, 0.08);
 }
 
 .cards_spaces {
@@ -8,4 +53,229 @@
 
 .card_divider {
   margin: 1rem 0;
+}
+
+/* Quote Mark */
+.testimonial-quote-mark {
+  font-size: 4.5rem; /* 72px */
+  line-height: 1;
+}
+
+/* Quote Text */
+.testimonial-quote {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Author Section */
+.testimonial-author {
+  gap: 1rem;
+}
+
+.testimonial-avatar {
+  width: 3rem; /* 48px */
+  height: 3rem; /* 48px */
+}
+
+.testimonial-name {
+  font-size: 0.875rem; /* 14px */
+}
+
+.testimonial-title {
+  font-size: 0.875rem; /* 14px */
+}
+
+/* ============================================================
+   RESPONSIVE - TABLET (max-width: 1024px)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .testimonials_title {
+    margin-top: 4rem;
+  }
+
+  .testimonial-card {
+    width: 320px;
+    min-height: 380px;
+  }
+
+  .cards_spaces {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .testimonial-quote-mark {
+    font-size: 4rem; /* 64px */
+  }
+
+  .testimonial-avatar {
+    width: 2.75rem; /* 44px */
+    height: 2.75rem; /* 44px */
+  }
+}
+
+/* ============================================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .testimonials_title {
+    margin-top: 3rem;
+  }
+
+  .testimonials-scroller {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10%,
+      white 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10%,
+      white 90%,
+      transparent
+    );
+  }
+
+  .testimonials-list {
+    gap: 0.875rem;
+  }
+
+  .testimonial-card {
+    width: 280px;
+    min-height: 360px;
+  }
+
+  .cards_spaces {
+    padding: 1.125rem 1.125rem;
+  }
+
+  .card_divider {
+    margin: 0.875rem 0;
+  }
+
+  .testimonial-quote-mark {
+    font-size: 3.5rem; /* 56px */
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonial-quote {
+    font-size: 0.9375rem !important; /* 15px */
+    line-height: 1.4 !important;
+  }
+
+  .testimonial-avatar {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+  }
+
+  .testimonial-name {
+    font-size: 0.8125rem; /* 13px */
+  }
+
+  .testimonial-title {
+    font-size: 0.8125rem; /* 13px */
+  }
+}
+
+/* ============================================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .testimonials_title {
+    margin-top: 2.5rem;
+  }
+
+  .testimonials-scroller {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 5%,
+      white 95%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 5%,
+      white 95%,
+      transparent
+    );
+  }
+
+  .testimonials-list {
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+  }
+
+  .testimonial-card {
+    width: 260px;
+    min-height: 340px;
+  }
+
+  .cards_spaces {
+    padding: 1rem 1rem;
+  }
+
+  .card_divider {
+    margin: 0.75rem 0;
+  }
+
+  .testimonial-quote-mark {
+    font-size: 3rem; /* 48px */
+    margin-bottom: 0.375rem;
+  }
+
+  .testimonial-quote {
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.35 !important;
+  }
+
+  .testimonial-author {
+    gap: 0.75rem;
+  }
+
+  .testimonial-avatar {
+    width: 2.25rem; /* 36px */
+    height: 2.25rem; /* 36px */
+  }
+
+  .testimonial-name {
+    font-size: 0.75rem; /* 12px */
+  }
+
+  .testimonial-title {
+    font-size: 0.75rem; /* 12px */
+  }
+}
+
+/* ============================================================
+   RESPONSIVE - EXTRA SMALL MOBILE (max-width: 360px)
+   ============================================================ */
+
+@media (max-width: 360px) {
+  .testimonial-card {
+    width: 240px;
+    min-height: 320px;
+  }
+
+  .cards_spaces {
+    padding: 0.875rem 0.875rem;
+  }
+
+  .testimonial-quote-mark {
+    font-size: 2.5rem; /* 40px */
+  }
+
+  .testimonial-quote {
+    font-size: 0.8125rem !important; /* 13px */
+  }
+
+  .testimonial-avatar {
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
+  }
 }
