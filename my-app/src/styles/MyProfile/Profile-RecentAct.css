@@ -20,9 +20,30 @@
 
 .Profile-RecentAct-header {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+}
+
+.Profile-RecentAct-header > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Profile-RecentAct-header h2 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  line-height: 1;
+}
+
+.Profile-RecentAct-header .material-symbols-outlined {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
 }
 
 .Profile-RecentAct-header p {
@@ -382,9 +403,10 @@
   }
 
   .Profile-RecentAct-header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     gap: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .Profile-RecentAct-header h2 {
