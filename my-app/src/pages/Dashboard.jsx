@@ -247,7 +247,7 @@ export default function DashboardPage() {
           {/* Top Technical Skills */}
           <div className="viz-card">
             <div className="viz-header">
-              <h3 className="viz-title">Top Technical Skills</h3>
+              <h3 className="viz-title">Your Top Technical Skills</h3>
             </div>
             <div className="viz-body">
               <HorizontalBars data={topTechSkills} />
