@@ -201,8 +201,16 @@
   color: rgb(12, 12, 12);
 }
 
+.aboutme-experience-company {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgb(12, 12, 12);
+}
+
 .aboutme-experience-location,
-.aboutme-experience-duration {
+.aboutme-experience-duration,
+.aboutme-experience-company {
   font-family: "Poppins", sans-serif;
   font-size: 0.875rem;
   color: #6b7280;

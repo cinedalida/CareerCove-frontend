@@ -13,17 +13,20 @@ export default function ProfileAboutMe() {
   const [experiences, setExperiences] = useState([
     {
       title: "Senior Frontend Developer",
-      location: "Location: New York",
+      company: "Tech Corp Inc.",
+      location: "New York",
       experience: "3 years",
     },
     {
       title: "Junior Frontend Developer",
-      location: "Location: San Francisco",
+      company: "Digital Solutions Ltd.",
+      location: "San Francisco",
       experience: "2 years",
     },
     {
       title: "Intern Developer",
-      location: "Location: Boston",
+      company: "StartUp Hub",
+      location: "Boston",
       experience: "6 months",
     },
   ]);
@@ -31,6 +34,7 @@ export default function ProfileAboutMe() {
   const [editingExpIndex, setEditingExpIndex] = useState(null);
   const [tempExp, setTempExp] = useState({
     title: "",
+    company: "",
     location: "",
     experience: "",
   });
@@ -232,7 +236,16 @@ export default function ProfileAboutMe() {
                     onChange={(e) =>
                       setTempExp({ ...tempExp, title: e.target.value })
                     }
-                    placeholder="Job Title"
+                    placeholder="Job Title / Position"
+                    className="aboutme-experience-input"
+                  />
+                  <input
+                    type="text"
+                    value={tempExp.company}
+                    onChange={(e) =>
+                      setTempExp({ ...tempExp, company: e.target.value })
+                    }
+                    placeholder="Company Name"
                     className="aboutme-experience-input"
                   />
                   <input
@@ -241,7 +254,7 @@ export default function ProfileAboutMe() {
                     onChange={(e) =>
                       setTempExp({ ...tempExp, location: e.target.value })
                     }
-                    placeholder="Location"
+                    placeholder="Location (e.g., New York)"
                     className="aboutme-experience-input"
                   />
                   <input
@@ -278,6 +291,12 @@ export default function ProfileAboutMe() {
                 <div className="aboutme-experience-display">
                   <div className="aboutme-experience-info">
                     <h3 className="aboutme-experience-title">{exp.title}</h3>
+                    <p className="aboutme-experience-company">
+                      <span className="material-symbols-outlined">
+                        business
+                      </span>
+                      {exp.company}
+                    </p>
                     <p className="aboutme-experience-location">
                       <span className="material-symbols-outlined">
                         pin_drop
@@ -309,10 +328,15 @@ export default function ProfileAboutMe() {
               onClick={() => {
                 setExperiences([
                   ...experiences,
-                  { title: "", location: "", experience: "" },
+                  { title: "", company: "", location: "", experience: "" },
                 ]);
                 setEditingExpIndex(experiences.length);
-                setTempExp({ title: "", location: "", experience: "" });
+                setTempExp({
+                  title: "",
+                  company: "",
+                  location: "",
+                  experience: "",
+                });
               }}
               className="aboutme-btn-add"
             >
