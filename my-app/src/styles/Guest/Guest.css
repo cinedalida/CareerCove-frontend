@@ -82,6 +82,7 @@
   font-weight: 500;
   color: var(--color-neutral-600);
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .search-with-filter {
