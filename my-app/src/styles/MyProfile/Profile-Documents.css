@@ -107,6 +107,7 @@
   align-items: center;
   gap: 1rem;
   transition: all 0.2s ease;
+  overflow: hidden; /* Ensure content stays inside */
 }
 
 .doc-card:hover {
@@ -145,7 +146,7 @@
 /* Info */
 .doc-info {
   flex: 1;
-  min-width: 0; /* Text truncation */
+  min-width: 0; /* Important for Text truncation */
 }
 
 .doc-name {
@@ -175,6 +176,7 @@
 .doc-actions {
   display: flex;
   gap: 0.25rem;
+  flex-shrink: 0;
 }
 
 .doc-action-btn {
@@ -231,18 +233,49 @@
   opacity: 0.6;
 }
 
-@media (max-width: 640px) {
-  .docs-grid {
-    grid-template-columns: 1fr;
-  }
+/* ============================================================
+   RESPONSIVE STYLES
+   ============================================================ */
 
+@media (max-width: 640px) {
+  /* Stack Header Elements */
   .profile-docs-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 1rem;
   }
 
   .docs-upload-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  /* Single Column Grid */
+  .docs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Compact Card Layout */
+  .doc-card {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .doc-icon-wrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .doc-icon-wrapper .material-symbols-outlined {
+    font-size: 1.5rem;
+  }
+
+  .doc-name {
+    font-size: 0.9rem;
+  }
+
+  .doc-meta {
+    font-size: 0.75rem;
+    flex-wrap: wrap; /* Allow wrapping if metadata is long */
   }
 }
