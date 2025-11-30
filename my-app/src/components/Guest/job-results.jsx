@@ -1,15 +1,22 @@
+// React
 import { useState } from "react";
+
+// Styles
+import "../../styles/Guest/Guest.css";
+
+// UI Components
 import { Button } from "../UI/Guest-UI/button";
 import { Card } from "../UI/Guest-UI/card";
 import { Input } from "../UI/Guest-UI/input";
-import "../../styles/Guest/Guest.css";
 import FilterPanel from "../UI/FilterPanel";
+
+// Icons
 import {
   ChevronLeft,
   ChevronRight,
   SlidersHorizontal,
   X,
-  Search, // Re-imported
+  Search,
 } from "lucide-react";
 
 export function JobResults({ jobs }) {

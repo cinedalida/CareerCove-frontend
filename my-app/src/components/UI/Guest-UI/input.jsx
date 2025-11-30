@@ -1,3 +1,7 @@
+// React
+import React from "react";
+
+// Styles
 import "../../../styles/Guest/Guest.css";
 
 export function Input({ className = "", ...props }) {

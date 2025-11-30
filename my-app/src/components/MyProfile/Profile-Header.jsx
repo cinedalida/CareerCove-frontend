@@ -1,4 +1,7 @@
+// React
 import { useRef, useState } from "react";
+
+// Styles
 import "../../styles/MyProfile/Profile-Header.css";
 
 export default function ProfileHeader() {

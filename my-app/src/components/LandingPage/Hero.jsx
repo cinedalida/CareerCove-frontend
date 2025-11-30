@@ -1,12 +1,20 @@
+// React
 import React from "react";
-import Button from "../UI/buttons";
-import F0 from "../../assets/F0.png";
+import { Link } from "react-router-dom";
+
+// Styles
 import "../../styles/LandingPage/Hero.css";
+
+// UI Components
+import Button from "../UI/buttons";
+
+// Assets
+import F0 from "../../assets/F0.png";
+
+// Animations
 import SplitText from "../Animations/SplitText";
 import TextType from "../Animations/TextType";
-
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (

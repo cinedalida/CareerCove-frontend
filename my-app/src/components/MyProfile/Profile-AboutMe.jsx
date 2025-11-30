@@ -1,5 +1,8 @@
-import "../../styles/MyProfile/Profile-AboutMe.css";
+// React
 import { useState, useRef } from "react";
+
+// Styles
+import "../../styles/MyProfile/Profile-AboutMe.css";
 
 export default function ProfileAboutMe() {
   const fileInputRef = useRef(null);

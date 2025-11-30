@@ -1,6 +1,11 @@
-import { SlidersHorizontal, X } from "lucide-react";
-import "../../styles/UIGeneral/FilterPanel.css";
+// React
 import { useEffect } from "react";
+
+// Styles
+import "../../styles/UIGeneral/FilterPanel.css";
+
+// Icons
+import { SlidersHorizontal, X } from "lucide-react";
 
 function FilterPanel({ filters, setFilters, onClearFilters, isOpen, onClose }) {
   const handleFilterChange = (field, value) => {

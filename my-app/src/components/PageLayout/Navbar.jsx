@@ -1,9 +1,18 @@
+// React
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import Button from "../UI/buttons";
-import CCLogo from "../../assets/CCLogo.png";
+
+// Styles
 import "../../styles/PageLayout/Navbar.css";
+
+// UI Components
+import Button from "../UI/buttons";
+
+// Assets
+import CCLogo from "../../assets/CCLogo.png";
+
+// Animations
+import { motion } from "framer-motion";
 
 const Navbar = ({ variant = "GuestNav" }) => {
   const [hidden, setHidden] = useState(false);

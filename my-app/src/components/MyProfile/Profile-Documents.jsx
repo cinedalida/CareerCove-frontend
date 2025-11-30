@@ -1,4 +1,7 @@
+// React
 import { useState } from "react";
+
+// Styles
 import "../../styles/MyProfile/Profile-Documents.css";
 
 export default function ProfileDocuments() {

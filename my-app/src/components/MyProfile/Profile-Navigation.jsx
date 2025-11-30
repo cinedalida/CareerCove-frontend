@@ -1,4 +1,7 @@
+// React
 import { useState } from "react";
+
+// Styles
 import "../../styles/MyProfile/Profile-Navigation.css";
 
 export default function ProfileNavigation({ activeTab, setActiveTab }) {

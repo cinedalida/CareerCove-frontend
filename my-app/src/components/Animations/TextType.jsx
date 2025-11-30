@@ -1,3 +1,4 @@
+// React
 import {
   useEffect,
   useRef,
@@ -6,6 +7,8 @@ import {
   useMemo,
   useCallback,
 } from "react";
+
+// GSAP
 import { gsap } from "gsap";
 
 const TextType = ({

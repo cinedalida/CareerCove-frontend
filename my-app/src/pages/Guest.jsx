@@ -1,10 +1,17 @@
-import { useState } from "react";
+// React & Libraries
+import React, { useState } from "react"; // Fixed: Combined imports
 import { motion } from "framer-motion";
+
+// Components
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
-import SplitText from "../components/Animations/SplitText";
 import { ChatInput } from "../components/Guest/chat-input";
 import { JobResults } from "../components/Guest/job-results";
+
+// Animations
+import SplitText from "../components/Animations/SplitText";
+
+// Styles
 import "../styles/Guest/Guest.css";
 
 const Guest = () => {

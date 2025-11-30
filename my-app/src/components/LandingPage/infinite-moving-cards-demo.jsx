@@ -1,6 +1,9 @@
-import { motion } from "framer-motion";
-import { InfiniteMovingCards } from "../Animations/infinite-moving-cards";
+// Styles
 import "../../styles/LandingPage/Testimonials.css";
+
+// Animations
+import { InfiniteMovingCards } from "../Animations/infinite-moving-cards";
+import { motion } from "framer-motion";
 
 // infinite moving cards demo component
 

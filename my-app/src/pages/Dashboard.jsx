@@ -1,7 +1,14 @@
+// React
 import React from "react";
+
+// Styles
+import "../styles/Dashboard/Dashboard.css";
+
+// UI Components
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
-import "../styles/Dashboard/Dashboard.css";
+
+// Charts
 import {
   BarChart,
   Bar,
@@ -12,7 +19,9 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
-import { Lightbulb } from "lucide-react"; // Icon for simple insights
+
+// Icons
+import { Lightbulb } from "lucide-react";
 
 /* -----------------------
    Horizontal bars for skills

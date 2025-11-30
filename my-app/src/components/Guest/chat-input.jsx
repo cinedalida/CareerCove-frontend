@@ -1,7 +1,14 @@
+// React
 import { useState } from "react";
+
+// Styles
+import "../../styles/Guest/chat-input.css";
+
+// UI Components
 import { Textarea } from "../UI/Guest-UI/textarea";
 import { Button } from "../UI/Guest-UI/button";
-import "../../styles/Guest/chat-input.css";
+
+// Icons
 import { Send } from "lucide-react";
 
 export function ChatInput({ onSubmit }) {

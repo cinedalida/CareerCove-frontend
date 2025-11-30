@@ -1,4 +1,13 @@
+// React
 import { useState } from "react";
+
+// Styles
+import "../../styles/JobsPage/JobsPage.css";
+
+// UI Components
+import FilterPanel from "../UI/FilterPanel";
+
+// Icons
 import {
   ChevronLeft,
   ChevronRight,
@@ -7,8 +16,6 @@ import {
   X,
   Search,
 } from "lucide-react";
-import "../../styles/JobsPage/JobsPage.css";
-import FilterPanel from "../UI/FilterPanel";
 
 // ========== FEATURED JOBS DATA ==========
 const FEATURED_JOBS = [

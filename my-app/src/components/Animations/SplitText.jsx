@@ -1,7 +1,12 @@
+// React
 import { useRef, useEffect, useState } from "react";
+
+// GSAP Core & Plugins
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText as GSAPSplitText } from "gsap/SplitText";
+
+// GSAP React Hook
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, GSAPSplitText, useGSAP);

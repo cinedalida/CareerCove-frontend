@@ -1,5 +1,10 @@
+// React
 import React from "react";
+
+// Styles
 import "../../styles/PageLayout/Footer.css";
+
+// Icons
 import { Github, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {

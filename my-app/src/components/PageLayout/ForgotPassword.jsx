@@ -1,5 +1,10 @@
+// React
 import React, { useState } from "react";
+
+// Styles
 import "../../styles/PageLayout/ForgotPassword.css";
+
+// UI Components
 import { Input } from "../UI/input";
 import { Button } from "../UI/button";
 

@@ -1,4 +1,7 @@
+// React
 import { useState, useMemo } from "react";
+
+// Styles
 import "../../styles/MyProfile/Profile-RecentAct.css";
 
 export default function ProfileRecentAct() {

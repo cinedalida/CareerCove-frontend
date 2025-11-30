@@ -1,4 +1,6 @@
+// React
 import React, { useState, useRef } from "react";
+// Styles
 import "../../../styles/JobsPage/PDFUploadModal.css";
 
 export default function PDFUploadModal({ isOpen, onClose }) {

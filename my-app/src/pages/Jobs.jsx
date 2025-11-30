@@ -1,13 +1,20 @@
+// React
 import { useState } from "react";
-import { motion } from "framer-motion";
+
+// Styles
+import "../styles/JobsPage/JobsPage.css";
+
+// UI Components
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
-import SplitText from "../components/Animations/SplitText";
 import { ChatInput } from "../components/User/UserChatInput";
 import { JobResults } from "../components/User/UserJobResults";
-import "../styles/JobsPage/JobsPage.css";
 import AnimatedButton from "../components/UI/Jobs-UI/AnimatedButton";
 import PDFUploadModal from "../components/UI/Jobs-UI/PDFUploadModal";
+
+// Animations
+import SplitText from "../components/Animations/SplitText";
+import { motion } from "framer-motion";
 
 const Jobs = () => {
   const [stage, setStage] = useState("input");

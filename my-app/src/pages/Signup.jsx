@@ -1,11 +1,18 @@
+// React
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+// Styles
+import "../styles/PageLayout/Signup.css";
+
+// UI Components
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
-import S1 from "../assets/S1.png";
-import { Link } from "react-router-dom";
-import { useState } from "react";
 import { Button } from "../components/UI/button";
 import { Input } from "../components/UI/input";
-import "../styles/PageLayout/Signup.css";
+
+// Assets
+import S1 from "../assets/S1.png";
 
 export default function SignupForm({ onToggle }) {
   const [fullName, setFullName] = useState("");
