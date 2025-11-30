@@ -1,7 +1,15 @@
+// React
 import { useState } from "react";
+
+// Styles
+import "../../styles/Guest/chat-input.css";
+
+// UI Components
 import { Textarea } from "../UI/Guest-UI/textarea";
 import { Button } from "../UI/Guest-UI/button";
-import "../../styles/Guest/chat-input.css";
+
+// Icons
+import { Send } from "lucide-react";
 
 export function ChatInput({ onSubmit }) {
   const [input, setInput] = useState("");
@@ -17,7 +25,8 @@ export function ChatInput({ onSubmit }) {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter" && e.ctrlKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
       handleSubmit();
     }
   };
@@ -31,9 +40,10 @@ export function ChatInput({ onSubmit }) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            rows={3}
+            rows={1}
             placeholder="Type your education, experiences and skills..."
             disabled={isSubmitting}
+            className="chat-textarea"
           />
 
           {/* Send Button */}
@@ -43,16 +53,19 @@ export function ChatInput({ onSubmit }) {
             className="chat-send-button"
             aria-label="Send message"
           >
-            <span className="material-symbols-outlined text-white">send</span>
+            <Send size={20} color="white" />
           </Button>
         </div>
 
         {/* Helper Text */}
         <div className="chat-helper-text">
-          Press <kbd className="chat-kbd">Ctrl</kbd> +{" "}
-          <kbd className="chat-kbd">Enter</kbd> or click the button to submit
+          <p>
+            Press <kbd className="chat-kbd">Enter</kbd> to submit
+          </p>
         </div>
       </div>
     </div>
   );
 }
+
+export default ChatInput;

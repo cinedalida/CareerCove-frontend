@@ -1,3 +1,4 @@
+// Styles
 import "../../../styles/JobsPage/AnimatedButton.css";
 
 export default function AnimatedButton({ onClick }) {

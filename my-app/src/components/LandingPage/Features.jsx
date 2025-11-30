@@ -1,7 +1,12 @@
+// Styles
 import "../../styles/LandingPage/Features.css";
+
+// Assets
 import F1 from "../../assets/F1.png";
 import F2 from "../../assets/F2.png";
 import F3 from "../../assets/F3.png";
+
+// Animations
 import { motion } from "framer-motion";
 
 const Features = () => {

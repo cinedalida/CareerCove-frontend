@@ -1,7 +1,11 @@
+// React & Third-party
+import React, { useEffect, useState } from "react";
+
+// Styles
 import "../../styles/LandingPage/Testimonials.css";
 
+// Utils
 import { cn } from "../../lib/utils";
-import React, { useEffect, useState } from "react";
 
 // infinite moving cards component
 

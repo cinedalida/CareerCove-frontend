@@ -1,12 +1,19 @@
+// React
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+// Styles
+import "../styles/PageLayout/Login.css";
+
+// UI Components
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
-import L1 from "../assets/L1.png";
-import { Link } from "react-router-dom";
-import { useState } from "react";
 import { Button } from "../components/UI/button";
 import { Input } from "../components/UI/input";
-import "../styles/PageLayout/Login.css";
 import ForgotPassword from "../components/PageLayout/ForgotPassword";
+
+// Assets
+import L1 from "../assets/L1.png";
 
 export default function LoginForm({ onToggle }) {
   const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);

@@ -1,12 +1,17 @@
+// React
+import { useState } from "react";
+
+// Styles
+import "../styles/MyProfile/MyProfile.css";
+
+// UI Components
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
-import { useState } from "react";
 import ProfileHeader from "../components/MyProfile/Profile-Header";
 import ProfileNavigation from "../components/MyProfile/Profile-Navigation";
 import ProfileAboutMe from "../components/MyProfile/Profile-AboutMe";
 import ProfileDocuments from "../components/MyProfile/Profile-Documents";
 import ProfileRecentActivity from "../components/MyProfile/Profile-RecentAct";
-import "../styles/MyProfile/MyProfile.css";
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState("about");

@@ -1,8 +1,14 @@
+// React
 import React from "react";
-import { motion } from "framer-motion";
+
+// Styles
+import "../styles/Dashboard/Dashboard.css";
+
+// UI Components
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
-import "../styles/Dashboard/Dashboard.css";
+
+// Charts
 import {
   BarChart,
   Bar,
@@ -13,6 +19,9 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
+
+// Icons
+import { Lightbulb } from "lucide-react";
 
 /* -----------------------
    Horizontal bars for skills
@@ -304,6 +313,46 @@ export default function DashboardPage() {
                   <span className="list-percentage">{item.percentage}%</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ========== NEW: SIMPLE INSIGHTS SECTION ========== */}
+        <div className="dashboard-insights-container">
+          <div className="insights-header">
+            <div className="insights-icon">
+              <Lightbulb size={24} color="white" />
+            </div>
+            <h2 className="section-title">Dashboard Insights</h2>
+          </div>
+
+          <p className="dashboard-section-subtext">
+            A quick summary of the current market trends.
+          </p>
+
+          <div className="insights-card">
+            <div className="insight-item">
+              <h4>Dominant Role</h4>
+              <p>
+                <strong>Software Engineer</strong> is currently the most
+                in-demand role, accounting for roughly <strong>15.4%</strong> of
+                the market share.
+              </p>
+            </div>
+            <div className="insight-item">
+              <h4>Top Skill</h4>
+              <p>
+                <strong>JavaScript</strong> remains the leading technical skill
+                required across <strong>18.5%</strong> of job postings.
+              </p>
+            </div>
+            <div className="insight-item">
+              <h4>Soft Skills</h4>
+              <p>
+                Employers prioritize <strong>Communication (90%)</strong> and{" "}
+                <strong>Problem-Solving (85%)</strong> above all other
+                interpersonal traits.
+              </p>
             </div>
           </div>
         </div>

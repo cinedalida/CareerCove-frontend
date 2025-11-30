@@ -1,5 +1,3 @@
-import React from "react";
-
 // Reusable Button Components [LANDING PAGE]
 const Button = ({
   children,

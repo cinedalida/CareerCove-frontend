@@ -1,6 +1,9 @@
-import { motion } from "framer-motion";
-import { InfiniteMovingCards } from "../Animations/infinite-moving-cards";
+// Styles
 import "../../styles/LandingPage/Testimonials.css";
+
+// Animations
+import { InfiniteMovingCards } from "../Animations/infinite-moving-cards";
+import { motion } from "framer-motion";
 
 // infinite moving cards demo component
 
@@ -8,6 +11,7 @@ export default function InfiniteMovingCardsDemo() {
   return (
     <motion.section
       id="feedbacks"
+      className="relative flex flex-col items-center justify-center overflow-hidden py-10 md:py-20"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
@@ -15,20 +19,20 @@ export default function InfiniteMovingCardsDemo() {
     >
       {/* Title */}
       <motion.div
-        className="flex flex-col items-center justify-center testimonials_title"
+        className="flex flex-col items-center justify-center testimonials_title relative z-10 px-4 mb-8 md:mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
         viewport={{ once: true }}
       >
         <h1
-          className="section-title text-[var(--color-text-primary)] font-[var(--font-weight-semibold)] text-center mb-4"
+          className="section-title text-[var(--color-text-primary)] font-[var(--font-weight-semibold)] text-center mb-2 md:mb-4"
           style={{ fontFamily: "var(--font-title)" }}
         >
           Feedback
         </h1>
         <motion.div
-          className="h-1 w-25 bg-[var(--color-brand-primary)] rounded"
+          className="h-1 w-16 md:w-25 bg-[var(--color-brand-primary)] rounded"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -36,9 +40,9 @@ export default function InfiniteMovingCardsDemo() {
         ></motion.div>
       </motion.div>
 
-      {/* Cards Section */}
+      {/* Cards Section - Height Adjusted for Mobile */}
       <motion.div
-        className="h-[40rem] flex flex-col antialiased items-center justify-center relative overflow-hidden "
+        className="h-[25rem] md:h-[30rem] lg:h-[40rem] flex flex-col antialiased items-center justify-center relative overflow-hidden w-full"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1.2 }}

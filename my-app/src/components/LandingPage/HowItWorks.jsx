@@ -1,11 +1,18 @@
+// React
 import React from "react";
-import ScrollStack, { ScrollStackItem } from "../Animations/ScrollStack.jsx";
+
+// Styles
 import "../../styles/LandingPage/HowItWorks.css";
+
+// Animations
+import ScrollStack, { ScrollStackItem } from "../Animations/ScrollStack.jsx";
+import { motion } from "framer-motion";
+
+// Assets
 import H1 from "../../assets/H1.png";
 import H2 from "../../assets/H2.png";
 import H3 from "../../assets/H3.png";
 import H4 from "../../assets/H4.png";
-import { motion } from "framer-motion";
 
 const HowItWorks = () => {
   const sectionVariants = {
