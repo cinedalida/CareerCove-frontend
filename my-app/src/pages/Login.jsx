@@ -6,8 +6,10 @@ import { useState } from "react";
 import { Button } from "../components/UI/button";
 import { Input } from "../components/UI/input";
 import "../styles/PageLayout/Login.css";
+import ForgotPassword from "../components/PageLayout/ForgotPassword";
 
 export default function LoginForm({ onToggle }) {
+  const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -182,15 +184,21 @@ export default function LoginForm({ onToggle }) {
                   }}
                 />
                 <span style={{ color: "var(--color-text-secondary)" }}>
-                  Remember me
+                  <p className="font-poppins"> Remember me</p>
                 </span>
               </label>
+              <ForgotPassword
+                isOpen={isForgotPasswordOpen}
+                onClose={() => setIsForgotPasswordOpen(false)}
+              />
               <button
                 type="button"
                 className="forgot-btn"
+                onClick={() => setIsForgotPasswordOpen(true)}
                 style={{
                   fontSize: "var(--font-size-content-subtext)",
                   fontWeight: "var(--font-weight-light)",
+                  color: "var(--color-brand-primary)",
                   border: "none",
                   background: "none",
                   cursor: "pointer",
