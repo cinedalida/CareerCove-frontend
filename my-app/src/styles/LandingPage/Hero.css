@@ -4,7 +4,7 @@
 
 #hero {
   padding: 10px;
-  margin-top: 15rem;
+  margin-top: 15rem; /* Desktop spacing */
 }
 
 .CC-section-subtext {
@@ -242,12 +242,47 @@
   }
 }
 
+/* ============================================================
+   MOBILE FIXES (Tablets and below)
+   ============================================================ */
+
 @media (max-width: 800px) {
   #hero {
-    padding: 10px;
-    margin-top: 2rem;
+    padding: 1.5rem;
+    /* Increased margin-top to clear the fixed navbar on mobile */
+    margin-top: 7rem;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
+
+  .hero-title {
+    /* Adjusted font size for better fit on mobile */
+    font-size: 2.75rem !important;
+    line-height: 1.1;
+  }
+
   .CC-section-subtext {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Extra small mobile adjustments */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.25rem !important;
+  }
+
+  #hero {
+    margin-top: 6rem;
+    padding: 1rem;
   }
 }

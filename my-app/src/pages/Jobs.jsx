@@ -105,11 +105,8 @@ const Jobs = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
+          {/* Only the button remains here */}
           <AnimatedButton onClick={() => setIsModalOpen(true)} />
-          <PDFUploadModal
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
-          />
         </motion.div>
       </section>
 
@@ -151,6 +148,13 @@ const Jobs = () => {
           )}
         </section>
       </motion.div>
+
+      {/* Moved Modal here to avoid stacking context issues */}
+      <PDFUploadModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+
       <Footer />
     </>
   );
