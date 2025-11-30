@@ -16,7 +16,7 @@ const Guest = () => {
     setUserInput(input);
     setStage("loading");
 
-    // Simulate API call — replace this with actual API later
+    // Simulate API call
     setTimeout(() => {
       const mockJobs = [
         {
@@ -71,10 +71,7 @@ const Guest = () => {
     <>
       <Navbar />
 
-      <section
-        className="CareerCove-Display flex flex-col items-center justify-center text-center px-6"
-        id="guest"
-      >
+      <section id="guest">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -98,11 +95,12 @@ const Guest = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        <section className="max-w-4xl chat-input-section">
+        {/* Use CSS class 'chat-jobs-wrapper' instead of inline styles */}
+        <section className="chat-jobs-wrapper">
           {stage === "input" && <ChatInput onSubmit={handleSubmit} />}
 
           {stage === "loading" && (
-            <div className="flex items-center justify-center min-h-[40vh]">
+            <div className="flex items-center justify-center min-h-[40vh] mt-10">
               <div className="text-center">
                 <div className="text-lg font-medium text-[var(--color-text-secondary)] mb-4">
                   Generating Job Suggestions...

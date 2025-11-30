@@ -1,5 +1,5 @@
 /* ============================================================
-   DASHBOARD - CareerCove-aligned (uses index.css vars & fonts)
+   DASHBOARD
    ============================================================ */
 
 .dashboard-container {
@@ -307,6 +307,76 @@
 }
 
 /* ============================================================
+   NEW: SIMPLE INSIGHTS SECTION
+   ============================================================ */
+
+.dashboard-insights-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--color-neutral-100);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.insights-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.insights-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand-primary);
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(255, 137, 34, 0.3);
+}
+
+.insights-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.insight-item {
+  background-color: var(--color-bg-secondary);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--color-brand-primary);
+  transition: transform 0.2s ease;
+}
+
+.insight-item:hover {
+  transform: translateY(-2px);
+}
+
+.insight-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.insight-item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.insight-item strong {
+  color: var(--color-brand-primary);
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
@@ -458,5 +528,13 @@
   .list-percentage {
     font-size: 0.75rem;
     min-width: 40px;
+  }
+
+  .dashboard-insights-container {
+    padding: 1.5rem;
+  }
+
+  .insight-item {
+    padding: 1rem;
   }
 }

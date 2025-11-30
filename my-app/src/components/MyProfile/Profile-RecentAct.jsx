@@ -98,16 +98,16 @@ export default function ProfileRecentAct() {
     );
   };
 
-  const getStatusColor = (status) => {
+  const getStatusIcon = (status) => {
     switch (status) {
       case "In Progress":
-        return "#3498db";
+        return "pending";
       case "Interview":
-        return "#f39c12";
+        return "groups";
       case "Accepted":
-        return "#27ae60";
+        return "check_circle";
       default:
-        return "#95a5a6";
+        return "help";
     }
   };
 
@@ -115,87 +115,95 @@ export default function ProfileRecentAct() {
     <div className="Profile-RecentAct">
       {/* Header */}
       <div className="Profile-RecentAct-header">
-        <span>
-          <span className="material-symbols-outlined">book</span>
+        <h2 className="recent-act-title">Application Tracker</h2>
+        <span className="recent-act-count">
+          {filteredJobs.length} {filteredJobs.length === 1 ? "Job" : "Jobs"}{" "}
+          Saved
         </span>
-        <h2>Bookmarks: {filteredJobs.length}</h2>
       </div>
 
-      {/* Status Counts */}
-      <div className="Profile-RecentAct-statusCounts">
-        <div
-          className="Profile-RecentAct-statusCount"
-          style={{ borderLeftColor: getStatusColor("In Progress") }}
-        >
-          <span className="status-label">In Progress</span>
-          <span className="status-number">{statusCounts["In Progress"]}</span>
-        </div>
-        <div
-          className="Profile-RecentAct-statusCount"
-          style={{ borderLeftColor: getStatusColor("Interview") }}
-        >
-          <span className="status-label">Interview</span>
-          <span className="status-number">{statusCounts.Interview}</span>
-        </div>
-        <div
-          className="Profile-RecentAct-statusCount"
-          style={{ borderLeftColor: getStatusColor("Accepted") }}
-        >
-          <span className="status-label">Accepted</span>
-          <span className="status-number">{statusCounts.Accepted}</span>
-        </div>
+      {/* Status Stats */}
+      <div className="Profile-RecentAct-stats">
+        {["In Progress", "Interview", "Accepted"].map((status) => (
+          <div
+            key={status}
+            className={`stat-card ${status.toLowerCase().replace(" ", "-")}`}
+          >
+            <div className="stat-icon-container">
+              <span className="material-symbols-outlined">
+                {getStatusIcon(status)}
+              </span>
+            </div>
+            <div className="stat-content">
+              <span className="stat-value">{statusCounts[status]}</span>
+              <span className="stat-label">{status}</span>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Search Input */}
-      <input
-        type="text"
-        placeholder="Search jobs..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className="Profile-RecentAct-search"
-      />
+      <div className="recent-act-search-wrapper">
+        <span className="material-symbols-outlined search-icon">search</span>
+        <input
+          type="text"
+          placeholder="Search saved jobs..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="recent-act-search-input"
+        />
+      </div>
 
       {/* Job Cards */}
       <div className="Profile-RecentAct-jobs">
         {filteredJobs.map((job) => (
-          <div key={job.id} className="Profile-RecentAct-jobCard">
-            <div className="Profile-RecentAct-jobContent">
-              <div className="Profile-RecentAct-jobAvatar" />
-              <div className="Profile-RecentAct-jobText">
+          <div key={job.id} className="recent-act-job-card">
+            <div className="job-card-top">
+              <div className="job-info-primary">
                 <h3>{job.title}</h3>
-                <p>{job.company}</p>
-                <p className="address">📍 {job.address}</p>
-                <div className="Profile-RecentAct-jobTags">
-                  {job.tags.map((tag, idx) => (
-                    <span key={idx} className="Profile-RecentAct-jobTag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                {/* Status Selector */}
-                <div className="Profile-RecentAct-statusSelector">
-                  <label htmlFor={`status-${job.id}`}>Status:</label>
+                <p className="job-company">{job.company}</p>
+              </div>
+              <div className="job-actions">
+                <div
+                  className={`status-selector ${job.status
+                    .toLowerCase()
+                    .replace(" ", "-")}`}
+                >
                   <select
-                    id={`status-${job.id}`}
                     value={job.status}
                     onChange={(e) => handleStatusChange(job.id, e.target.value)}
-                    className="Profile-RecentAct-statusDropdown"
-                    style={{ borderColor: getStatusColor(job.status) }}
                   >
                     <option value="In Progress">In Progress</option>
                     <option value="Interview">Interview</option>
                     <option value="Accepted">Accepted</option>
                   </select>
+                  <span className="material-symbols-outlined arrow">
+                    expand_more
+                  </span>
                 </div>
+                <button
+                  onClick={() => handleDelete(job.id)}
+                  className="delete-job-btn"
+                  title="Remove bookmark"
+                >
+                  <span className="material-symbols-outlined">delete</span>
+                </button>
               </div>
             </div>
-            <button
-              onClick={() => handleDelete(job.id)}
-              className="Profile-RecentAct-jobDeleteBtn"
-              title="Delete bookmark"
-            >
-              <span className="material-symbols-outlined">delete</span>
-            </button>
+
+            <div className="job-card-bottom">
+              <div className="job-location">
+                <span className="material-symbols-outlined">location_on</span>
+                {job.address}
+              </div>
+              <div className="job-tags">
+                {job.tags.map((tag, idx) => (
+                  <span key={idx} className="job-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -203,8 +211,13 @@ export default function ProfileRecentAct() {
       {/* Empty State */}
       {filteredJobs.length === 0 && (
         <div className="Profile-RecentAct-empty">
+          <span className="material-symbols-outlined empty-icon">
+            folder_open
+          </span>
           <p>
-            {searchQuery ? "No jobs match your search" : "No saved jobs yet"}
+            {searchQuery
+              ? "No jobs found matching your search."
+              : "No saved jobs yet. Start bookmarking jobs!"}
           </p>
         </div>
       )}

@@ -3,10 +3,9 @@ import { motion } from "framer-motion";
 import Navbar from "../components/PageLayout/Navbar";
 import Footer from "../components/PageLayout/Footer";
 import SplitText from "../components/Animations/SplitText";
-import TextType from "../components/Animations/TextType";
 import { ChatInput } from "../components/User/UserChatInput";
 import { JobResults } from "../components/User/UserJobResults";
-import "../styles/Guest/Guest.css";
+import "../styles/JobsPage/JobsPage.css";
 import AnimatedButton from "../components/UI/Jobs-UI/AnimatedButton";
 import PDFUploadModal from "../components/UI/Jobs-UI/PDFUploadModal";
 
@@ -20,8 +19,7 @@ const Jobs = () => {
     setUserInput(input);
     setStage("loading");
 
-    // Note: Guest View is identical to User View BUT is LIMITED (4-5 Jobs)
-    // Simulate API call — replace with actual API later
+    // Simulate API call
     setTimeout(() => {
       const mockJobs = [
         {
@@ -76,11 +74,8 @@ const Jobs = () => {
     <>
       <Navbar variant="UserNav" />
 
-      {/* CareerCove Title */}
-      <section
-        className="CareerCove-Display flex flex-col items-center justify-center text-center px-6"
-        id="jobs"
-      >
+      {/* Hero Section */}
+      <section id="jobs">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -110,6 +105,8 @@ const Jobs = () => {
           />
         </motion.div>
       </section>
+
+      {/* Main Content */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -119,7 +116,7 @@ const Jobs = () => {
           {stage === "input" && <ChatInput onSubmit={handleSubmit} />}
 
           {stage === "loading" && (
-            <div className="flex items-center justify-center min-h-[40vh]">
+            <div className="flex items-center justify-center min-h-[40vh] mt-10">
               <div className="text-center">
                 <div className="text-lg font-medium text-[var(--color-text-secondary)] mb-4">
                   Generating Job Suggestions...

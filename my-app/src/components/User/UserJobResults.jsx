@@ -3,15 +3,14 @@ import {
   ChevronLeft,
   ChevronRight,
   Bookmark,
-  Search,
   SlidersHorizontal,
   X,
+  Search,
 } from "lucide-react";
 import "../../styles/JobsPage/JobsPage.css";
 import FilterPanel from "../UI/FilterPanel";
 
 // ========== FEATURED JOBS DATA ==========
-
 const FEATURED_JOBS = [
   {
     id: 101,
@@ -166,15 +165,15 @@ function JobCard({ job, isSaved, onSaveToggle }) {
 
       <div className="job-details">
         <p>
-          <span className="label">📍</span>
+          <span className="material-symbols-outlined">location_on</span>
           <span>{job.location}</span>
         </p>
         <p>
-          <span className="label">💰</span>
+          <span className="material-symbols-outlined">payments</span>
           <span>{job.salary}</span>
         </p>
         <p>
-          <span className="label">🏠</span>
+          <span className="material-symbols-outlined">work</span>
           <span>{job.workSetup}</span>
         </p>
       </div>
@@ -212,32 +211,21 @@ export function JobResults() {
 
   // Apply filters
   const filteredJobs = FEATURED_JOBS.filter((job) => {
-    // Work Setup Filter
-    if (filters.workSetup && job.workSetup !== filters.workSetup) {
+    if (filters.workSetup && job.workSetup !== filters.workSetup) return false;
+    if (filters.salaryMin && job.salaryMax < parseInt(filters.salaryMin))
       return false;
-    }
+    if (filters.salaryMax && job.salaryMin > parseInt(filters.salaryMax))
+      return false;
 
-    // Salary Range Filter
-    if (filters.salaryMin && job.salaryMax < parseInt(filters.salaryMin)) {
-      return false;
-    }
-    if (filters.salaryMax && job.salaryMin > parseInt(filters.salaryMax)) {
-      return false;
-    }
-
-    // Search Term Filter based on Ranker
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
-
       switch (filters.ranker) {
         case "Title":
           return job.title.toLowerCase().includes(searchLower);
-
         case "Hard Skill":
           return job.skills.some((skill) =>
             skill.toLowerCase().includes(searchLower)
           );
-
         case "General":
         default:
           return (
@@ -250,7 +238,6 @@ export function JobResults() {
           );
       }
     }
-
     return true;
   });
 
@@ -292,6 +279,7 @@ export function JobResults() {
         <div className="job-results-search">
           <div className="search-with-filter">
             <div className="search-input-wrapper">
+              {/* Added Search Icon back */}
               <Search className="search-icon" size={20} />
               <input
                 type="text"
@@ -356,7 +344,7 @@ export function JobResults() {
           )}
         </div>
 
-        {/* Filter Panel */}
+        {/* Filter Modal */}
         <FilterPanel
           filters={filters}
           setFilters={setFilters}
@@ -365,7 +353,7 @@ export function JobResults() {
           onClose={() => setIsFilterOpen(false)}
         />
 
-        {/* Results Count */}
+        {/* Results Info */}
         <div className="results-info">
           <p className="results-count">
             {filteredJobs.length} {filteredJobs.length === 1 ? "job" : "jobs"}{" "}

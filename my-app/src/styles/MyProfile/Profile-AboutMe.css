@@ -1,670 +1,371 @@
 /* ============================================================
-   ABOUT ME SECTION
+   ABOUT ME - MODERNIZED
    ============================================================ */
 
-/* Section wrapper */
 .aboutme-container {
   width: 100%;
-  max-width: 1500px;
-  padding: 1rem;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.profile-aboutme-header {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.aboutme-section {
-  border-bottom: 1px solid #e5e7eb;
   padding: 1.5rem 0;
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* Header */
-.aboutme-header {
+/* Resume Card */
+.resume-upload-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-.aboutme-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.25rem;
+.resume-info h3 {
+  font-size: 1.1rem;
   font-weight: 600;
-  color: rgb(12, 12, 12);
+  margin-bottom: 0.25rem;
+  color: var(--color-text-primary);
 }
 
-/* Edit button */
-.aboutme-edit-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.375rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  background-color: #f3f3f3;
-  color: #0c0c0c;
-  transition: opacity 0.2s, background-color 0.2s, color 0.2s;
+.resume-info p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
 }
 
-.aboutme-edit-btn:hover {
-  opacity: 0.8;
-}
-
-.aboutme-edit-btn.edit-active {
-  background-color: rgb(255, 137, 34);
-  color: white;
-}
-
-/* Textarea */
-.aboutme-textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid rgb(255, 137, 34);
-  border-radius: 0.5rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  resize: vertical;
-  outline: none;
-}
-
-/* Display text */
-.aboutme-text {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  color: #4b5563;
-  line-height: 1.5rem;
-}
-
-/* ============================================================
-   ABOUT ME - EXPERIENCE SECTION
-   ============================================================ */
-
-/* Upload resume button */
-.aboutme-upload-resume-btn {
-  color: white;
+.upload-resume-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-medium);
-  padding: 0.5rem 1rem;
+  background-color: var(--color-neutral-900);
+  color: white;
+  padding: 0.6rem 1.2rem;
   border-radius: 0.5rem;
-  background-color: var(--color-button-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  border: none;
+  transition: all 0.2s ease;
 }
 
-.aboutme-upload-resume-btn:hover {
-  opacity: 0.8;
+.upload-resume-btn:hover {
+  background-color: var(--color-brand-primary);
+  transform: translateY(-2px);
 }
 
-/* Experience list */
-.aboutme-experience-list {
+/* Section Styling */
+.profile-section {
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 2rem;
 }
 
-/* Individual experience item */
-.aboutme-experience-item {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s;
+.profile-section:last-child {
+  border-bottom: none;
 }
 
-.aboutme-experience-editing {
-  background-color: rgb(255, 245, 230);
-  border: 1px solid rgb(255, 137, 34);
-}
-
-/* Input fields */
-.aboutme-experience-input {
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid rgb(255, 137, 34);
-  border-radius: 0.375rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  outline: none;
-  margin-bottom: 0.5rem;
-}
-
-/* Action buttons container */
-.aboutme-experience-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* Action buttons */
-.aboutme-btn-save,
-.aboutme-btn-cancel,
-.aboutme-btn-delete {
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.375rem;
-  font-size: var(--font-size-content-subtext);
-  transition: transform 0.2s, opacity 0.2s;
-  cursor: pointer;
-}
-
-.aboutme-btn-save:hover,
-.aboutme-btn-cancel:hover,
-.aboutme-btn-delete:hover {
-  transform: scale(1.05);
-  opacity: 0.85;
-}
-
-.aboutme-btn-save {
-  background-color: var(--color-success);
-  color: white;
-}
-
-.aboutme-btn-cancel {
-  background-color: #f3f3f3;
-  color: rgb(12, 12, 12);
-  border: 1px solid #a0a0a0;
-}
-
-.aboutme-btn-delete {
-  background-color: rgb(220, 53, 69);
-  color: white;
-  margin-left: auto;
-}
-
-/* Display mode */
-.aboutme-experience-display {
+.section-header {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
 }
 
-.aboutme-experience-info {
+.section-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background-color: var(--color-neutral-200);
+  color: var(--color-text-primary);
+}
+
+.icon-btn.active {
+  background-color: var(--color-brand-primary);
+  color: white;
+  border-color: var(--color-brand-primary);
+}
+
+.section-text {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Edit Inputs */
+.edit-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-brand-primary);
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  resize: vertical;
+}
+
+/* Experience List */
+.experience-list {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.experience-card {
+  background: #f9fafb;
+  border-radius: 0.75rem;
+  padding: 1.25rem; /* Increased padding slightly */
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.experience-card:hover {
+  border-color: var(--color-border);
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.experience-view {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Changed from center to flex-start to align top */
+  gap: 1.5rem; /* Added gap to prevent text touching */
+}
+
+.exp-main {
+  flex: 1; /* Allows title to take available space */
+}
+
+.exp-main h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.exp-company {
+  font-size: 0.9rem;
+  color: var(--color-brand-primary);
+  font-weight: 500;
+}
+
+.exp-meta {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: right;
+  flex-shrink: 0; /* Prevents meta from wrapping weirdly */
+  margin-top: 0.1rem; /* Aligns text with the Title baseline */
+}
+
+.edit-item-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.edit-item-btn:hover {
+  color: var(--color-brand-primary);
+}
+
+/* Experience Edit Form */
+.experience-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.experience-edit-form input {
+  padding: 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.save-btn {
+  background-color: var(--color-brand-primary);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.cancel-btn {
+  background-color: var(--color-neutral-200);
+  color: var(--color-text-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.delete-text-btn {
+  background: none;
+  color: var(--color-error);
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-left: auto;
+  text-decoration: underline;
+}
+
+.add-item-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px dashed var(--color-brand-primary);
+  background-color: #fffaf5;
+  color: var(--color-brand-primary);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.add-item-btn:hover {
+  background-color: #fff0e0;
+}
+
+/* Skills */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-chip {
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-chip.hard {
+  background-color: var(--color-neutral-900);
+  color: white;
+}
+
+.skill-chip.soft {
+  background-color: var(--color-neutral-200);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.remove-skill {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 0.5;
+  opacity: 0.7;
+}
+
+.remove-skill:hover {
+  opacity: 1;
+}
+
+.add-skill-wrapper {
+  display: flex;
+  align-items: center;
   gap: 0.25rem;
 }
 
-.aboutme-experience-title {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: rgb(12, 12, 12);
-}
-
-.aboutme-experience-company {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: rgb(12, 12, 12);
-}
-
-.aboutme-experience-location,
-.aboutme-experience-duration,
-.aboutme-experience-company {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  color: #6b7280;
-}
-
-.aboutme-btn-edit {
-  background-color: #f3f3f3;
-  color: rgb(12, 12, 12);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.375rem;
-  font-size: var(--font-size-content-subtext);
-}
-
-/* Add new experience button */
-.aboutme-btn-add {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 0.375rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 0.875rem;
-  background-color: #f3f3f3;
-  color: rgb(255, 137, 34);
-  border: 1px dashed rgb(255, 137, 34);
-  transition: opacity 0.2s;
-}
-
-.aboutme-btn-add:hover {
-  opacity: 0.8;
-}
-
-/* ============================================================
-   ABOUT ME - HARD SKILLS SECTION
-   ============================================================ */
-
-/* Section wrapper */
-.aboutMeHardSkills-section {
-  border-bottom: 1px solid #e5e7eb;
-  padding: 1.5rem 0;
-  margin-bottom: 1.5rem;
-}
-
-/* Header */
-.aboutMeHardSkills-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.aboutMeHardSkills-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: rgb(12, 12, 12);
-}
-
-/* Edit button */
-.aboutMeHardSkills-edit-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.375rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  background-color: #f3f3f3;
-  color: rgb(12, 12, 12);
-  transition: opacity 0.2s, background-color 0.2s, color 0.2s;
-}
-
-.aboutMeHardSkills-edit-btn:hover {
-  opacity: 0.8;
-}
-
-.aboutMeHardSkills-edit-btn.edit-active {
-  background-color: rgb(255, 137, 34);
-  color: white;
-}
-
-/* Skills list */
-.aboutMeHardSkills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-/* Individual skill */
-.aboutMeHardSkills-item {
-  position: relative;
-}
-
-.aboutMeHardSkills-btn {
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  background-color: rgb(255, 137, 34);
-  color: white;
-  transition: all 0.2s;
-  cursor: default;
-}
-
-.aboutMeHardSkills-btn:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Save and cancel buttons */
-.aboutMeHardSkills-btn-save {
-  background-color: rgb(255, 137, 34);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.375rem;
-}
-
-.aboutMeHardSkills-btn-cancel {
-  background-color: rgb(220, 53, 69);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.375rem;
-}
-
-/* Input and add section */
-.hardSkills-input-add-section {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.aboutMeHardSkills-edit-input {
-  width: 50%;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.375rem;
-  border: 1px solid rgb(255, 137, 34);
-  font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
+.add-skill-wrapper input {
+  padding: 0.4rem 0.75rem;
+  border-radius: 2rem;
+  border: 1px solid var(--color-brand-primary);
   outline: none;
-  transition: width 0.3s ease;
+  font-size: 0.85rem;
+  width: 150px;
 }
 
-.aboutMeHardSkills-btn-add {
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-size: var(--font-size-content-subtext);
-  background-color: #f3f3f3;
-  color: rgb(255, 137, 34);
-  border: 1px dashed rgb(255, 137, 34);
-  transition: opacity 0.2s, transform 0.2s;
-  cursor: pointer;
-}
-
-.aboutMeHardSkills-btn-add:hover {
-  opacity: 0.8;
-  transform: scale(1.05);
-}
-
-/* Delete button */
-.aboutMeHardSkills-btn-delete {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  width: 20px;
-  height: 20px;
-  border-radius: 9999px;
-  background-color: rgb(220, 53, 69);
+.add-skill-wrapper button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-brand-primary);
   color: white;
-  font-size: 0.75rem;
-  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.2s;
-  cursor: pointer;
+  padding: 0;
 }
 
-.aboutMeHardSkills-item:hover .aboutMeHardSkills-btn-delete {
-  opacity: 1;
-}
-
-/* ============================================================
-   ABOUT ME - SOFT SKILLS SECTION
-   ============================================================ */
-
-/* Section wrapper */
-.aboutMeSoftSkills-section {
-  border-bottom: 1px solid #e5e7eb;
-  padding: 1.5rem 0;
-  margin-bottom: 1.5rem;
-}
-
-/* Header */
-.aboutMeSoftSkills-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.aboutMeSoftSkills-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: rgb(12, 12, 12);
-}
-
-/* Edit button */
-.aboutMeSoftSkills-edit-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.375rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  background-color: #f3f3f3;
-  color: rgb(12, 12, 12);
-  transition: opacity 0.2s, background-color 0.2s, color 0.2s;
-}
-
-.aboutMeSoftSkills-edit-btn:hover {
-  opacity: 0.8;
-}
-
-.aboutMeSoftSkills-edit-btn.edit-active {
-  background-color: rgb(255, 137, 34);
-  color: white;
-}
-
-/* Skills list */
-.aboutMeSoftSkills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-/* Individual skill */
-.aboutMeSoftSkills-item {
-  position: relative;
-}
-
-.aboutMeSoftSkills-btn {
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  background-color: rgb(255, 137, 34);
-  color: white;
-  transition: all 0.2s;
-  cursor: default;
-}
-
-.aboutMeSoftSkills-btn:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Save and cancel buttons */
-.aboutMeSoftSkills-btn-save {
-  background-color: rgb(255, 137, 34);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.375rem;
-}
-
-.aboutMeSoftSkills-btn-cancel {
-  background-color: rgb(220, 53, 69);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.375rem;
-}
-
-/* Input and add section */
-.softSkills-input-add-section {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.aboutMeSoftSkills-edit-input {
-  width: 50%;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.375rem;
-  border: 1px solid rgb(255, 137, 34);
-  font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  outline: none;
-  transition: width 0.3s ease;
-}
-
-.aboutMeSoftSkills-btn-add {
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-size: var(--font-size-content-subtext);
-  background-color: #f3f3f3;
-  color: rgb(255, 137, 34);
-  border: 1px dashed rgb(255, 137, 34);
-  transition: opacity 0.2s, transform 0.2s;
-  cursor: pointer;
-}
-
-.aboutMeSoftSkills-btn-add:hover {
-  opacity: 0.8;
-  transform: scale(1.05);
-}
-
-/* Delete button */
-.aboutMeSoftSkills-btn-delete {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  width: 20px;
-  height: 20px;
-  border-radius: 9999px;
-  background-color: rgb(220, 53, 69);
-  color: white;
-  font-size: 0.75rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.2s;
-  cursor: pointer;
-}
-
-.aboutMeSoftSkills-item:hover .aboutMeSoftSkills-btn-delete {
-  opacity: 1;
-}
-
-/* ============================================================
-   RESPONSIVE STYLES - TABLET (max-width: 1024px)
-   ============================================================ */
-
-@media (max-width: 1024px) {
-  .aboutme-container {
-    padding: 0 0.75rem;
-  }
-
-  .aboutme-upload-resume-btn {
-    font-size: 0.9rem;
-    padding: 0.45rem 0.9rem;
-    gap: 0.4rem;
-  }
-
-  .aboutme-btn-save,
-  .aboutme-btn-cancel,
-  .aboutme-btn-delete {
-    padding: 0.2rem 0.6rem;
-    font-size: 0.875rem;
-  }
-
-  .aboutMeHardSkills-edit-input,
-  .aboutMeSoftSkills-edit-input {
-    width: 60%;
-  }
-
-  .aboutMeHardSkills-btn-add,
-  .aboutMeSoftSkills-btn-add {
-    padding: 0.45rem 0.9rem;
-    font-size: 0.825rem;
-  }
-}
-
-/* ============================================================
-   RESPONSIVE STYLES - MOBILE (max-width: 768px)
-   ============================================================ */
-
-@media (max-width: 768px) {
-  .aboutme-container {
-    padding: 0 0.5rem;
-  }
-
-  .aboutme-section,
-  .aboutMeHardSkills-section,
-  .aboutMeSoftSkills-section {
-    padding: 1rem 0;
-  }
-
-  .aboutme-upload-resume-btn {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    gap: 0.35rem;
-  }
-
-  .aboutme-experience-actions {
+@media (max-width: 640px) {
+  .resume-upload-card {
     flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .experience-view {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 0.5rem;
   }
-
-  .aboutme-btn-save,
-  .aboutme-btn-cancel,
-  .aboutme-btn-delete {
-    width: 100%;
-    margin-left: 0;
-    font-size: 0.85rem;
-    padding: 0.25rem 0.5rem;
+  .exp-meta {
+    text-align: left;
+    margin-top: 0;
   }
-
-  .hardSkills-input-add-section,
-  .softSkills-input-add-section {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .aboutMeHardSkills-edit-input,
-  .aboutMeSoftSkills-edit-input {
-    width: 100%;
-  }
-
-  .aboutMeHardSkills-btn-add,
-  .aboutMeSoftSkills-btn-add {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
-    width: 100%;
-  }
-}
-
-/* ============================================================
-   RESPONSIVE STYLES - SMALL MOBILE (max-width: 480px)
-   ============================================================ */
-
-@media (max-width: 480px) {
-  .aboutme-container {
-    padding: 0 0.5rem;
-  }
-
-  .aboutme-upload-resume-btn {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.7rem;
-    gap: 0.3rem;
-  }
-
-  .aboutme-btn-save,
-  .aboutme-btn-cancel,
-  .aboutme-btn-delete {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;
-  }
-
-  .aboutMeHardSkills-edit-input,
-  .aboutMeSoftSkills-edit-input {
-    width: 100%;
-    padding: 0.4rem 0.6rem;
-  }
-
-  .aboutMeHardSkills-btn-add,
-  .aboutMeSoftSkills-btn-add {
-    padding: 0.35rem 0.7rem;
-    font-size: 0.75rem;
+  .edit-item-btn {
+    align-self: flex-end;
+    margin-top: -2rem; /* Adjust position on mobile */
   }
 }

@@ -1,83 +1,69 @@
 /* ============================================================
-   SEARCH FILTERS
+   FILTER MODAL STYLES
    ============================================================ */
 
-/* ===== Search with Filter ===== */
-
-/* other search bar styles */
-
-.search-with-filter {
+/* Overlay Backdrop */
+.filter-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1050;
   display: flex;
-  gap: 1rem;
-  align-items: stretch;
-}
-
-.search-input-wrapper {
-  flex: 1;
-}
-
-/* Filter Toggle Button */
-.filter-toggle-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: white;
-  border: 1px solid var(--color-border, #d1d5db);
-  border-radius: 0.75rem;
-  color: var(--color-neutral-700, #374151);
-  font-weight: 500;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  position: relative;
-}
-
-.filter-toggle-btn:hover {
-  border-color: var(--color-brand-primary, #ff6b00);
-  background-color: rgba(255, 107, 0, 0.05);
-}
-
-.filter-badge {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 1.25rem;
-  height: 1.25rem;
-  padding: 0 0.375rem;
-  background-color: var(--color-brand-primary, #ff6b00);
-  color: white;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border-radius: 9999px;
+  animation: fadeIn 0.2s ease-out;
 }
 
-/* ===== Filter Panel ===== */
-.filter-panel {
+/* Modal Container */
+.filter-modal {
   background: white;
-  border: 1px solid var(--color-border-light, #e5e7eb);
-  border-radius: 1rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 1.5rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
+  max-height: 90vh;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Header */
 .filter-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem;
   border-bottom: 1px solid var(--color-border-light, #e5e7eb);
-  background-color: var(--color-neutral-50, #f9fafb);
+  background-color: white;
 }
 
 .filter-title {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-neutral-900, #1f2937);
   margin: 0;
@@ -89,7 +75,7 @@
   border: none;
   color: var(--color-neutral-400, #9ca3af);
   cursor: pointer;
-  border-radius: 0.5rem;
+  border-radius: 50%;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
@@ -97,15 +83,17 @@
 }
 
 .filter-close-btn:hover {
-  color: var(--color-neutral-600, #4b5563);
   background-color: var(--color-neutral-100, #f3f4f6);
+  color: var(--color-neutral-900);
 }
 
+/* Body */
 .filter-body {
   padding: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
 }
 
 /* Filter Group */
@@ -116,19 +104,20 @@
 }
 
 .filter-label {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-neutral-700, #374151);
+  margin-left: 0.25rem;
 }
 
 .filter-select,
 .filter-input {
   width: 100%;
-  padding: 0.625rem 1rem;
+  padding: 0.75rem 1rem;
   border: 1px solid var(--color-border, #d1d5db);
-  border-radius: 0.5rem;
-  font-size: 0.9375rem;
-  color: var(--color-neutral-900, #1f2937);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  color: var(--color-neutral-900);
   background-color: white;
   transition: all 0.2s ease;
 }
@@ -140,7 +129,6 @@
   box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
 }
 
-/* Salary Range Inputs */
 .salary-range-inputs {
   display: flex;
   align-items: center;
@@ -148,41 +136,100 @@
 }
 
 .salary-separator {
-  color: var(--color-neutral-400, #9ca3af);
+  color: var(--color-neutral-400);
   font-weight: 500;
 }
 
-/* Filter Actions */
+/* Actions Footer */
 .filter-actions {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-light, #f3f4f6);
 }
 
+/* ===== UPDATED FONT SIZES HERE ===== */
 .btn-clear-filters {
-  width: 100%;
-  padding: 0.75rem 1.5rem;
+  flex: 1;
+  padding: 0.875rem;
   background-color: white;
   border: 1px solid var(--color-border, #d1d5db);
-  border-radius: 0.5rem;
-  color: var(--color-neutral-700, #374151);
-  font-weight: 500;
+  border-radius: 0.75rem;
+  color: var(--color-neutral-700);
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btn-clear-filters:hover {
   background-color: var(--color-neutral-50, #f9fafb);
-  border-color: var(--color-neutral-300, #d1d5db);
 }
 
-/* ===== Active Filters ===== */
+.btn-apply-filters {
+  flex: 2;
+  padding: 0.875rem;
+  background-color: var(--color-brand-primary, #ff6b00);
+  border: none;
+  border-radius: 0.75rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
+}
+
+.btn-apply-filters:hover {
+  background-color: #e65a00;
+  transform: translateY(-1px);
+}
+
+/* ===== TOGGLE BUTTON (On Job Page) ===== */
+.filter-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  border: 1px solid var(--color-border, #d1d5db);
+  border-radius: 0.75rem;
+  color: var(--color-neutral-700);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0; /* Ensures it doesn't shrink when beside input */
+}
+
+.filter-toggle-btn:hover {
+  border-color: var(--color-brand-primary);
+  background-color: rgba(255, 107, 0, 0.05);
+  color: var(--color-brand-primary);
+}
+
+/* Active Filters Badge */
+.filter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.4rem;
+  background-color: var(--color-brand-primary);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 9999px;
+}
+
 .active-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1rem;
-  align-items: center;
 }
 
 .active-filter-tag {
@@ -190,9 +237,10 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.375rem 0.75rem;
-  background-color: var(--color-brand-primary, #ff6b00);
-  color: white;
-  font-size: 0.8125rem;
+  background-color: #fff0e6;
+  border: 1px solid rgba(255, 137, 34, 0.2);
+  color: var(--color-brand-primary);
+  font-size: 0.85rem;
   font-weight: 500;
   border-radius: 9999px;
 }
@@ -202,49 +250,27 @@
   align-items: center;
   justify-content: center;
   padding: 0.125rem;
-  background: transparent;
+  background: rgba(255, 137, 34, 0.1);
   border: none;
-  color: white;
+  color: var(--color-brand-primary);
   cursor: pointer;
   border-radius: 50%;
   transition: background-color 0.2s ease;
 }
 
 .remove-filter:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 137, 34, 0.3);
 }
 
 .clear-all-btn {
-  padding: 0.375rem 0.75rem;
-  background-color: white;
-  border: 1px solid var(--color-brand-primary, #ff6b00);
-  color: var(--color-brand-primary, #ff6b00);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  border-radius: 9999px;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  text-decoration: underline;
+  margin-left: 0.5rem;
 }
-
 .clear-all-btn:hover {
-  background-color: var(--color-brand-primary, #ff6b00);
-  color: white;
-}
-
-/* ===== Results Info ===== */
-.results-info {
-  margin-bottom: 1rem;
-}
-
-.results-count {
-  font-size: 0.9375rem;
-  color: var(--color-neutral-600, #4b5563);
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 640px) {
-  .filter-toggle-btn {
-    padding: 0.75rem 2rem;
-  }
+  color: var(--color-brand-primary);
 }

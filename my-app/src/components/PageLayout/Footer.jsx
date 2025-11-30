@@ -1,110 +1,92 @@
 import React from "react";
-import { motion } from "framer-motion";
 import "../../styles/PageLayout/Footer.css";
+import { Github, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <motion.footer
-      className="bg-[var(--color-neutral-900)] py-12 px-6"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      viewport={{ once: true }}
-    >
-      <section id="contact-us">
-        {/* TOP SECTION */}
-        <motion.div
-          className="top-section"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          {/* LEFT SECTION */}
-          <motion.div
-            className="flex flex-col items-center md:items-start text-center md:text-left"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-[var(--color-brand-primary)] text-2xl font-semibold mb-2">
-              Contact Us.
+    <footer className="site-footer">
+      <div className="footer-content">
+        {/* Top Grid Section */}
+        <div className="footer-grid">
+          {/* Brand Section */}
+          <div className="footer-col brand-col">
+            <h2 className="footer-brand">CareerCove</h2>
+            <p className="footer-tagline">
+              Navigating your career path with clarity and confidence. Connect
+              with opportunities that matter.
             </p>
-
-            <ul className="text-[var(--color-neutral-100)] space-y-1">
-              <li>Francine Dalida</li>
-              <li>Jan Escander</li>
-              <li>Marti Trance</li>
-            </ul>
-          </motion.div>
-
-          {/* RIGHT SECTION */}
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center md:text-left"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            {/* Emails */}
-            <div className="text-[var(--color-neutral-100)]">
-              <h3 className="font-semibold text-lg mb-3">Emails</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="mailto:dfb0414@dlsud.edu.ph"
-                    className="hover:text-[var(--color-brand-primary)] transition-colors"
-                  >
-                    dfb0414@dlsud.edu.ph
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:ejb1823@dlsud.edu.ph"
-                    className="hover:text-[var(--color-brand-primary)] transition-colors"
-                  >
-                    ejb1823@dlsud.edu.ph
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:tmv0253@dlsud.edu.ph"
-                    className="hover:text-[var(--color-brand-primary)] transition-colors"
-                  >
-                    tmv0253@dlsud.edu.ph
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* GitHub */}
-            <div className="text-[var(--color-neutral-100)]">
-              <h3 className="font-semibold text-lg mb-3">GitHub Repository</h3>
+            <div className="footer-socials">
               <a
                 href="https://github.com/cinedalida/CareerCove-frontend"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[var(--color-brand-primary)] transition-colors underline"
+                className="social-link"
+                aria-label="GitHub"
               >
-                github.com/careercove
+                <Github size={20} />
               </a>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
 
-        {/* BOTTOM SECTION */}
-        <motion.div
-          className="flex flex-col md:flex-row justify-between items-center text-sm text-[var(--color-neutral-100)] pt-6 gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <p>©2025 CareerCove</p>
-        </motion.div>
-      </section>
-    </motion.footer>
+          {/* Researchers Section */}
+          <div className="footer-col">
+            <h3 className="footer-heading">Researchers</h3>
+            <ul className="footer-links">
+              <li>Francine Dalida</li>
+              <li>Jan Escander</li>
+              <li>Marti Trance</li>
+            </ul>
+          </div>
+
+          {/* Contact Section */}
+          <div className="footer-col">
+            <h3 className="footer-heading">Contact</h3>
+            <ul className="footer-links">
+              <li>
+                <a href="mailto:dfb0414@dlsud.edu.ph" className="icon-link">
+                  <Mail size={16} /> dfb0414@dlsud.edu.ph
+                </a>
+              </li>
+              <li>
+                <a href="mailto:ejb1823@dlsud.edu.ph" className="icon-link">
+                  <Mail size={16} /> ejb1823@dlsud.edu.ph
+                </a>
+              </li>
+              <li>
+                <a href="mailto:tmv0253@dlsud.edu.ph" className="icon-link">
+                  <Mail size={16} /> tmv0253@dlsud.edu.ph
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Location Section */}
+          <div className="footer-col">
+            <h3 className="footer-heading">Location</h3>
+            <ul className="footer-links">
+              <li className="icon-link">
+                <MapPin size={16} /> Dasmariñas, Cavite
+              </li>
+              <li>De La Salle University - Dasmariñas</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="footer-divider"></div>
+
+        {/* Bottom Section */}
+        <div className="footer-bottom">
+          <p>© {currentYear} CareerCove. All rights reserved.</p>
+          <div className="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 

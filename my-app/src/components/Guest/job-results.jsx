@@ -7,15 +7,13 @@ import FilterPanel from "../UI/FilterPanel";
 import {
   ChevronLeft,
   ChevronRight,
-  Bookmark,
-  Search,
   SlidersHorizontal,
   X,
+  Search, // Re-imported
 } from "lucide-react";
 
 export function JobResults({ jobs }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [savedJobs, setSavedJobs] = useState([]);
   const [filters, setFilters] = useState({
     workSetup: "",
     salaryMin: "",
@@ -64,14 +62,6 @@ export function JobResults({ jobs }) {
   const paginatedJobs = filteredJobs.slice(startIndex, endIndex);
   const totalPages = Math.ceil(filteredJobs.length / JOBS_PER_PAGE);
 
-  const toggleSave = (jobId) => {
-    setSavedJobs((prev) =>
-      prev.includes(jobId)
-        ? prev.filter((id) => id !== jobId)
-        : [...prev, jobId]
-    );
-  };
-
   const handleClearFilters = () => {
     setFilters({
       workSetup: "",
@@ -92,26 +82,29 @@ export function JobResults({ jobs }) {
   return (
     <div className="job-results-container max-w-6xl mx-auto px-4 py-8">
       {/* ---------- Search & Filter ---------- */}
-      <div className="job-results-search mb-6 flex flex-col sm:flex-row sm:items-center sm:gap-4">
-        <div className="relative flex-1 mb-2 sm:mb-0">
-          <Input
-            placeholder={`Search by ${filters.ranker.toLowerCase()}...`}
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="guest-input pl-10 w-full"
-          />
-        </div>
+      <div className="job-results-search mb-6">
+        <div className="search-with-filter">
+          <div className="search-input-wrapper">
+            <Search className="search-icon" size={20} />
+            <Input
+              placeholder={`Search by ${filters.ranker.toLowerCase()}...`}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="guest-input search-input"
+            />
+          </div>
 
-        <button
-          className="filter-toggle-btn flex items-center gap-2"
-          onClick={() => setIsFilterOpen(!isFilterOpen)}
-        >
-          <SlidersHorizontal size={20} />
-          <span>Filters</span>
-          {activeFilterCount > 0 && (
-            <span className="filter-badge">{activeFilterCount}</span>
-          )}
-        </button>
+          <button
+            className="filter-toggle-btn"
+            onClick={() => setIsFilterOpen(!isFilterOpen)}
+          >
+            <SlidersHorizontal size={20} />
+            <span>Filters</span>
+            {activeFilterCount > 0 && (
+              <span className="filter-badge">{activeFilterCount}</span>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Active Filters */}
@@ -156,7 +149,7 @@ export function JobResults({ jobs }) {
         </div>
       )}
 
-      {/* Filter Panel */}
+      {/* Filter Panel (Modal) */}
       <FilterPanel
         filters={filters}
         setFilters={setFilters}
@@ -165,12 +158,13 @@ export function JobResults({ jobs }) {
         onClose={() => setIsFilterOpen(false)}
       />
 
-      {/* ---------- Job Results ---------- */}
-      <p className="results-count mb-4">
+      {/* ---------- Job Results Count ---------- */}
+      <p className="guest-results-count">
         {filteredJobs.length} {filteredJobs.length === 1 ? "job" : "jobs"} found
       </p>
 
-      <div className="grid gap-6">
+      {/* ---------- Job Grid (Single Column) ---------- */}
+      <div className="job-results-grid gap-6">
         {paginatedJobs.length > 0 ? (
           paginatedJobs.map((job) => (
             <Card
@@ -185,15 +179,19 @@ export function JobResults({ jobs }) {
                 </div>
               </div>
 
+              {/* Details */}
               <div className="job-details mt-2">
                 <p>
-                  <span className="label">💰 Salary:</span> {job.salary}
+                  <span className="material-symbols-outlined">payments</span>{" "}
+                  {job.salary}
                 </p>
                 <p>
-                  <span className="label">🏠 Work Setup:</span> {job.workSetup}
+                  <span className="material-symbols-outlined">work</span>{" "}
+                  {job.workSetup}
                 </p>
-                <p className="job-description">{job.description}</p>
               </div>
+
+              <p className="job-description">{job.description}</p>
 
               <div className="flex flex-wrap gap-2 mt-4">
                 {job.skills.map((skill) => (
