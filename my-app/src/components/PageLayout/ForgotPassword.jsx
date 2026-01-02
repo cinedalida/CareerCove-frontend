@@ -19,65 +19,40 @@ export default function ForgotPassword({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
+  // --- Handlers ---
+
   const handleClose = () => {
-    // Reset state when closing
-    setStep(1);
-    setEmail("");
-    setOtp("");
-    setPassword("");
-    setConfirmPassword("");
+    setStep(1); // Reset to step 1 when closing
     setError("");
     onClose();
   };
 
   const handleSendCode = (e) => {
     e.preventDefault();
-    setError("");
-    if (!email.includes("@")) {
-      setError("Please enter a valid email address.");
-      return;
-    }
-
+    // Validation logic skipped for visualization if you use the Dev buttons below
     setIsLoading(true);
-    // Simulate API call
     setTimeout(() => {
       setIsLoading(false);
       setStep(2);
-    }, 1500);
+    }, 1000);
   };
 
   const handleVerifyCode = (e) => {
     e.preventDefault();
-    setError("");
-    if (otp.length < 4) {
-      setError("Please enter a valid verification code.");
-      return;
-    }
-
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
       setStep(3);
-    }, 1500);
+    }, 1000);
   };
 
   const handleResetPassword = (e) => {
     e.preventDefault();
-    setError("");
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters.");
-      return;
-    }
-    if (password !== confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
-
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
       setStep(4);
-    }, 1500);
+    }, 1000);
   };
 
   return (
@@ -134,12 +109,12 @@ export default function ForgotPassword({ isOpen, onClose }) {
               </span>
               <h2>Check your inbox</h2>
               <p>
-                We sent a verification code to <strong>{email}</strong>.
+                We sent a verification code to{" "}
+                <strong>{email || "your email"}</strong>.
               </p>
             </div>
 
             <form onSubmit={handleVerifyCode} className="fp-form">
-              {error && <div className="fp-error">{error}</div>}
               <div className="fp-input-group">
                 <label>Verification Code</label>
                 <Input
@@ -185,7 +160,6 @@ export default function ForgotPassword({ isOpen, onClose }) {
             </div>
 
             <form onSubmit={handleResetPassword} className="fp-form">
-              {error && <div className="fp-error">{error}</div>}
               <div className="fp-input-group">
                 <label>New Password</label>
                 <Input
@@ -229,7 +203,6 @@ export default function ForgotPassword({ isOpen, onClose }) {
               Your password has been successfully updated. You can now log in
               with your new credentials.
             </p>
-
             <Button
               type="button"
               variant="primary"
@@ -240,6 +213,54 @@ export default function ForgotPassword({ isOpen, onClose }) {
             </Button>
           </div>
         )}
+
+        {/* ======================================================== */}
+        {/* TEMPORARY DEV TOOLS: Click buttons to jump between steps */}
+        {/* ======================================================== */}
+        <div
+          style={{
+            marginTop: "2rem",
+            paddingTop: "1rem",
+            borderTop: "1px dashed #ccc",
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "0.75rem",
+              color: "#888",
+              textAlign: "center",
+              margin: 0,
+            }}
+          >
+            ⚠️ Dev Mode: Force View Step
+          </p>
+          <div
+            style={{ display: "flex", gap: "0.5rem", justifyContent: "center" }}
+          >
+            {[1, 2, 3, 4].map((num) => (
+              <button
+                key={num}
+                type="button"
+                onClick={() => setStep(num)}
+                style={{
+                  padding: "4px 10px",
+                  background:
+                    step === num ? "var(--color-brand-primary)" : "#eee",
+                  color: step === num ? "white" : "#333",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                  fontSize: "0.8rem",
+                }}
+              >
+                Step {num}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
