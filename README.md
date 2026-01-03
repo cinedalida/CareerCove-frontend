@@ -25,3 +25,15 @@ npm install
 ```bash
 npm run dev
 ```
+## Video Demo
+
+[![CareerCove Video Demo](https://img.youtube.com/vi/x_MH1Pqrg3A/0.jpg)](https://youtu.be/x_MH1Pqrg3A)
+
+---
+
+## Authors
+
+- **Francine Dalida** – [@cinedalida](https://github.com/cinedalida)
+- **Jan Escander** – [@CrazyCakeee](https://github.com/CrazyCakeee)
+- **Marti Trance** – [@KMarttt](https://github.com/KMarttt)
+
